@@ -8,7 +8,11 @@
 
 {team members and roles}
 
-Feel free to link any existing Linked.in Profiles or Portfolio Websites.
+Designers:
+* * Joakim Blomstrand , Designer [LinkedIn](https://www.linkedin.com/in/joakim-blomstrand-218417227/)
+Engineers:
+* Oliver Källerfors, engineer [LinkedIn](https://www.linkedin.com/in/oliver-källerfors-358bb21b3/)
+* Jesper Danielsson, engineer [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
 
 ## Design Documents
 
