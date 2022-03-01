@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public enum TileFunction
     Edge, Corner, Door
 }
 
+[Serializable]
 public class Coordinates
 {
     public int X, Y, Z;
@@ -31,6 +33,7 @@ public class Coordinates
 
 }
 
+[Serializable]
 public class Tile_ML
 {
     public TileType TileType;
