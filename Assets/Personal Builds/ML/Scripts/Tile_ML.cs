@@ -24,11 +24,11 @@ public class Coordinates
         Y = y;
         Z = z;
     }
-    public Coordinates(int x, int y)
+    public Coordinates(int x, int z)
     {
         X = x;
-        Y = y;
-        Z = 0;
+        Y = 0;
+        Z = z;
     }
 
 }
