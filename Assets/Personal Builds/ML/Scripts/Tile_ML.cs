@@ -13,6 +13,11 @@ public enum TileFunction
     Edge, Corner, Door
 }
 
+public enum TileContent
+{
+    Treasure, Enemy, Trap, None
+}
+
 [Serializable]
 public class Coordinates
 {

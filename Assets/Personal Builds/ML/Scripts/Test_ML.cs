@@ -8,15 +8,17 @@ public class Test_ML : MonoBehaviour
     [SerializeField] private GameObject TileTest;
     private List<Vector3> tilePos = new List<Vector3>();
 
-    private void GetMeshSize()
+    private Vector3 GetMeshSize(GameObject theObject)
     {
-
+        return theObject.GetComponent<MeshFilter>().mesh.bounds.size;
     }
 
     void Start()
     {
        var testTile = Instantiate(TileTest);
-       Debug.Log(testTile.GetComponent<Mesh>().bounds.size);
+       var size = testTile.GetComponent<MeshFilter>().mesh.bounds.size.x;
+       testTile = Instantiate(TileTest);
+       testTile.transform.position += new Vector3(size, 0);
     }
 
     // Update is called once per frame
