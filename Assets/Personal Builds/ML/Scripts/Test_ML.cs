@@ -17,35 +17,26 @@ public class Test_ML : MonoBehaviour
 
     void Start()
     {
-       CreatTileSquare(new Vector2(8, 7));
+       CreatTileSquare(new Vector2(8, 7), transform.position);
     }
 
-    private void CreatTileSquare(Vector2 tileCount)
+    private void CreatTileSquare(Vector2 tileCount, Vector3 startPos)
     {
-        var startVector = transform.position;
-        currentPosition = startVector;
-        for (int i = 0; i < tileCount.y; i++)
+        for (int i = 0; i <= tileCount.y; i++)
         {
-            CreateTileRow((int)tileCount.x);
-            currentPosition = startVector
-                              + new Vector3(0, 0, currentTileSize.z * i);
+            CreateTileRow((int)tileCount.x, startPos);
+            startPos += new Vector3(0, 0, currentTileSize.z);
         }
     }
 
-    private void CreateTileRow(int rowCount)
+    private void CreateTileRow(int rowCount, Vector3 startPos)
     {
         for (int i = 0; i < rowCount; i++)
         {
             var testTile = Instantiate(TileTest);
             currentTileSize = testTile.GetComponent<MeshFilter>().mesh.bounds.size;
-            testTile.transform.position = currentPosition + new Vector3(currentTileSize.x, 0);
-            currentPosition = testTile.transform.position;
+            testTile.transform.position = startPos + new Vector3(currentTileSize.x, 0);
+            startPos = testTile.transform.position;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
