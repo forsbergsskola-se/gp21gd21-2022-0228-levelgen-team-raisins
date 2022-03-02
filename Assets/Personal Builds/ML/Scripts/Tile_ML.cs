@@ -43,7 +43,8 @@ public class Tile_ML
 {
     public TileType TileType;
     public TileFunction TileFunction;
+    public TileContent TileContent;
     public Coordinates Coordinates;
-
+    public Tile_ML[] neighbours;
 
 }
