@@ -4,40 +4,64 @@ using System.Drawing;
 using System.Linq;
 using UnityEngine;
 
+
+
 public class RoomTest_ML : MonoBehaviour
 {
     public GameObject testSpawn;
     void Start()
     {
-        GetFloorTiles();
+        GetTilesOfType(TileType.Wall);
     }
 
-    private void GetFloorTiles()
+
+    private List<MeshFilter> GetTilesOfType(TileType tileType)
     {
-       var tiles = gameObject.GetComponentsInChildren<MeshFilter>()
-            .Where(x => x.CompareTag("Floor")).ToList();
+        string tileString = tileType switch
+        {
+            TileType.Wall => "Wall",
+            TileType.Floor => "Floor",
+            TileType.Corner => "Corner",
+            _ => ""
+        };
 
-       List<int> randoms = new List<int>();
+        var tiles = gameObject.GetComponentsInChildren<MeshFilter>()
+            .Where(x => x.CompareTag(tileString)).ToList();
 
-       for (int i = 0; i < 23; i++)
-       {
-           var randomNumbers = Random.Range(0, tiles.Count);
-           if(!randoms.Contains(randomNumbers))
-               randoms.Add(randomNumbers);
-       }
+           return tiles;
+    }
+    private void DoSomething()
+    {
+        var tiles = GetTilesOfType(TileType.Wall);
+        var newTiles = tiles.OrderBy(x => x.gameObject.transform.position.z).ToList();
+        var tempVase2 = Instantiate(testSpawn, newTiles[newTiles.Count - 1].transform.position, Quaternion.identity);
+        List<int> randoms = new List<int>();
 
 
-       for (int i = 0; i < 5; i++)
-       {
-           var rand = randoms[i];
-           var randRot = Random.Range(5f, 300f);
-           var tilePos = tiles[rand].gameObject.transform.position;
-           var scale = tiles[rand].mesh.bounds.size;
-           var adjustPos = tilePos + new Vector3(scale.x / 2,0, -scale.z / 2);
-           var tempVase = Instantiate(testSpawn, adjustPos, Quaternion.identity);
+        for (int i = 0; i < 23; i++)
+        {
+            var randomNumbers = Random.Range(0, tiles.Count);
+            if(!randoms.Contains(randomNumbers))
+                randoms.Add(randomNumbers);
+        }
 
-           AdjustObjectPlacement(tempVase, 300f);
-       }
+
+        for (int i = 0; i < 5; i++)
+        {
+            var rand = randoms[i];
+            var randRot = Random.Range(5f, 300f);
+            var tilePos = tiles[rand].gameObject.transform.position;
+            var scale = tiles[rand].mesh.bounds.size;
+            var adjustPos = tilePos + new Vector3(scale.x / 2,0, -scale.z / 2);
+            var tempVase = Instantiate(testSpawn, adjustPos, Quaternion.identity);
+
+            AdjustObjectPlacement(tempVase, 300f);
+        }
+    }
+
+    private void SpawnAnAsset()
+    {
+
     }
 
     private void AdjustObjectPlacement(GameObject theObject, float maxRotation)
