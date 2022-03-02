@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum TileType
 {
-    Rock1, Rock2
+    Floor, Wall, Corner,
 }
 
 public enum TileFunction
@@ -43,7 +43,8 @@ public class Tile_ML
 {
     public TileType TileType;
     public TileFunction TileFunction;
+    public TileContent TileContent;
     public Coordinates Coordinates;
-
+    public Tile_ML[] neighbours;
 
 }
