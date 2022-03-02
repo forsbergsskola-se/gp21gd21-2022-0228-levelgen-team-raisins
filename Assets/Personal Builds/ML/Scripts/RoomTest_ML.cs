@@ -18,16 +18,13 @@ public class RoomTest_ML : MonoBehaviour
 
        for (int i = 0; i < 5; i++)
        {
-
            var rand = Random.Range(0, tiles.Count);
-           var tile = tiles[rand].transform;
-           var pos = tiles[rand].gameObject.transform.TransformPoint(tile.position);
-           var tempVase = Instantiate(testSpawn, tile.position, Quaternion.identity);
+           var tile = tiles[rand].gameObject.transform;
+           var scale = tiles[rand].mesh.bounds.size;
+           var adjustPos = tile.position + new Vector3(scale.x / 2,0, -scale.z / 2);
+           Debug.Log(tile.position);
+           var tempVase = Instantiate(testSpawn, adjustPos, Quaternion.identity);
        }
     }
 
-    void Update()
-    {
-
-    }
 }
