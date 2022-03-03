@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e734049f0cba1b145a2d6e11a9641168, type: 2}
     - target: {fileID: 5052917119739959536, guid: 6938d7280f450d74eadca5a631c94108, type: 3}
       propertyPath: m_Name
-      value: Imp_Heroic_BrownGreen
+      value: Imp_Heroic_BrownGreen Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5052917119739959546, guid: 6938d7280f450d74eadca5a631c94108, type: 3}
       propertyPath: m_RootOrder
@@ -67,5 +67,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e734049f0cba1b145a2d6e11a9641168, type: 2}
+    - target: {fileID: 8327549658799733943, guid: 6938d7280f450d74eadca5a631c94108, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6938d7280f450d74eadca5a631c94108, type: 3}
