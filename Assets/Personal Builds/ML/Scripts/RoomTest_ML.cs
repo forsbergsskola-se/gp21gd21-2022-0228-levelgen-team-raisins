@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum AssetType
 {
@@ -14,11 +15,14 @@ public class RoomTest_ML : MonoBehaviour
     public GameObject testSpawn;
     public List<int> availableFloorTiles;
     public List<MeshFilter> availableTiles;
-    
+    private NavMeshSurface navSurface;
+
     void Start()
     {
         availableTiles = GetTilesOfType(TileType.Floor);
         SpawnAssets(3, AssetType.Enemy);
+        navSurface = GetComponent<NavMeshSurface>();
+
 
     }
 
