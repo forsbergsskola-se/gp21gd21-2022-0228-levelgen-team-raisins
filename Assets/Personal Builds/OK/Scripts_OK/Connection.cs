@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public enum ConnectionType{
@@ -12,11 +14,28 @@ public enum ConnectionType{
 
 public class Connection : MonoBehaviour{
     [SerializeField] PrefabListSO prefabListSo;
+    [SerializeField] ConnectionType connectionType;
 
+
+    [System.NonSerialized] public UnityEvent becameOpenConnectionEvent;
+
+    public ConnectionType ConnectionType{
+        get => connectionType;
+        set{
+            connectionType = value;
+            if (connectionType == ConnectionType.OpenConnection){
+                becameOpenConnectionEvent.Invoke();
+            }
+        }
+    }
 
     bool validatedRoom;
     int attempt;
 
+    void Awake(){
+        ConnectionType = ConnectionType.UndecidedConnection;
+
+    }
 
 
     GameObject PickRoomToSpawn(){
@@ -34,12 +53,15 @@ public class Connection : MonoBehaviour{
             var randomRoom = PickRoomToSpawn();
             var randomRoomRoom = randomRoom.GetComponent<Room>();
 
-            var offset = Vector3.Distance(randomRoomRoom.connections[0].transform.position, transform.position); //Testing purposes
-            var offsetVector = new Vector3(offset, offset, offset);
+            var offset = randomRoomRoom.connections[1].transform.position - transform.position;
+
+            //var offset = Vector3.Distance(randomRoomRoom.connections[0].transform.position, transform.position); //Testing purposes
+           // var offsetVector = new Vector3(offset, offset, offset);
             attempt++;
             //random room
             //instatiate room
-            Instantiate(randomRoom,transform.position,quaternion.identity);
+            var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
+            Debug.Log(transform.name +$": Pos {transform.position}, Offset {offset}");
             // if (ValidateRoom()){
             //     break;
             // }

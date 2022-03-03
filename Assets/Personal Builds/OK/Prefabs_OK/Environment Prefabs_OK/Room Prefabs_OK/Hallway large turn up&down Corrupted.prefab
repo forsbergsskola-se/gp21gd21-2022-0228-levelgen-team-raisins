@@ -7841,6 +7841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  connectionType: 0
 --- !u!1 &1760647962652408477
 GameObject:
   m_ObjectHideFlags: 0
@@ -112249,6 +112250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  connectionType: 0
 --- !u!1 &8409591300982872259
 GameObject:
   m_ObjectHideFlags: 0
@@ -113004,8 +113006,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections:
-  - {fileID: 8348424600843106829}
-  - {fileID: 1711186150274404501}
+  - {fileID: 1321251891316679949}
+  - {fileID: 3733054579601141640}
+  activeConnections: 0
 --- !u!1 &8818570501051018047
 GameObject:
   m_ObjectHideFlags: 0
