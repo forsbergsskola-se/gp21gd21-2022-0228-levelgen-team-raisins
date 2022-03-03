@@ -13,13 +13,16 @@ public enum RoomType{
 }
 
 public class Room : MonoBehaviour{
-    [SerializeField] List<GameObject> connections; //Reference door scripts
+    [SerializeField] public List<GameObject> connections; //Reference door scripts
+
+
 
 
     void Awake(){
 
 
         foreach (var connection in connections){
+
 
         }
     }
