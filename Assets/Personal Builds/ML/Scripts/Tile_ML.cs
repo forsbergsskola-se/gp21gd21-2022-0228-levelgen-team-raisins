@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum TileType
 {
-    Floor, Wall, Corner,
+    Floor, Wall, Corner, Floor_Wall
 }
 
 public enum TileFunction

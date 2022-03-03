@@ -4,15 +4,24 @@ using System.Drawing;
 using System.Linq;
 using UnityEngine;
 
-
+public enum AssetType
+{
+    Breakable, Enemy, Treasure
+}
 
 public class RoomTest_ML : MonoBehaviour
 {
     public GameObject testSpawn;
+    public List<int> availableFloorTiles;
+    public List<MeshFilter> availableTiles;
+    
     void Start()
     {
-        GetTilesOfType(TileType.Wall);
+        availableTiles = GetTilesOfType(TileType.Floor);
+        SpawnAssets(3, AssetType.Enemy);
+
     }
+
 
 
     private List<MeshFilter> GetTilesOfType(TileType tileType)
@@ -22,47 +31,48 @@ public class RoomTest_ML : MonoBehaviour
             TileType.Wall => "Wall",
             TileType.Floor => "Floor",
             TileType.Corner => "Corner",
+            TileType.Floor_Wall => "Floor_Wall",
             _ => ""
         };
 
         var tiles = gameObject.GetComponentsInChildren<MeshFilter>()
             .Where(x => x.CompareTag(tileString)).ToList();
 
-           return tiles;
+        Debug.Log(tiles.Count);
+
+        return tiles;
     }
-    private void DoSomething()
+
+    private void SpawnAssets(int amount, AssetType assetType)
     {
-        var tiles = GetTilesOfType(TileType.Wall);
-        var newTiles = tiles.OrderBy(x => x.gameObject.transform.position.z).ToList();
-        var tempVase2 = Instantiate(testSpawn, newTiles[newTiles.Count - 1].transform.position, Quaternion.identity);
-        List<int> randoms = new List<int>();
-
-
-        for (int i = 0; i < 23; i++)
+        for (int i = 0; i < amount; i++)
         {
-            var randomNumbers = Random.Range(0, tiles.Count);
-            if(!randoms.Contains(randomNumbers))
-                randoms.Add(randomNumbers);
-        }
-
-
-        for (int i = 0; i < 5; i++)
-        {
-            var rand = randoms[i];
-            var randRot = Random.Range(5f, 300f);
-            var tilePos = tiles[rand].gameObject.transform.position;
-            var scale = tiles[rand].mesh.bounds.size;
-            var adjustPos = tilePos + new Vector3(scale.x / 2,0, -scale.z / 2);
-            var tempVase = Instantiate(testSpawn, adjustPos, Quaternion.identity);
-
-            AdjustObjectPlacement(tempVase, 300f);
+            SpawnAsset(assetType);
         }
     }
 
-    private void SpawnAnAsset()
+    private void SpawnAsset(AssetType assetType)
     {
+        if (availableTiles.Count < 1) return;
 
+        var rand = Random.Range(0, availableTiles.Count - 1);
+
+        var tilePos = availableTiles[rand].gameObject.transform.position;
+        var scale = availableTiles[rand].mesh.bounds.size;
+        var adjustPos = tilePos + new Vector3(scale.x / 2,0, -scale.z / 2);
+        var theAsset = Instantiate(testSpawn, adjustPos, Quaternion.identity);
+
+        if (assetType != AssetType.Enemy)
+        {
+            AdjustObjectPlacement(theAsset, 300);
+            availableTiles.RemoveAt(rand);
+        }
+        else
+        {
+
+        }
     }
+
 
     private void AdjustObjectPlacement(GameObject theObject, float maxRotation)
     {
@@ -70,8 +80,8 @@ public class RoomTest_ML : MonoBehaviour
         theObject.transform.Rotate(new Vector3(0,1,0), randRot);
 
         var objectSize = theObject.GetComponent<MeshFilter>().mesh.bounds.size;
-        var randMoveX = Random.Range(0f, objectSize.x / 2);
-        var randMoveZ = Random.Range(0f, objectSize.z / 2);
+        var randMoveX = Random.Range(0f, objectSize.x / 5);
+        var randMoveZ = Random.Range(0f, objectSize.z / 5);
 
         theObject.transform.position += new Vector3(randMoveX, 0, randMoveZ);
     }
