@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[ExecuteInEditMode]//TODO:REMOVE used for debug
+//TODO:REMOVE used for debug
 public class RoomValidator : MonoBehaviour{
     internal UnityEvent<bool> RoomValidationEvent;
 

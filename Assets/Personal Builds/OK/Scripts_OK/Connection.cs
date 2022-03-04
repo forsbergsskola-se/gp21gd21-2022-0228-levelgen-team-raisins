@@ -22,7 +22,7 @@ public enum ConnectionDirection{
     Right
 }
 
-[ExecuteInEditMode]//TODO:REMOVE used for debug
+//[ExecuteInEditMode]//TODO:REMOVE used for debug
 public class Connection : MonoBehaviour{
     [SerializeField] PrefabListSO prefabListSo;
     [SerializeField] ConnectionType connectionType;
@@ -104,7 +104,6 @@ public class Connection : MonoBehaviour{
             if (!spawnedRoom.GetComponent<Room>().IsValidRoom){
                 DestroyImmediate(spawnedRoom); //TODO: instead of destroying we want to try the other connections
             }
-            Debug.Log(transform.name +$": Pos {transform.position}, Offset {offset}");
             // if (ValidateRoom()){
             //     break;
             // }
