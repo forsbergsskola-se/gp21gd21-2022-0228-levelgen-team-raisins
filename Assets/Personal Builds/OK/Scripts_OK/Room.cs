@@ -117,6 +117,7 @@ public class Room : MonoBehaviour{
 
     public void ValidateRoom(bool value){
         isValidRoom = value;
+        //if boids boxcast tell us the room is spawned outside the old room its allowed to spawn
     }
 
     [ContextMenu("Spawn All Available Rooms")]
