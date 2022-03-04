@@ -42,8 +42,6 @@ public class RoomTest_ML : MonoBehaviour
         var tiles = gameObject.GetComponentsInChildren<MeshFilter>()
             .Where(x => x.CompareTag(tileString)).ToList();
 
-        Debug.Log(tiles.Count);
-
         return tiles;
     }
 
