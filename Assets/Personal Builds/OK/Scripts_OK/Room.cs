@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -39,24 +40,25 @@ public class Room : MonoBehaviour{
             }
         }
     }
-
-    void OnEnable(){
-        foreach (var roomValidator in RoomValidators){
-            roomValidator.RoomValidationEvent.AddListener(ValidateRoom);
-        }
-        activeConnections = 0;
-        foreach (var connection in connections){
-            connection.becameOpenConnectionEvent.AddListener(AddActiveConnections);
-        }
-    }
-    void OnDisable(){
-        foreach (var roomValidator in RoomValidators){
-            roomValidator.RoomValidationEvent.RemoveListener(ValidateRoom);
-        }
-        foreach (var connection in connections){
-            connection.becameOpenConnectionEvent.RemoveListener(ReduceActiveConnections);
-        }
-    }
+//bug
+ //   void OnEnable()
+ //   {
+ //       foreach (var roomValidator in RoomValidators){
+ //           roomValidator.RoomValidationEvent.AddListener(ValidateRoom);
+ //       }
+ //       activeConnections = 0;
+ //       foreach (var connection in connections){
+ //           connection.becameOpenConnectionEvent.AddListener(AddActiveConnections);
+ //       }
+ //   }
+ //   void OnDisable(){
+ //       foreach (var roomValidator in RoomValidators){
+ //           roomValidator.RoomValidationEvent.RemoveListener(ValidateRoom);
+ //       }
+ //       foreach (var connection in connections){
+ //           connection.becameOpenConnectionEvent.RemoveListener(ReduceActiveConnections);
+ //       }
+ //   }
 
 
     void AddActiveConnections(){
