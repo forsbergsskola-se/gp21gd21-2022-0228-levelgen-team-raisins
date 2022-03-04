@@ -16,9 +16,6 @@ public class DungeonTest : MonoBehaviour
             var aBounds = availableRooms[0].gameObject.GetComponentsInChildren<Collider>()
                 .Where(x => x.CompareTag("Bounds")).ToList();
 
-            Debug.Log(aBounds[0].bounds.min);
-            Debug.Log(aBounds[0].bounds.max);
-
             SpawnedRooms.Add(new SpawnedRooms()
             {
                 spawnPos = availableRooms[0].transform.position,
