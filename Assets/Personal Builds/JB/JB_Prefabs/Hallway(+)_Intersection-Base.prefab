@@ -9576,7 +9576,7 @@ GameObject:
   - component: {fileID: 6812511246887832992}
   m_Layer: 8
   m_Name: Hallway(+)_Intersection-Base
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9619,6 +9619,7 @@ MonoBehaviour:
   - {fileID: 1067329705008147413}
   RoomValidators:
   - {fileID: 7083151467695240465}
+  SpawnedRooms: []
   activeConnections: 0
 --- !u!1 &5980795622472790837
 GameObject:
