@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.Mathematics;
 using UnityEditorInternal;
 using UnityEngine;
@@ -96,18 +97,13 @@ public class Connection : MonoBehaviour{
 
             }
 
-            // if (connectionDirection == ConnectionDirection.Up){
-            //     randomRoomRoom.connections
-            // }
-
-           // var offset =  randomRoomRoom.connections[0].transform.position;
-
-            //var offset = Vector3.Distance(randomRoomRoom.connections[0].transform.position, transform.position); //Testing purposes
-           // var offsetVector = new Vector3(offset, offset, offset);
             attempt++;
             //random room
             //instatiate room
             var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
+            if (!spawnedRoom.GetComponent<Room>().IsValidRoom){
+                DestroyImmediate(spawnedRoom); //TODO: instead of destroying we want to try the other connections
+            }
             Debug.Log(transform.name +$": Pos {transform.position}, Offset {offset}");
             // if (ValidateRoom()){
             //     break;
