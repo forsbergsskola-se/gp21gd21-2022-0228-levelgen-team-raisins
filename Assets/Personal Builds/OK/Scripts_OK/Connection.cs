@@ -52,7 +52,7 @@ public class Connection : MonoBehaviour{
 
 
     void Awake(){
-        ConnectionType = ConnectionType.UndecidedConnection;
+        //ConnectionType = ConnectionType.UndecidedConnection;
         AssignConnectionDirection();
     }
 
@@ -87,21 +87,42 @@ public class Connection : MonoBehaviour{
             var randomRoom = PickRoomToSpawn();
             var randomRoomRoom = randomRoom.GetComponent<Room>();
 
+            Vector3 offset = Vector3.zero;
 
-            var offset =  randomRoomRoom.connections[0].transform.position;
+            foreach (var connection in randomRoomRoom.connections){
+                if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+                    offset = connection.transform.position;
+                }
+
+            }
+
+            // if (connectionDirection == ConnectionDirection.Up){
+            //     randomRoomRoom.connections
+            // }
+
+           // var offset =  randomRoomRoom.connections[0].transform.position;
 
             //var offset = Vector3.Distance(randomRoomRoom.connections[0].transform.position, transform.position); //Testing purposes
            // var offsetVector = new Vector3(offset, offset, offset);
             attempt++;
             //random room
             //instatiate room
-            var spawnedRoom = Instantiate(randomRoom,transform.position + offset,quaternion.identity);
+            var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
             Debug.Log(transform.name +$": Pos {transform.position}, Offset {offset}");
             // if (ValidateRoom()){
             //     break;
             // }
         }
 
+    }
+
+
+    bool CheckOppositeDirection(ConnectionDirection direction1,ConnectionDirection direction2){
+        if (direction1 is ConnectionDirection.Up && direction2 is ConnectionDirection.Down) return true;
+        else if (direction1 is ConnectionDirection.Down && direction2 is ConnectionDirection.Up) return true;
+        else if (direction1 is ConnectionDirection.Left && direction2 is ConnectionDirection.Right) return true;
+        else if (direction1 is ConnectionDirection.Right && direction2 is ConnectionDirection.Left) return true;
+        else return false;
     }
 
     //If validate fails, open up new connection
