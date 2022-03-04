@@ -10,12 +10,18 @@ public class DungeonTest : MonoBehaviour
     void Start()
     {
         availableRooms = GameObject.FindGameObjectsWithTag("Room").ToList();
-        availableRooms[0].GetComponent<Room>().RuntimeSpawn();
+        RoomTest();
     }
 
     private void RoomTest()
     {
-        availableRooms[0].GetComponent<Room>().RuntimeSpawn();
+        for (int i = 0; i < 6; i++)
+        {
+            var rand = Random.Range(0, availableRooms.Count - 1);
+            availableRooms[rand].GetComponent<Room>().SingleRoomSpawn();
+
+            availableRooms = GameObject.FindGameObjectsWithTag("Room").ToList();
+        }
 
 
     }

@@ -17,6 +17,7 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public List<RoomValidator> RoomValidators;
+    public List<SpawnedRooms> SpawnedRooms;
 
     bool isValidRoom = true;
 
@@ -31,6 +32,18 @@ public class Room : MonoBehaviour{
     public bool HasFreeConnections()
     {
         return connections.Any(x => x.ConnectionType == ConnectionType.OpenConnection);
+    }
+
+    public void SingleRoomSpawn()
+    {
+        var  temp = connections
+            .FirstOrDefault(x => x.ConnectionType == ConnectionType.OpenConnection);
+
+        if (temp == default) return;
+
+
+        temp.SpawnRoom();
+        temp.ConnectionType = ConnectionType.ClosedConnection;
     }
 
     public void RuntimeSpawn()
