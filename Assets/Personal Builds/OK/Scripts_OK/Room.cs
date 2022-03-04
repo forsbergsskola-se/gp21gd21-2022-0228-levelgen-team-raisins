@@ -35,6 +35,7 @@ public class Room : MonoBehaviour{
             .Select(x =>
             {
                 x.SpawnRoom();
+                x.ConnectionType = ConnectionType.ClosedConnection;
                 return x;
             } ).ToList();
     }
