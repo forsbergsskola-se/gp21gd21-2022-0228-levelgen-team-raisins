@@ -13,14 +13,17 @@ public class DungeonTest : MonoBehaviour
         availableRooms = GameObject.FindGameObjectsWithTag("Room").ToList();
         if (availableRooms.Count > 0)
         {
+            var aBounds = availableRooms[0].gameObject.GetComponentsInChildren<Collider>()
+                .Where(x => x.CompareTag("Bounds")).ToList();
+
+            Debug.Log(aBounds[0].bounds.center);
+
             SpawnedRooms.Add(new SpawnedRooms()
             {
-                spawnPos = availableRooms[0].transform.position
+                spawnPos = availableRooms[0].transform.position,
             });
         }
 
-
-        RoomTest();
     }
 
     private void RoomTest()

@@ -17,6 +17,7 @@ public enum AssetType
 public class SpawnedRooms
 {
     public Vector3 spawnPos;
+    public Collider boundsCollider;
 }
 
 public class RoomTest_ML : MonoBehaviour
