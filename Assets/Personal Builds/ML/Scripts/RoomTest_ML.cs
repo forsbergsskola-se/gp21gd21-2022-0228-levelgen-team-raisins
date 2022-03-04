@@ -1,13 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public enum AssetType
 {
     Breakable, Enemy, Treasure
+}
+
+
+[Serializable]
+public class SpawnedRooms
+{
+    public Vector3 spwanPos;
 }
 
 public class RoomTest_ML : MonoBehaviour
@@ -41,8 +50,6 @@ public class RoomTest_ML : MonoBehaviour
 
         var tiles = gameObject.GetComponentsInChildren<MeshFilter>()
             .Where(x => x.CompareTag(tileString)).ToList();
-
-        Debug.Log(tiles.Count);
 
         return tiles;
     }
