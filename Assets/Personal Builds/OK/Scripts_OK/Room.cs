@@ -34,18 +34,23 @@ public class Room : MonoBehaviour{
         return connections.Any(x => x.ConnectionType == ConnectionType.OpenConnection);
     }
 
-    public void SingleRoomSpawn()
+    public bool SingleRoomSpawn()
     {
         var  temp = connections
             .FirstOrDefault(x => x.ConnectionType == ConnectionType.OpenConnection);
 
-        if (temp == default) return;
-
+        if (temp == default) return false;
+        var spawnPos = temp.GetSpawnPosition();
         if(SpawnedRooms.SingleOrDefault(x => x.spwanPos
-               .Equals(temp.GetSpawnPosition())) == default) return;
-        
+               .Equals(spawnPos)) == default) return false;
+
         temp.SpawnRoom();
         temp.ConnectionType = ConnectionType.ClosedConnection;
+        SpawnedRooms.Add(new SpawnedRooms()
+        {
+            spwanPos =  spawnPos
+        });
+        return true;
     }
 
     public void RuntimeSpawn()
