@@ -8534,7 +8534,7 @@ GameObject:
   - component: {fileID: 6812511246887832992}
   m_Layer: 8
   m_Name: Hallway(+)_Intersection-Base
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

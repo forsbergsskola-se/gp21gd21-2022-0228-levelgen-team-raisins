@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -16,6 +17,7 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public List<RoomValidator> RoomValidators;
+    public List<SpawnedRooms> SpawnedRooms;
 
     bool isValidRoom = true;
 
@@ -26,6 +28,37 @@ public class Room : MonoBehaviour{
         }
     }
 
+
+    public bool HasFreeConnections()
+    {
+        return connections.Any(x => x.ConnectionType == ConnectionType.OpenConnection);
+    }
+
+    public void SingleRoomSpawn()
+    {
+        var  temp = connections
+            .FirstOrDefault(x => x.ConnectionType == ConnectionType.OpenConnection);
+
+        if (temp == default) return;
+
+        if(SpawnedRooms.SingleOrDefault(x => x.spwanPos
+               .Equals(temp.GetSpawnPosition())) == default) return;
+        
+        temp.SpawnRoom();
+        temp.ConnectionType = ConnectionType.ClosedConnection;
+    }
+
+    public void RuntimeSpawn()
+    {
+        var temp = connections
+            .Where(x => x.ConnectionType == ConnectionType.OpenConnection)
+            .Select(x =>
+            {
+                x.SpawnRoom();
+                x.ConnectionType = ConnectionType.ClosedConnection;
+                return x;
+            } ).ToList();
+    }
 
      public int activeConnections;
 
@@ -39,24 +72,25 @@ public class Room : MonoBehaviour{
             }
         }
     }
-
-    void OnEnable(){
-        foreach (var roomValidator in RoomValidators){
-            roomValidator.RoomValidationEvent.AddListener(ValidateRoom);
-        }
-        activeConnections = 0;
-        foreach (var connection in connections){
-            connection.becameOpenConnectionEvent.AddListener(AddActiveConnections);
-        }
-    }
-    void OnDisable(){
-        foreach (var roomValidator in RoomValidators){
-            roomValidator.RoomValidationEvent.RemoveListener(ValidateRoom);
-        }
-        foreach (var connection in connections){
-            connection.becameOpenConnectionEvent.RemoveListener(ReduceActiveConnections);
-        }
-    }
+//bug
+ //   void OnEnable()
+ //   {
+ //       foreach (var roomValidator in RoomValidators){
+ //           roomValidator.RoomValidationEvent.AddListener(ValidateRoom);
+ //       }
+ //       activeConnections = 0;
+ //       foreach (var connection in connections){
+ //           connection.becameOpenConnectionEvent.AddListener(AddActiveConnections);
+ //       }
+ //   }
+ //   void OnDisable(){
+ //       foreach (var roomValidator in RoomValidators){
+ //           roomValidator.RoomValidationEvent.RemoveListener(ValidateRoom);
+ //       }
+ //       foreach (var connection in connections){
+ //           connection.becameOpenConnectionEvent.RemoveListener(ReduceActiveConnections);
+ //       }
+ //   }
 
 
     void AddActiveConnections(){
