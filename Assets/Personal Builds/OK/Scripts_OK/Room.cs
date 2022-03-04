@@ -28,6 +28,11 @@ public class Room : MonoBehaviour{
     }
 
 
+    public bool HasFreeConnections()
+    {
+        return connections.Any(x => x.ConnectionType == ConnectionType.OpenConnection);
+    }
+
     public void RuntimeSpawn()
     {
         var temp = connections
