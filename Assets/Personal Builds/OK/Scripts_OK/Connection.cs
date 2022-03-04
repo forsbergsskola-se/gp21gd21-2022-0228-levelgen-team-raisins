@@ -12,6 +12,13 @@ public enum ConnectionType{
     UndecidedConnection
 }
 
+public enum ConnectionDirection{
+    Up,
+    Down,
+    Left,
+    Right
+}
+
 public class Connection : MonoBehaviour{
     [SerializeField] PrefabListSO prefabListSo;
     [SerializeField] ConnectionType connectionType;
@@ -52,6 +59,7 @@ public class Connection : MonoBehaviour{
         while (validatedRoom == false && attempt < prefabListSo.prefabs.Count){
             var randomRoom = PickRoomToSpawn();
             var randomRoomRoom = randomRoom.GetComponent<Room>();
+
 
             var offset =  randomRoomRoom.connections[0].transform.position;
 
