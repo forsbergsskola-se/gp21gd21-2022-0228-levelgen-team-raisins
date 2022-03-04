@@ -41,7 +41,9 @@ public class Room : MonoBehaviour{
 
         if (temp == default) return;
 
-
+        if(SpawnedRooms.SingleOrDefault(x => x.spwanPos
+               .Equals(temp.GetSpawnPosition())) == default) return;
+        
         temp.SpawnRoom();
         temp.ConnectionType = ConnectionType.ClosedConnection;
     }

@@ -73,6 +73,22 @@ public class Connection : MonoBehaviour{
     }
 
 
+    public Vector3 GetSpawnPosition()
+    {
+        var randomRoom = PickRoomToSpawn();
+        var randomRoomRoom = randomRoom.GetComponent<Room>();
+
+        Vector3 offset = Vector3.zero;
+
+        foreach (var connection in randomRoomRoom.connections){
+            if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+                offset = connection.transform.position;
+            }
+        }
+
+        return transform.position - offset;
+    }
+
     GameObject PickRoomToSpawn(){
         //Randomize with seed which room gets picked
         //SpawnRoom();
