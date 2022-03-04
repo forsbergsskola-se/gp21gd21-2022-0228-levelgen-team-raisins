@@ -28,6 +28,17 @@ public class Room : MonoBehaviour{
     }
 
 
+    public void RuntimeSpawn()
+    {
+        var temp = connections
+            .Where(x => x.ConnectionType == ConnectionType.OpenConnection)
+            .Select(x =>
+            {
+                x.SpawnRoom();
+                return x;
+            } ).ToList();
+    }
+
      public int activeConnections;
 
     bool isCompletedRoom;

@@ -10,19 +10,13 @@ public class DungeonTest : MonoBehaviour
     void Start()
     {
         availableRooms = GameObject.FindGameObjectsWithTag("Room").ToList();
-        availableRooms[0].GetComponent<Room>().connections[0].SpawnRoom();
+        availableRooms[0].GetComponent<Room>().RuntimeSpawn();
     }
 
     private void RoomTest()
     {
-        availableRooms[0].GetComponent<Room>().connections[0].SpawnRoom();
-        var conn = availableRooms[0].GetComponent<Room>().connections;
+        availableRooms[0].GetComponent<Room>().RuntimeSpawn();
 
-        Debug.Log("something");
-        foreach (var c in conn)
-        {
-            Debug.Log(c.ConnectionType);
-        }
 
     }
 
