@@ -30,21 +30,20 @@ public class Room : MonoBehaviour{
 
     public bool HasFreeConnections()
     {
-        return connections.Any(x => x.ConnectionType == ConnectionType.OpenConnection);
+        return connections.Any(connection => connection.ConnectionType == ConnectionType.OpenConnection);
     }
 
     public bool SingleRoomSpawn(List<SpawnedRooms> SpawnedRooms)
     {
-        var  temp = connections
-            .FirstOrDefault(x => x.ConnectionType == ConnectionType.OpenConnection);
+        var  temp = connections.FirstOrDefault(connection => connection.ConnectionType == ConnectionType.OpenConnection);
 
         if (temp == default) return false;
 
         var spawnPosition = temp.GetSpawnPosition();
 
-        var condition = SpawnedRooms.Where(x =>
+        var condition = SpawnedRooms.Where(spawnedRoom =>
         {
-            if (Vector3.Distance(spawnPosition, x.spawnPos) < 10)
+            if (Vector3.Distance(spawnPosition, spawnedRoom.spawnPos) < 10) //Magic number
             {
                 return true;
             }
@@ -66,12 +65,12 @@ public class Room : MonoBehaviour{
     public void RuntimeSpawn()
     {
         var temp = connections
-            .Where(x => x.ConnectionType == ConnectionType.OpenConnection)
-            .Select(x =>
+            .Where(connection => connection.ConnectionType == ConnectionType.OpenConnection)
+            .Select(connection =>
             {
-                x.SpawnRoom();
-                x.ConnectionType = ConnectionType.ClosedConnection;
-                return x;
+                connection.SpawnRoom();
+                connection.ConnectionType = ConnectionType.ClosedConnection;
+                return connection;
             } ).ToList();
     }
 
@@ -108,12 +107,12 @@ public class Room : MonoBehaviour{
  //   }
 
 
-    void AddActiveConnections(){
-        activeConnections++;
-    }
-    void ReduceActiveConnections(){
-        activeConnections--;
-    }
+    // void AddActiveConnections(){
+    //     activeConnections++;
+    // }
+    // void ReduceActiveConnections(){
+    //     activeConnections--;
+    // }
 
     public void ValidateRoom(bool value){
         isValidRoom = value;

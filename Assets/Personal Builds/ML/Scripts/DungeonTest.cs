@@ -39,11 +39,11 @@ public class DungeonTest : MonoBehaviour
 
     }
 
-    public static bool IsInside(Collider c, Vector3 point)
+    public static bool IsInside(Collider collider, Vector3 point)
     {
-        Vector3 closest = c.ClosestPoint(point);
+        Vector3 closestCollider = collider.ClosestPoint(point);
         // Because closest=point if point is inside - not clear from docs I feel
-        return closest == point;
+        return closestCollider == point;
     }
 
     // Update is called once per frame
