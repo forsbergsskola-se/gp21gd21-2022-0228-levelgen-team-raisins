@@ -22,31 +22,31 @@ public enum ConnectionDirection{
     Right
 }
 
-//[ExecuteInEditMode]//TODO:REMOVE used for debug
+[ExecuteInEditMode]//TODO:REMOVE used for debug
 public class Connection : MonoBehaviour{
     [SerializeField] PrefabListSO prefabListSo;
     [SerializeField] ConnectionType connectionType;
+    [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
 
     [System.NonSerialized] public UnityEvent becameOpenConnectionEvent;
 
+
     public ConnectionType ConnectionType{
         get => connectionType;
         set{
+            Debug.Log(value);
             connectionType = value;
-            if (connectionType == ConnectionType.OpenConnection){
-                becameOpenConnectionEvent.Invoke();
+            if (value is ConnectionType.OpenConnection){
+                //becameOpenConnectionEvent.Invoke();
+                DeactivateEnvironmentBlockers();
+            }
+            else if (value is ConnectionType.ClosedConnection){
+                ActivateEnvironmentBlockers();
             }
         }
     }
-
-    // public ConnectionDirection ConnectionDirection{
-    //     get => connectionDirection;
-    //     set{
-    //         connectionDirection = value;
-    //     }
-    // }
 
     bool validatedRoom;
     int attempt;
@@ -55,6 +55,12 @@ public class Connection : MonoBehaviour{
     void Awake(){
         //ConnectionType = ConnectionType.UndecidedConnection;
         AssignConnectionDirection();
+        if (ConnectionType == ConnectionType.OpenConnection){
+            DeactivateEnvironmentBlockers();
+        }
+        else if (ConnectionType == ConnectionType.ClosedConnection){
+            ActivateEnvironmentBlockers();
+        }
     }
 
     void AssignConnectionDirection(){
@@ -144,5 +150,29 @@ public class Connection : MonoBehaviour{
 
         //if successful, set validatedRoom = true;
     }
+
+
+    void DeactivateEnvironmentBlockers(){
+        foreach (var _gameObject in environmentToggleList){
+            _gameObject.SetActive(false);
+        }
+    }
+
+    void ActivateEnvironmentBlockers(){
+        foreach (var _gameObject in environmentToggleList){
+            _gameObject.SetActive(true);
+        }
+    }
+
+    [ContextMenu("Connection type check")]
+    void Test1(){
+        ConnectionType = ConnectionType.ClosedConnection;
+    }
+
+    [ContextMenu("Connection type check2")]
+    void Test2(){
+        ConnectionType = ConnectionType.OpenConnection;
+    }
+
 
 }

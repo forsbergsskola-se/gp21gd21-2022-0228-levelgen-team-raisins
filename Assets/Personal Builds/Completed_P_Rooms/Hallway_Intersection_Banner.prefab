@@ -3868,7 +3868,7 @@ GameObject:
   - component: {fileID: 7894784057392147574}
   - component: {fileID: 6346399140626593573}
   m_Layer: 0
-  m_Name: Connection
+  m_Name: Connection_S
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3902,6 +3902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
   connectionType: 0
+  environmentToggleList:
+  - {fileID: 7822351762426177924}
   connectionDirection: 2
 --- !u!1 &2622041346691361586
 GameObject:
@@ -4324,7 +4326,7 @@ GameObject:
   - component: {fileID: 5293907151068243285}
   - component: {fileID: 1067329705008147413}
   m_Layer: 0
-  m_Name: Connection
+  m_Name: Connection_W
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4358,6 +4360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
   connectionType: 0
+  environmentToggleList:
+  - {fileID: 3242126034237957053}
   connectionDirection: 3
 --- !u!1 &2844493919422609026
 GameObject:
@@ -5326,7 +5330,7 @@ GameObject:
   - component: {fileID: 5206644853799528603}
   - component: {fileID: 5052154296838543691}
   m_Layer: 0
-  m_Name: Connection
+  m_Name: Connection_N
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5360,6 +5364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
   connectionType: 0
+  environmentToggleList:
+  - {fileID: 2235724691824331920}
   connectionDirection: 1
 --- !u!1 &3627602217287223838
 GameObject:
@@ -10063,7 +10069,6 @@ MonoBehaviour:
   - {fileID: 1067329705008147413}
   RoomValidators:
   - {fileID: 7083151467695240465}
-  SpawnedRooms: []
   activeConnections: 0
 --- !u!1 &5980795622472790837
 GameObject:
@@ -11906,7 +11911,7 @@ GameObject:
   - component: {fileID: 7405174197085840880}
   - component: {fileID: 6833586521545923424}
   m_Layer: 0
-  m_Name: Connection
+  m_Name: Connection_E
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -11940,6 +11945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
   connectionType: 0
+  environmentToggleList:
+  - {fileID: 5048941414472224746}
   connectionDirection: 4
 --- !u!1 &6842137812104941640
 GameObject:
@@ -17903,6 +17910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  room: {fileID: 0}
 --- !u!1 &8882621548978583251
 GameObject:
   m_ObjectHideFlags: 0
