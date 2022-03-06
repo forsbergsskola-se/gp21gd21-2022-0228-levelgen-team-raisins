@@ -21,7 +21,7 @@ public class UIDifficultyUpdater : MonoBehaviour{
     }
 
     void SetDifficultyText(Difficulty difficulty){
-        textMeshProUGUI.text = difficulty.ToString();
+        textMeshProUGUI.text = "Difficulty: " + difficulty;
     }
 
 
