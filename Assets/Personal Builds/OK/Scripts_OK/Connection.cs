@@ -24,7 +24,7 @@ public enum ConnectionDirection{
 
 [ExecuteInEditMode]//TODO:REMOVE used for debug
 public class Connection : MonoBehaviour{
-    [SerializeField] PrefabListSO prefabListSo;
+    [SerializeField] DifficultyDependantRoomList roomListSo;
     [SerializeField] ConnectionType connectionType;
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
@@ -98,7 +98,7 @@ public class Connection : MonoBehaviour{
     GameObject PickRoomToSpawn(){
         //Randomize with seed which room gets picked
         //SpawnRoom();
-        var room = prefabListSo.prefabs[0]; //For testing purposes
+        var room = roomListSo.combinedPrefabList[0]; //For testing purposes
         return room;
     }
 
@@ -106,7 +106,7 @@ public class Connection : MonoBehaviour{
     public void SpawnRoom(){
 
         attempt = 0;
-        while (validatedRoom == false && attempt < prefabListSo.prefabs.Count){
+        while (validatedRoom == false && attempt < roomListSo.combinedPrefabList.Count){
             var randomRoom = PickRoomToSpawn();
             var randomRoomRoom = randomRoom.GetComponent<Room>();
 

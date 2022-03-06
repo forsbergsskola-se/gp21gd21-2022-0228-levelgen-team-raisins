@@ -3366,7 +3366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1400492888603200574
 Transform:
   m_ObjectHideFlags: 0
@@ -3900,7 +3900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  roomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   connectionType: 0
   environmentToggleList:
   - {fileID: 7822351762426177924}
@@ -4358,7 +4358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  roomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   connectionType: 0
   environmentToggleList:
   - {fileID: 3242126034237957053}
@@ -4969,7 +4969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2385497281273204680
 Transform:
   m_ObjectHideFlags: 0
@@ -5362,7 +5362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  roomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   connectionType: 0
   environmentToggleList:
   - {fileID: 2235724691824331920}
@@ -8700,7 +8700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8948270749360752840
 Transform:
   m_ObjectHideFlags: 0
@@ -11943,7 +11943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  roomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   connectionType: 0
   environmentToggleList:
   - {fileID: 5048941414472224746}
@@ -13931,7 +13931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1985751707692843483
 Transform:
   m_ObjectHideFlags: 0
