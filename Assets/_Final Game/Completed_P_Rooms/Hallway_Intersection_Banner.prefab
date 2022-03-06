@@ -501,7 +501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768604145816171954}
   m_Layer: 0
-  m_Name: Pebble_Placement
+  m_Name: Small_Decoration_Placement
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -584,7 +584,7 @@ Transform:
   - {fileID: 2810120965643618040}
   - {fileID: 9113160221648743105}
   m_Father: {fileID: 2022946898941884274}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &388140881877324335
 GameObject:
@@ -916,6 +916,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 316619788150776100}
   m_EnableStateOnAwake: 0
+--- !u!1 &498478531318839993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6518577158299368017}
+  m_Layer: 8
+  m_Name: Doors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6518577158299368017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498478531318839993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1985751707692843483}
+  - {fileID: 1400492888603200574}
+  - {fileID: 2385497281273204680}
+  - {fileID: 8948270749360752840}
+  m_Father: {fileID: 2022946898941884274}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &532441637060739296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614525475558713210}
   m_Layer: 0
-  m_Name: Urn_Placement (5)
+  m_Name: Breakable_Placement (5)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1096,7 +1130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3131747949479381514}
   m_Layer: 0
-  m_Name: Urn_Placement (1)
+  m_Name: Breakable_Placement (1)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1150,7 +1184,7 @@ Transform:
   - {fileID: 9013134385569305897}
   - {fileID: 1394940025322089876}
   m_Father: {fileID: 2022946898941884274}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &761426420008777409
 GameObject:
@@ -1711,7 +1745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8006243614923633147}
   m_Layer: 0
-  m_Name: Urn_Placement (8)
+  m_Name: Breakable_Placement (8)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1741,7 +1775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3384958070024216871}
   m_Layer: 0
-  m_Name: Pebble_Placement (2)
+  m_Name: Small_Decoration_Placement (2)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2577,7 +2611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303071969449306329}
   m_Layer: 0
-  m_Name: Urn_Placement (2)
+  m_Name: Breakable_Placement (2)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3361,7 +3395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400492888603200574}
   m_Layer: 8
-  m_Name: Closed_Wall_North
+  m_Name: Closed_Door_North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3384,7 +3418,7 @@ Transform:
   - {fileID: 8590814036495213238}
   - {fileID: 8590814036900510753}
   - {fileID: 8590814036055944318}
-  m_Father: {fileID: 2022946898941884274}
+  m_Father: {fileID: 6518577158299368017}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2258728893012454261
@@ -3646,7 +3680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4715424538190918366}
   m_Layer: 0
-  m_Name: Pebble_Placement (4)
+  m_Name: Small_Decoration_Placement (4)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4513,7 +4547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972697396359912673}
   m_Layer: 0
-  m_Name: Pebble_Placement (7)
+  m_Name: Small_Decoration_Placement (7)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4782,7 +4816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1910529962726844324}
   m_Layer: 0
-  m_Name: PotSpawnPoints
+  m_Name: BreakableSpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4934,7 +4968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8603751754320969786}
   m_Layer: 0
-  m_Name: Urn_Placement (3)
+  m_Name: Breakable_Placement (3)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4964,7 +4998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2385497281273204680}
   m_Layer: 0
-  m_Name: Closed_Wall_West
+  m_Name: Closed_Door_West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4987,7 +5021,7 @@ Transform:
   - {fileID: 345376552809794629}
   - {fileID: 430609974387793004}
   - {fileID: 3039750549224498696}
-  m_Father: {fileID: 2022946898941884274}
+  m_Father: {fileID: 6518577158299368017}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3331305902232184934
@@ -5110,7 +5144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5067671610639852083}
   m_Layer: 0
-  m_Name: Pebble_Placement (1)
+  m_Name: Small_Decoration_Placement (1)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6120,7 +6154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2022946898941884274}
   m_Layer: 8
-  m_Name: Builing
+  m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6137,14 +6171,12 @@ Transform:
   m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1985751707692843483}
-  - {fileID: 1400492888603200574}
-  - {fileID: 2385497281273204680}
-  - {fileID: 8948270749360752840}
+  - {fileID: 6518577158299368017}
   - {fileID: 2493403521942580780}
   - {fileID: 6470166174819876307}
   - {fileID: 152215595513308981}
   - {fileID: 7846791708018679077}
+  - {fileID: 8032851436877686824}
   m_Father: {fileID: 5929968145470845014}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7278,7 +7310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8714998109446346017}
   m_Layer: 0
-  m_Name: Urn_Placement (6)
+  m_Name: Breakable_Placement (6)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -8365,7 +8397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4902454740111842156}
   m_Layer: 0
-  m_Name: Pebble_Placement (8)
+  m_Name: Small_Decoration_Placement (8)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -8695,7 +8727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8948270749360752840}
   m_Layer: 0
-  m_Name: Closed_Wall_East
+  m_Name: Closed_Door_East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8718,7 +8750,7 @@ Transform:
   - {fileID: 3097267528456832450}
   - {fileID: 7932991270516552865}
   - {fileID: 6960245588157482725}
-  m_Father: {fileID: 2022946898941884274}
+  m_Father: {fileID: 6518577158299368017}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5276018764877774350
@@ -9032,7 +9064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518180979789763563}
   m_Layer: 0
-  m_Name: Pebble_Placement (11)
+  m_Name: Small_Decoration_Placement (11)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9281,7 +9313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1739327587912701415}
   m_Layer: 0
-  m_Name: Pebble_Placement (5)
+  m_Name: Small_Decoration_Placement (5)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9869,7 +9901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2498841620587504093}
   m_Layer: 0
-  m_Name: Urn_Placement (12)
+  m_Name: Breakable_Placement (12)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10010,7 +10042,7 @@ Transform:
   - {fileID: 8312848986176666951}
   - {fileID: 8404157271582000412}
   m_Father: {fileID: 2022946898941884274}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5929968145470845015
 GameObject:
@@ -10046,7 +10078,6 @@ Transform:
   - {fileID: 2022946898941884274}
   - {fileID: 6089827477388607712}
   - {fileID: 7525197656965828298}
-  - {fileID: 8032851436877686824}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10290,7 +10321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1567685963896390633}
   m_Layer: 0
-  m_Name: Urn_Placement (10)
+  m_Name: Breakable_Placement (10)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10525,7 +10556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7206996627222781372}
   m_Layer: 0
-  m_Name: Urn_Placement (9)
+  m_Name: Breakable_Placement (9)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -11958,7 +11989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4038477265606139273}
   m_Layer: 0
-  m_Name: Pebbles
+  m_Name: Small_Decoration_Placements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12397,7 +12428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6283268652221356511}
   m_Layer: 0
-  m_Name: Urn_Placement (4)
+  m_Name: Breakable_Placement (4)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -12427,7 +12458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 223405737762430451}
   m_Layer: 0
-  m_Name: Pebble_Placement (10)
+  m_Name: Small_Decoration_Placement (10)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13116,7 +13147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7494760602532464684}
   m_Layer: 0
-  m_Name: Urn_Placement (11)
+  m_Name: Breakable_Placement (11)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13251,7 +13282,7 @@ Transform:
   - {fileID: 1797698900278381077}
   - {fileID: 335857430832350931}
   m_Father: {fileID: 2022946898941884274}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7446394633352336724
 GameObject:
@@ -13263,7 +13294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 997883807498264810}
   m_Layer: 0
-  m_Name: Urn_Placement (7)
+  m_Name: Breakable_Placement (7)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13926,7 +13957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1985751707692843483}
   m_Layer: 8
-  m_Name: Closed_Wall_South
+  m_Name: Closed_Door_South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13949,7 +13980,7 @@ Transform:
   - {fileID: 8590814037613535522}
   - {fileID: 8590814036406186954}
   - {fileID: 8590814037529436931}
-  m_Father: {fileID: 2022946898941884274}
+  m_Father: {fileID: 6518577158299368017}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7859911481665984033
@@ -16907,7 +16938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2708193515825177543}
   m_Layer: 0
-  m_Name: Pebble_Placement (9)
+  m_Name: Small_Decoration_Placement (9)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -16937,7 +16968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2229060482583503851}
   m_Layer: 0
-  m_Name: Pebble_Placement (12)
+  m_Name: Small_Decoration_Placement (12)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -17187,7 +17218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3984615182423248271}
   m_Layer: 0
-  m_Name: Pebble_Placement (6)
+  m_Name: Small_Decoration_Placement (6)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -17312,7 +17343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7115977843895018191}
   m_Layer: 0
-  m_Name: EnvironmentsSpawnPoints
+  m_Name: DecorationSpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17407,7 +17438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7525197656965828298}
   m_Layer: 8
-  m_Name: Colliders
+  m_Name: Validator Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17921,7 +17952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1838598519610304521}
   m_Layer: 0
-  m_Name: Pebble_Placement (3)
+  m_Name: Small_Decoration_Placement (3)
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -18495,7 +18526,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5929968145470845014}
+    m_TransformParent: {fileID: 2022946898941884274}
     m_Modifications:
     - target: {fileID: 1899106884463111546, guid: 774df9f23c339504c921336572edb699, type: 3}
       propertyPath: m_Name
@@ -18503,7 +18534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980115660496427320, guid: 774df9f23c339504c921336572edb699, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7980115660496427320, guid: 774df9f23c339504c921336572edb699, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18523,15 +18554,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980115660496427320, guid: 774df9f23c339504c921336572edb699, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7980115660496427320, guid: 774df9f23c339504c921336572edb699, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7980115660496427320, guid: 774df9f23c339504c921336572edb699, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7980115660496427320, guid: 774df9f23c339504c921336572edb699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
