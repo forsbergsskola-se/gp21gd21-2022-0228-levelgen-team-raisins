@@ -73,6 +73,7 @@ public class Connection : MonoBehaviour{
 
     void OnEnable(){
         gameDifficultySo.difficultyChangeEvent.AddListener(SetActiveRoomList);
+        SetActiveRoomList(gameDifficultySo.Difficulty);
     }
 
     void OnDisable(){

@@ -9,6 +9,7 @@ public class DifficultyDependantPrefabList : ScriptableObject{
     [Tooltip("This gets set automatically, disregard.")]public List<GameObject>combinedPrefabList;
 
     public virtual void OnEnable(){
+        combinedPrefabList = new List<GameObject>();
         if (prefabLists != null){
             CombinePrefabLists();
         }
