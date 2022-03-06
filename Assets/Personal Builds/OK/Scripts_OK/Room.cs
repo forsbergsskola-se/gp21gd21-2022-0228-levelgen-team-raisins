@@ -24,6 +24,9 @@ public class Room : MonoBehaviour{
         get => isValidRoom;
         set{
             isValidRoom = value;
+            if (value){
+                SpawnInternals();
+            }
         }
     }
 
@@ -128,5 +131,15 @@ public class Room : MonoBehaviour{
             }
 
         }
+    }
+
+    public void SpawnInternals(){
+        //This should spawn all items inside the room.
+        //The items need to be picked at random from a list of possible items
+
+
+      //-take into account rooms which allow both easy and medium enemies to spawn
+      //Foreach prefablistSO in ...something?
+            //foreach gameobject in prefablistSO
     }
 }
