@@ -16,7 +16,7 @@ public class DifficultyDependantPrefabList : ScriptableObject{
     }
 
     public virtual void OnDisable(){
-        combinedPrefabList = default;
+        combinedPrefabList = new List<GameObject>();
     }
 
     void CombinePrefabLists(){
