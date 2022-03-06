@@ -4,21 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Prefab List", menuName = "Lists/Difficulty Dependant Prefab List")]
 public class DifficultyDependantPrefabList : ScriptableObject{
-    [Tooltip("Inserted lists will get combined in a new list")][SerializeField] List<PrefabListSO> prefabLists;
+    [Tooltip("Inserted lists will get combined in a new list")][SerializeField] public List<PrefabListSO> prefabLists;
 
     [Tooltip("This gets set automatically, disregard.")]public List<GameObject>combinedPrefabList;
 
-    void OnEnable(){
+    public virtual void OnEnable(){
         if (prefabLists != null){
             CombinePrefabLists();
         }
 
     }
 
-    void OnDisable(){
+    public virtual void OnDisable(){
         combinedPrefabList = default;
     }
-
 
     void CombinePrefabLists(){
         foreach (var prefabList in prefabLists){
