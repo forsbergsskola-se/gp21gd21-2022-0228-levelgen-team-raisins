@@ -24,8 +24,15 @@ public enum ConnectionDirection{
 
 [ExecuteInEditMode]//TODO:REMOVE used for debug
 public class Connection : MonoBehaviour{
-    [SerializeField] DifficultyDependantRoomList roomListSo;
+    [SerializeField] DifficultyDependantRoomList activeRoomListSo;
+    [Header("Changable Difficulty Rooms")]
+    [SerializeField] DifficultyDependantRoomList easyRoomListSo;
+    [SerializeField] DifficultyDependantRoomList mediumRoomListSo;
+    [SerializeField] DifficultyDependantRoomList hardRoomListSo;
+    [SerializeField] DifficultyDependantRoomList nightmareRoomListSo;
+    [Header("")]
     [SerializeField] ConnectionType connectionType;
+    [SerializeField] GameDifficultySO gameDifficultySo;
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
@@ -61,6 +68,15 @@ public class Connection : MonoBehaviour{
         else if (ConnectionType == ConnectionType.ClosedConnection){
             ActivateEnvironmentBlockers();
         }
+
+    }
+
+    void OnEnable(){
+        gameDifficultySo.difficultyChangeEvent.AddListener(SetActiveRoomList);
+    }
+
+    void OnDisable(){
+        gameDifficultySo.difficultyChangeEvent.RemoveListener(SetActiveRoomList);
     }
 
     void AssignConnectionDirection(){
@@ -98,7 +114,7 @@ public class Connection : MonoBehaviour{
     GameObject PickRoomToSpawn(){
         //Randomize with seed which room gets picked
         //SpawnRoom();
-        var room = roomListSo.combinedPrefabList[0]; //For testing purposes
+        var room = activeRoomListSo.combinedPrefabList[0]; //For testing purposes
         return room;
     }
 
@@ -106,7 +122,7 @@ public class Connection : MonoBehaviour{
     public void SpawnRoom(){
 
         attempt = 0;
-        while (validatedRoom == false && attempt < roomListSo.combinedPrefabList.Count){
+        while (validatedRoom == false && attempt < activeRoomListSo.combinedPrefabList.Count){
             var randomRoom = PickRoomToSpawn();
             var randomRoomRoom = randomRoom.GetComponent<Room>();
 
@@ -161,6 +177,26 @@ public class Connection : MonoBehaviour{
     void ActivateEnvironmentBlockers(){
         foreach (var _gameObject in environmentToggleList){
             _gameObject.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Changes the active room list depending when difficulty changes
+    /// </summary>
+    /// <param name="newDifficulty"></param>
+    void SetActiveRoomList(Difficulty newDifficulty){
+
+        if (newDifficulty is Difficulty.Easy){
+            activeRoomListSo = easyRoomListSo;
+        }
+        else if (newDifficulty is Difficulty.Medium){
+            activeRoomListSo = mediumRoomListSo;
+        }
+        else if (newDifficulty is Difficulty.Hard){
+            activeRoomListSo = hardRoomListSo;
+        }
+        else if (newDifficulty is Difficulty.Nightmare){
+            activeRoomListSo = nightmareRoomListSo;
         }
     }
 

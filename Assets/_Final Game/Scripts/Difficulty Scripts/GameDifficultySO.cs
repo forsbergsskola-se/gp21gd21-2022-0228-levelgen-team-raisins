@@ -15,7 +15,7 @@ public enum Difficulty{
 public class GameDifficultySO : ScriptableObject{
 
     [System.NonSerialized] public UnityEvent<Difficulty> difficultyChangeEvent;
-    Difficulty difficulty;
+     public Difficulty difficulty;
 
     public Difficulty Difficulty{
         get => difficulty;
@@ -33,5 +33,10 @@ public class GameDifficultySO : ScriptableObject{
         }
 
         Difficulty = Difficulty.Easy;
+    }
+
+    [ContextMenu("Change Difficulty to Hard")]
+    void Test1(){
+        Difficulty = Difficulty.Hard;
     }
 }
