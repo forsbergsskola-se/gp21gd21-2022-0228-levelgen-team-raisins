@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 459837586706514659, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 685976219eec7484ea57445179e40b9e, type: 2}
     - target: {fileID: 2412304360383263856, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -61,12 +65,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3688950541947916333, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_Name
-      value: ImpBoss_Nightmare
+      value: ImpBoss_Nightmare Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3749727407989933610, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 33c6b2b88724c9f408c486fa0d2b971d, type: 2}
+    - target: {fileID: 3823873592914428886, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 685976219eec7484ea57445179e40b9e, type: 2}
     - target: {fileID: 5180521064780363147, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
