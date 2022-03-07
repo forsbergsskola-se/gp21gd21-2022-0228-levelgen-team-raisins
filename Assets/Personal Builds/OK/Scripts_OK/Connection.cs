@@ -6,6 +6,7 @@ using Unity.Mathematics;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 
 public enum ConnectionType{
@@ -36,6 +37,7 @@ public class Connection : MonoBehaviour{
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
+    List<DifficultyDependantRoomList> exhaustedRoomList;
 
     [System.NonSerialized] public UnityEvent becameOpenConnectionEvent;
 
@@ -115,7 +117,8 @@ public class Connection : MonoBehaviour{
     GameObject PickRoomToSpawn(){
         //Randomize with seed which room gets picked
         //SpawnRoom();
-        var room = activeRoomListSo.combinedPrefabList[0]; //For testing purposes
+        var roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count+1); //For testing purposes
+        var room = activeRoomListSo.combinedPrefabList[roomNumber];
         return room;
     }
 

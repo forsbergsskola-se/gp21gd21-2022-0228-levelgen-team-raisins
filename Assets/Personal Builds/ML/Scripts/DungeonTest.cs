@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum SpawnDirection
+{
+    XPlus, XMinus, ZPlus, ZMinus
+}
+
 public class DungeonTest : MonoBehaviour
 {
     private List<GameObject> availableRooms = new List<GameObject>();
     private List<SpawnedRooms> SpawnedRooms = new List<SpawnedRooms>();
+    public GameObject spawnRoom;
 
     void Start()
     {
@@ -22,9 +28,34 @@ public class DungeonTest : MonoBehaviour
                 roomColliders = aBounds
             });
         }
-        BoundsTest();
+        FindNextSpawnPoint(SpawnedRooms[0].roomColliders[0].bounds, SpawnDirection.ZPlus);
     }
 
+
+    private void FindNextSpawnPoint(Bounds roomBounds, SpawnDirection spawnDirection)
+    {
+        var x = roomBounds.center.x;
+        var y = 0f;
+        var z = roomBounds.center.z;
+
+        switch (spawnDirection)
+        {
+            case SpawnDirection.XMinus:
+                x = roomBounds.min.x - roomBounds.extents.x;
+                break;
+            case SpawnDirection.XPlus:
+                x = roomBounds.max.x + roomBounds.extents.x;
+                break;
+            case SpawnDirection.ZMinus:
+                z = roomBounds.min.z - roomBounds.extents.z;
+                break;
+            case SpawnDirection.ZPlus:
+                z = roomBounds.max.z + roomBounds.extents.z;
+                break;
+        }
+
+        Instantiate(spawnRoom, new Vector3(x, y, z), Quaternion.identity);
+    }
 
     private void BoundsTest()
     {
