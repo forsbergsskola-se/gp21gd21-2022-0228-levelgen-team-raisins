@@ -18,7 +18,8 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public List<RoomValidator> RoomValidators;
-    [SerializeField] RoomListSO activeRooms;
+
+
 
     bool isValidRoom = true;
 
@@ -27,14 +28,9 @@ public class Room : MonoBehaviour{
         set{
             isValidRoom = value;
             if (value){
-                activeRooms.rooms.Add(this);
                 SpawnInternals();
             }
         }
-    }
-
-    void OnDisable(){
-        activeRooms.rooms.Remove(this);
     }
 
     public bool HasFreeConnections()
@@ -129,14 +125,17 @@ public class Room : MonoBehaviour{
     }
 
     [ContextMenu("Spawn All Available Rooms")]
-    public void SpawnRooms(){
+    public List<Room> SpawnRooms(){
+        List<Room> rooms = new List<Room>();
         foreach (var connection in connections){
 
             if (connection.ConnectionType is ConnectionType.OpenConnection){
-                connection.SpawnRoom();
+                var room = connection.SpawnRoom();
                 connection.ConnectionType = ConnectionType.UsedConnection;
+                rooms.Add(room);
             }
         }
+        return rooms;
     }
 
     public void SpawnInternals(){
@@ -148,4 +147,8 @@ public class Room : MonoBehaviour{
       //Foreach prefablistSO in ...something?
             //foreach gameobject in prefablistSO
     }
+}
+
+public interface IRoomSpawner{
+    Room OnRoomSpawn(Room room);
 }

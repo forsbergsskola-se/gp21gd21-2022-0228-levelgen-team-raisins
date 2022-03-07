@@ -139,7 +139,7 @@ public class Connection : MonoBehaviour{
     }
 
     [ContextMenu("Spawn Room")]
-    public void SpawnRoom(){
+    public Room SpawnRoom(){
 
         attempt = 0;
         while (validatedRoom == false && attempt < activeRoomListSo.combinedPrefabList.Count){
@@ -160,6 +160,7 @@ public class Connection : MonoBehaviour{
             //instatiate room
             var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
             validatedRoom = true;
+            return randomRoomRoom;
             // if (!spawnedRoom.GetComponent<Room>().IsValidRoom){
             //     DestroyImmediate(spawnedRoom); //TODO: instead of destroying we want to try the other connections
             // }
@@ -167,7 +168,7 @@ public class Connection : MonoBehaviour{
             //     break;
             // }
         }
-
+        return null;
     }
 
 
