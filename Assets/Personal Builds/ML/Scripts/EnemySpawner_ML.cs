@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class EnemySpawner_ML : MonoBehaviour
 {
-    [SerializeField] private ScriptableObject EasyEnemies;
-    [SerializeField] private ScriptableObject MediumEnemies;
-    [SerializeField] private ScriptableObject HardEnemies;
-    [SerializeField] private ScriptableObject NightmareEnemies;
+    [SerializeField] private PrefabListSO EasyEnemies;
+    [SerializeField] private PrefabListSO MediumEnemies;
+    [SerializeField] private PrefabListSO HardEnemies;
+    [SerializeField] private PrefabListSO NightmareEnemies;
 
     void Start()
     {
