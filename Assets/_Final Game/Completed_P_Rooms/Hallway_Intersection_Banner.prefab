@@ -10115,6 +10115,7 @@ MonoBehaviour:
   - {fileID: 1067329705008147413}
   RoomValidators:
   - {fileID: 7083151467695240465}
+  activeRooms: {fileID: 0}
   activeConnections: 0
 --- !u!1 &5980795622472790837
 GameObject:
