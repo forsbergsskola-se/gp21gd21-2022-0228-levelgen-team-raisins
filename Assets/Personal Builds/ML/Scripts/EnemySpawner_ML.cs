@@ -29,6 +29,7 @@ public class EnemySpawner_ML : MonoBehaviour
 
     void Start()
     {
+        spawnTimer = GetComponent<MyTimer>();
         spawnTimer.remainingTime = spawnInterval;
         spawnTimer.outOfTime = false;
         DifficultyManager.OnDifficultyChanged += ChangeEnemyTypes;

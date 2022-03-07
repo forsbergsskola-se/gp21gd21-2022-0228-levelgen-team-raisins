@@ -58,9 +58,6 @@ public class DifficultyManager : MonoBehaviour
 
     private static void DifficultyChanged()
     {
-        if (OnDifficultyChanged != null)
-        {
-            OnDifficultyChanged(difficulty);
-        }
+        OnDifficultyChanged?.Invoke(difficulty);
     }
 }
