@@ -20,23 +20,17 @@ public class UIDifficultyUpdater : MonoBehaviour{
         textMeshProUGUI = GetComponent<TextMeshProUGUI>();
     }
 
-    private void Start()
-    {
-        textMeshProUGUI = GetComponent<TextMeshProUGUI>();
-        DifficultyManager.OnDifficultyChanged += SetDifficultyText;
-    }
-
     void OnEnable(){
         gameDifficultySo.difficultyChangeEvent.AddListener(SetDifficultyText);
         SetDifficultyText(gameDifficultySo.Difficulty);
+        DifficultyManager.OnDifficultyChanged += SetDifficultyText;
     }
     void OnDisable(){
         gameDifficultySo.difficultyChangeEvent.RemoveListener(SetDifficultyText);
         DifficultyManager.OnDifficultyChanged -= SetDifficultyText;
     }
 
-    void SetDifficultyText(Difficulty difficulty)
-    {
+    void SetDifficultyText(Difficulty difficulty){
         textMeshProUGUI.text = "Difficulty: " + difficulty;
     }
 
