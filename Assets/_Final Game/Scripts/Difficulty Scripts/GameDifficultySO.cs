@@ -51,6 +51,13 @@ public class GameDifficultySO : ScriptableObject{
              difficulty = (Difficulty) currentDifficulty;
              Debug.Log(difficulty);
          }
+         else
+         {
+             Debug.Log(difficulty);
+             difficultyTimer.Elapsed -= DifficultyUpEvent;
+             difficultyTimer.AutoReset = false;
+             difficultyTimer.Enabled = false;
+         }
      }
 
 
