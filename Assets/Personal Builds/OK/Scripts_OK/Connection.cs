@@ -37,7 +37,9 @@ public class Connection : MonoBehaviour{
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
-    List<int> exhaustedNumbers;
+    List<int> exhaustedNumbers = new List<int>();
+
+    int roomNumber;
 
     [System.NonSerialized] public UnityEvent becameOpenConnectionEvent;
 
@@ -100,29 +102,37 @@ public class Connection : MonoBehaviour{
 
     public Vector3 GetSpawnPosition()
     {
-        var randomRoom = PickRoomToSpawn();
-        var randomRoomRoom = randomRoom.GetComponent<Room>();
+        // var randomRoom = PickRoomToSpawn();
+        // var randomRoomRoom = randomRoom.GetComponent<Room>();
+        //
+        // Vector3 offset = Vector3.zero;
+        //
+        // foreach (var connection in randomRoomRoom.connections){
+        //     if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+        //         offset = connection.transform.position;
+        //     }
+        // }
+        //
+        // return transform.position - offset;
+        return default;
+    }
 
-        Vector3 offset = Vector3.zero;
-
-        foreach (var connection in randomRoomRoom.connections){
-            if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-                offset = connection.transform.position;
-            }
-        }
-
-        return transform.position - offset;
+    int GetRandomNumber(int maxInt){
+        return Random.Range(0, maxInt);
     }
 
     GameObject PickRoomToSpawn(){
         //Randomize with seed which room gets picked
         //SpawnRoom();
 
-        var roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count);
-        while (exhaustedNumbers.Contains(roomNumber) && exhaustedNumbers.Count != activeRoomListSo.combinedPrefabList.Count){
-            roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count);
-        }
 
+        roomNumber = GetRandomNumber(activeRoomListSo.combinedPrefabList.Count);
+        // while (exhaustedNumbers.Contains(roomNumber) && exhaustedNumbers.Count < activeRoomListSo.combinedPrefabList.Count){
+        //     roomNumber = GetRandomNumber(activeRoomListSo.combinedPrefabList.Count);
+        // }
+
+        print(roomNumber);
+        print("Count:" + activeRoomListSo.combinedPrefabList.Count);
         var room = activeRoomListSo.combinedPrefabList[roomNumber];
         exhaustedNumbers.Add(roomNumber);
         return room;
@@ -149,9 +159,10 @@ public class Connection : MonoBehaviour{
             //random room
             //instatiate room
             var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
-            if (!spawnedRoom.GetComponent<Room>().IsValidRoom){
-                DestroyImmediate(spawnedRoom); //TODO: instead of destroying we want to try the other connections
-            }
+            validatedRoom = true;
+            // if (!spawnedRoom.GetComponent<Room>().IsValidRoom){
+            //     DestroyImmediate(spawnedRoom); //TODO: instead of destroying we want to try the other connections
+            // }
             // if (ValidateRoom()){
             //     break;
             // }
