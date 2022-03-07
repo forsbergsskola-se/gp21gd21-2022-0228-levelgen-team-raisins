@@ -159,6 +159,7 @@ public class Connection : MonoBehaviour{
             //random room
             //instatiate room
             var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
+            validatedRoom = true;
             // if (!spawnedRoom.GetComponent<Room>().IsValidRoom){
             //     DestroyImmediate(spawnedRoom); //TODO: instead of destroying we want to try the other connections
             // }
