@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,6 +8,10 @@ public class FillRooms : MonoBehaviour{
 
     List<Transform> spawnPoints = new List<Transform>();
 
+    float SpawnProcentage{
+        get => chanceToSpawn;
+        set => SpawnProcentage = chanceToSpawn / 100;
+    }
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.A)){
@@ -18,10 +21,13 @@ public class FillRooms : MonoBehaviour{
 
     void OnButtonpressForDebug(){
         var children = GetComponentsInChildren<Transform>();
+        var willItSpawnComparator = Random.Range(0f, 1f);
         foreach (var point in children){
-            spawnPoints.Add(point);
-            var newObject = RandomizeSpawnedObject();
-            Instantiate(newObject, point.position, point.rotation, point);
+            if (willItSpawnComparator <= SpawnProcentage){
+                spawnPoints.Add(point);
+                var newObject = RandomizeSpawnedObject();
+                Instantiate(newObject, point.position, point.rotation, point);
+            }
         }
     }
 
