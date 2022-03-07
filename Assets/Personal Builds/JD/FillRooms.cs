@@ -1,22 +1,31 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class FillRooms : MonoBehaviour{
-    PrefabListSO spawnedObjects;
-    List<Transform> spawnPoints;
+    [SerializeField] PrefabListSO spawnedObjects;
+    [SerializeField][Range(0,100)] int chanceToSpawn;
 
-    void OnEnable(){
-        foreach (var point in GetComponentsInChildren<Transform>()){
-            spawnPoints.Add(point);
-            var newobject = RandomizeSpawnedObject(point);
-            Instantiate(newobject, point.position, point.rotation, transform);
+    List<Transform> spawnPoints = new List<Transform>();
+
+
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.A)){
+            OnButtonpressForDebug();
         }
     }
 
-    GameObject RandomizeSpawnedObject(Transform point){
+    void OnButtonpressForDebug(){
+        var children = GetComponentsInChildren<Transform>();
+        foreach (var point in children){
+            spawnPoints.Add(point);
+            var newObject = RandomizeSpawnedObject();
+            Instantiate(newObject, point.position, point.rotation, point);
+        }
+    }
+
+    GameObject RandomizeSpawnedObject(){
         var spawnedObject = Random.Range(0, spawnedObjects.prefabs.Count);
         var objectToSpawn = spawnedObjects.prefabs[spawnedObject];
         return objectToSpawn;
