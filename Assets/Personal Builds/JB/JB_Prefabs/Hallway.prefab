@@ -79,6 +79,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  RoomValidators: []
   activeConnections: 0
 --- !u!1 &7855524184535674426
 GameObject:

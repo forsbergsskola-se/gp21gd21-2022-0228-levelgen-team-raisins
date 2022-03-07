@@ -3747,8 +3747,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  activeRoomListSo: {fileID: 0}
+  easyRoomListSo: {fileID: 0}
+  mediumRoomListSo: {fileID: 0}
+  hardRoomListSo: {fileID: 0}
+  nightmareRoomListSo: {fileID: 0}
   connectionType: 0
+  gameDifficultySo: {fileID: 0}
   environmentToggleList:
   - {fileID: 7822351762426177924}
   connectionDirection: 2
@@ -4205,8 +4210,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  activeRoomListSo: {fileID: 0}
+  easyRoomListSo: {fileID: 0}
+  mediumRoomListSo: {fileID: 0}
+  hardRoomListSo: {fileID: 0}
+  nightmareRoomListSo: {fileID: 0}
   connectionType: 0
+  gameDifficultySo: {fileID: 0}
   environmentToggleList:
   - {fileID: 3242126034237957053}
   connectionDirection: 3
@@ -5100,8 +5110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  activeRoomListSo: {fileID: 0}
+  easyRoomListSo: {fileID: 0}
+  mediumRoomListSo: {fileID: 0}
+  hardRoomListSo: {fileID: 0}
+  nightmareRoomListSo: {fileID: 0}
   connectionType: 0
+  gameDifficultySo: {fileID: 0}
   environmentToggleList:
   - {fileID: 2235724691824331920}
   connectionDirection: 1
@@ -8288,7 +8303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8948270749360752840
 Transform:
   m_ObjectHideFlags: 0
@@ -11468,8 +11483,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabListSo: {fileID: 11400000, guid: 6d7a61a7d41cb454c84f2ce7fdd6a841, type: 2}
+  activeRoomListSo: {fileID: 0}
+  easyRoomListSo: {fileID: 0}
+  mediumRoomListSo: {fileID: 0}
+  hardRoomListSo: {fileID: 0}
+  nightmareRoomListSo: {fileID: 0}
   connectionType: 1
+  gameDifficultySo: {fileID: 0}
   environmentToggleList:
   - {fileID: 5048941414472224746}
   connectionDirection: 4
