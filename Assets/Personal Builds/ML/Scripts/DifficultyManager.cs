@@ -9,8 +9,6 @@ public class DifficultyManager : MonoBehaviour
     private static Difficulty difficulty;
 
     private  int numberDifficultyLevels;
-
-
     public float timerInterval = 6;
     private  int currentDifficulty = 0;
 
@@ -27,7 +25,6 @@ public class DifficultyManager : MonoBehaviour
         numberDifficultyLevels = Enum.GetValues(typeof(Difficulty)).Length;
     }
 
-
     private void Update()
     {
         if (timer.outOfTime)
@@ -38,13 +35,6 @@ public class DifficultyManager : MonoBehaviour
         }
     }
 
-    private static void DifficultyChanged()
-    {
-        if (OnDifficultyChanged != null)
-        {
-            OnDifficultyChanged(difficulty);
-        }
-    }
     private void DifficultyUpEvent()
     {
         currentDifficulty++;
@@ -53,8 +43,14 @@ public class DifficultyManager : MonoBehaviour
         {
             difficulty = (Difficulty) currentDifficulty;
             DifficultyChanged();
-            Debug.Log(difficulty);
         }
+    }
 
+    private static void DifficultyChanged()
+    {
+        if (OnDifficultyChanged != null)
+        {
+            OnDifficultyChanged(difficulty);
+        }
     }
 }
