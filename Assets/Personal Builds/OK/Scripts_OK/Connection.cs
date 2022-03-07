@@ -6,12 +6,13 @@ using Unity.Mathematics;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 
 public enum ConnectionType{
     OpenConnection,
     ClosedConnection,
-    UndecidedConnection
+    UsedConnection
 }
 
 public enum ConnectionDirection{
@@ -22,31 +23,39 @@ public enum ConnectionDirection{
     Right
 }
 
-//[ExecuteInEditMode]//TODO:REMOVE used for debug
+[ExecuteInEditMode]//TODO:REMOVE used for debug
 public class Connection : MonoBehaviour{
-    [SerializeField] PrefabListSO prefabListSo;
+    [SerializeField] DifficultyDependantRoomList activeRoomListSo;
+    [Header("Changable Difficulty Rooms")]
+    [SerializeField] DifficultyDependantRoomList easyRoomListSo;
+    [SerializeField] DifficultyDependantRoomList mediumRoomListSo;
+    [SerializeField] DifficultyDependantRoomList hardRoomListSo;
+    [SerializeField] DifficultyDependantRoomList nightmareRoomListSo;
+    [Header("")]
     [SerializeField] ConnectionType connectionType;
+    [SerializeField] GameDifficultySO gameDifficultySo;
+    [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
+    List<int> exhaustedNumbers;
 
     [System.NonSerialized] public UnityEvent becameOpenConnectionEvent;
+
 
     public ConnectionType ConnectionType{
         get => connectionType;
         set{
+            Debug.Log(value);
             connectionType = value;
-            if (connectionType == ConnectionType.OpenConnection){
-                becameOpenConnectionEvent.Invoke();
+            if (value is ConnectionType.OpenConnection){
+                //becameOpenConnectionEvent.Invoke();
+                DeactivateEnvironmentBlockers();
+            }
+            else if (value is ConnectionType.ClosedConnection){
+                ActivateEnvironmentBlockers();
             }
         }
     }
-
-    // public ConnectionDirection ConnectionDirection{
-    //     get => connectionDirection;
-    //     set{
-    //         connectionDirection = value;
-    //     }
-    // }
 
     bool validatedRoom;
     int attempt;
@@ -55,6 +64,22 @@ public class Connection : MonoBehaviour{
     void Awake(){
         //ConnectionType = ConnectionType.UndecidedConnection;
         AssignConnectionDirection();
+        if (ConnectionType == ConnectionType.OpenConnection){
+            DeactivateEnvironmentBlockers();
+        }
+        else if (ConnectionType == ConnectionType.ClosedConnection){
+            ActivateEnvironmentBlockers();
+        }
+
+    }
+
+    void OnEnable(){
+        gameDifficultySo.difficultyChangeEvent.AddListener(SetActiveRoomList);
+        SetActiveRoomList(gameDifficultySo.Difficulty);
+    }
+
+    void OnDisable(){
+        gameDifficultySo.difficultyChangeEvent.RemoveListener(SetActiveRoomList);
     }
 
     void AssignConnectionDirection(){
@@ -92,7 +117,14 @@ public class Connection : MonoBehaviour{
     GameObject PickRoomToSpawn(){
         //Randomize with seed which room gets picked
         //SpawnRoom();
-        var room = prefabListSo.prefabs[0]; //For testing purposes
+
+        var roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count);
+        while (exhaustedNumbers.Contains(roomNumber) && exhaustedNumbers.Count != activeRoomListSo.combinedPrefabList.Count){
+            roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count);
+        }
+
+        var room = activeRoomListSo.combinedPrefabList[roomNumber];
+        exhaustedNumbers.Add(roomNumber);
         return room;
     }
 
@@ -100,7 +132,7 @@ public class Connection : MonoBehaviour{
     public void SpawnRoom(){
 
         attempt = 0;
-        while (validatedRoom == false && attempt < prefabListSo.prefabs.Count){
+        while (validatedRoom == false && attempt < activeRoomListSo.combinedPrefabList.Count){
             var randomRoom = PickRoomToSpawn();
             var randomRoomRoom = randomRoom.GetComponent<Room>();
 
@@ -144,5 +176,49 @@ public class Connection : MonoBehaviour{
 
         //if successful, set validatedRoom = true;
     }
+
+
+    void DeactivateEnvironmentBlockers(){
+        foreach (var _gameObject in environmentToggleList){
+            _gameObject.SetActive(false);
+        }
+    }
+
+    void ActivateEnvironmentBlockers(){
+        foreach (var _gameObject in environmentToggleList){
+            _gameObject.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Changes the active room list depending when difficulty changes
+    /// </summary>
+    /// <param name="newDifficulty"></param>
+    void SetActiveRoomList(Difficulty newDifficulty){
+
+        if (newDifficulty is Difficulty.Easy){
+            activeRoomListSo = easyRoomListSo;
+        }
+        else if (newDifficulty is Difficulty.Medium){
+            activeRoomListSo = mediumRoomListSo;
+        }
+        else if (newDifficulty is Difficulty.Hard){
+            activeRoomListSo = hardRoomListSo;
+        }
+        else if (newDifficulty is Difficulty.Nightmare){
+            activeRoomListSo = nightmareRoomListSo;
+        }
+    }
+
+    [ContextMenu("Connection type check")]
+    void Test1(){
+        ConnectionType = ConnectionType.ClosedConnection;
+    }
+
+    [ContextMenu("Connection type check2")]
+    void Test2(){
+        ConnectionType = ConnectionType.OpenConnection;
+    }
+
 
 }

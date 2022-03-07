@@ -6,12 +6,11 @@ using UnityEngine.Events;
 
 //TODO:REMOVE used for debug
 public class RoomValidator : MonoBehaviour{
-    internal UnityEvent<bool> RoomValidationEvent;
+    [SerializeField] Room room;
 
-    void OnCollisionEnter(Collision other){
-        if (other.transform.GetComponent<RoomValidator>()){
-            RoomValidationEvent.Invoke(false);
-            Debug.Log("OMFG COLLISION DETECT");
+    void OnCollisionEnter(Collision collision){
+        if (collision.transform.CompareTag("Validation_Collider")){
+            room.IsValidRoom = false;
         }
     }
 }

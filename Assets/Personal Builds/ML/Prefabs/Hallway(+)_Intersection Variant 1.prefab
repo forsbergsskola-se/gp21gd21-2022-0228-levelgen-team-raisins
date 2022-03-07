@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8131127677759959408}
   m_Layer: 0
   m_Name: RoomBounds
-  m_TagString: Untagged
+  m_TagString: Bounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,8 +42,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 44.941547, y: 8.914079, z: 46.08388}
-  m_Center: {x: -0.37457085, y: -0.35476923, z: 0.12381935}
+  m_Size: {x: 46.29383, y: 8.914079, z: 46.08388}
+  m_Center: {x: 0.07351303, y: -0.35476923, z: 0.12381935}
 --- !u!1001 &4933682724232267332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51,6 +51,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1067329705008147413, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
+      propertyPath: prefabListSo
+      value: 
+      objectReference: {fileID: 11400000, guid: e857910db315c104cae64c7bfacca60f, type: 2}
+    - target: {fileID: 5052154296838543691, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
+      propertyPath: prefabListSo
+      value: 
+      objectReference: {fileID: 11400000, guid: e857910db315c104cae64c7bfacca60f, type: 2}
     - target: {fileID: 5052154296838543691, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
       propertyPath: connectionType
       value: 0
@@ -106,6 +114,22 @@ PrefabInstance:
     - target: {fileID: 5929968145470845015, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
       propertyPath: m_TagString
       value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089827477388607712, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346399140626593573, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
+      propertyPath: prefabListSo
+      value: 
+      objectReference: {fileID: 11400000, guid: e857910db315c104cae64c7bfacca60f, type: 2}
+    - target: {fileID: 6833586521545923424, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
+      propertyPath: prefabListSo
+      value: 
+      objectReference: {fileID: 11400000, guid: e857910db315c104cae64c7bfacca60f, type: 2}
+    - target: {fileID: 7525197656965828298, guid: aebcc9aed01175f42998795a70a0d300, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aebcc9aed01175f42998795a70a0d300, type: 3}

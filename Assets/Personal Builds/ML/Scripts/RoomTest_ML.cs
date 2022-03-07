@@ -16,7 +16,8 @@ public enum AssetType
 [Serializable]
 public class SpawnedRooms
 {
-    public Vector3 spwanPos;
+    public Vector3 spawnPos;
+    public List<Collider> roomColliders;
 }
 
 public class RoomTest_ML : MonoBehaviour

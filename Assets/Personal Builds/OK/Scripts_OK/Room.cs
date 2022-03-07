@@ -17,7 +17,6 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public List<RoomValidator> RoomValidators;
-    public List<SpawnedRooms> SpawnedRooms;
 
     bool isValidRoom = true;
 
@@ -25,38 +24,56 @@ public class Room : MonoBehaviour{
         get => isValidRoom;
         set{
             isValidRoom = value;
+            if (value){
+                SpawnInternals();
+            }
         }
     }
 
 
     public bool HasFreeConnections()
     {
-        return connections.Any(x => x.ConnectionType == ConnectionType.OpenConnection);
+        return connections.Any(connection => connection.ConnectionType == ConnectionType.OpenConnection);
     }
 
-    public void SingleRoomSpawn()
+    public bool SingleRoomSpawn(List<SpawnedRooms> SpawnedRooms)
     {
-        var  temp = connections
-            .FirstOrDefault(x => x.ConnectionType == ConnectionType.OpenConnection);
+        var  temp = connections.FirstOrDefault(connection => connection.ConnectionType == ConnectionType.OpenConnection);
 
-        if (temp == default) return;
+        if (temp == default) return false;
 
-        if(SpawnedRooms.SingleOrDefault(x => x.spwanPos
-               .Equals(temp.GetSpawnPosition())) == default) return;
-        
+        var spawnPosition = temp.GetSpawnPosition();
+
+        var condition = SpawnedRooms.Where(spawnedRoom =>
+        {
+            if (Vector3.Distance(spawnPosition, spawnedRoom.spawnPos) < 10) //Magic number
+            {
+                return true;
+            }
+
+            return false;
+        }).ToList().Count;
+
+        if(condition > 0) return false;
+
         temp.SpawnRoom();
         temp.ConnectionType = ConnectionType.ClosedConnection;
+        SpawnedRooms.Add(new SpawnedRooms()
+        {
+            spawnPos =  spawnPosition
+        });
+        return true;
     }
 
     public void RuntimeSpawn()
     {
         var temp = connections
-            .Where(x => x.ConnectionType == ConnectionType.OpenConnection)
-            .Select(x =>
+            .Where(connection => connection.ConnectionType == ConnectionType.OpenConnection)
+            .Select(connection =>
             {
-                x.SpawnRoom();
-                x.ConnectionType = ConnectionType.ClosedConnection;
-                return x;
+                connection.SpawnRoom();
+                connection.ConnectionType = ConnectionType.ClosedConnection;
+                return connection;
             } ).ToList();
     }
 
@@ -93,15 +110,16 @@ public class Room : MonoBehaviour{
  //   }
 
 
-    void AddActiveConnections(){
-        activeConnections++;
-    }
-    void ReduceActiveConnections(){
-        activeConnections--;
-    }
+    // void AddActiveConnections(){
+    //     activeConnections++;
+    // }
+    // void ReduceActiveConnections(){
+    //     activeConnections--;
+    // }
 
     public void ValidateRoom(bool value){
         isValidRoom = value;
+        //if boids boxcast tell us the room is spawned outside the old room its allowed to spawn
     }
 
     [ContextMenu("Spawn All Available Rooms")]
@@ -113,5 +131,15 @@ public class Room : MonoBehaviour{
             }
 
         }
+    }
+
+    public void SpawnInternals(){
+        //This should spawn all items inside the room.
+        //The items need to be picked at random from a list of possible items
+
+
+      //-take into account rooms which allow both easy and medium enemies to spawn
+      //Foreach prefablistSO in ...something?
+            //foreach gameobject in prefablistSO
     }
 }
