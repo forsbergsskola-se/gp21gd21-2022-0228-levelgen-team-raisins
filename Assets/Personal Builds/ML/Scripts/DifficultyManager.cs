@@ -31,12 +31,12 @@ public class DifficultyManager : MonoBehaviour
 
     private void Update()
     {
+        Countdown();
         if (timer.outOfTime)
         {
             DifficultyUpEvent();
             timer.remainingTime = timerInterval;
             timer.outOfTime = false;
-            Countdown();
         }
     }
 
