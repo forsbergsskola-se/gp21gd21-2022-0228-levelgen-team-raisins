@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
-    [SerializeField] List<Room> rooms; //Have room fire off an event with their room script as input when validated add
+    [SerializeField] RoomListSO activeRooms; //Have room fire off an event with their room script as input when validated add
                                        //to this list,and when destroy, remove from list?
     [SerializeField] float roomSpawnRadius = 60f;
     [SerializeField] float updatePosThreshold = 1f;
@@ -29,7 +29,7 @@ public class Dungeon : MonoBehaviour{
     }
 
     void GenerateNewRooms(){
-        foreach (var room in rooms){
+        foreach (var room in activeRooms.rooms){
             if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRadius){
                 room.SpawnRooms(); //TODO: Here we want to return the room so we can add it to the list
                 //here we add the new room to rooms list
