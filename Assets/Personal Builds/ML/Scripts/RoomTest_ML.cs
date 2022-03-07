@@ -18,6 +18,7 @@ public class SpawnedRooms
 {
     public Vector3 spawnPos;
     public List<Collider> roomColliders;
+    public List<SpawnDirection> UsedSpawnDirections;
 }
 
 public class RoomTest_ML : MonoBehaviour

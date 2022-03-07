@@ -31,7 +31,8 @@ public class Dungeon : MonoBehaviour{
     void GenerateNewRooms(){
         foreach (var room in rooms){
             if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRadius){
-                room.SpawnRooms();
+                room.SpawnRooms(); //TODO: Here we want to return the room so we can add it to the list
+                //here we add the new room to rooms list
             }
         }
     }
