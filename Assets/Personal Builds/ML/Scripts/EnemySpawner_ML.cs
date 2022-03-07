@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,13 +18,13 @@ public class EnemySpawner_ML : MonoBehaviour
     public float spawnInterval = 5;
     private MyTimer spawnTimer;
 
-    private List<GameObject> spawnPoints = new List<GameObject>();
+    private List<Transform> spawnPoints = new List<Transform>();
 
     public void SpawnEnemy()
     {
-      var enemyNum =  Random.Range(0, currentEnemies.Count - 1);
-
-      Instantiate(currentEnemies[enemyNum]);
+      var enemyNum =  Random.Range(0, currentEnemies.Count);
+      var spawnNum = Random.Range(0, spawnPoints.Count);
+      Instantiate(currentEnemies[enemyNum], spawnPoints[spawnNum].position, Quaternion.identity);
     }
 
     void Start()
@@ -32,6 +33,15 @@ public class EnemySpawner_ML : MonoBehaviour
         spawnTimer.outOfTime = false;
         DifficultyManager.OnDifficultyChanged += ChangeEnemyTypes;
         ChangeEnemyTypes(Difficulty.Easy);
+        SetSpawnPoints();
+    }
+
+
+    private void SetSpawnPoints()
+    {
+      spawnPoints =  GameObject.FindGameObjectsWithTag("Room")[0]
+            .GetComponentsInChildren<Transform>()
+            .Where(x => x.CompareTag("EnemySpawnPoints")).ToList();
     }
 
     private void OnDisable()
