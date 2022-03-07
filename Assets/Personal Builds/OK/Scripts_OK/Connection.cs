@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 public enum ConnectionType{
     OpenConnection,
     ClosedConnection,
-    UndecidedConnection
+    UsedConnection
 }
 
 public enum ConnectionDirection{
@@ -37,7 +37,7 @@ public class Connection : MonoBehaviour{
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
-    List<DifficultyDependantRoomList> exhaustedRoomList;
+    List<int> exhaustedNumbers;
 
     [System.NonSerialized] public UnityEvent becameOpenConnectionEvent;
 
@@ -117,8 +117,14 @@ public class Connection : MonoBehaviour{
     GameObject PickRoomToSpawn(){
         //Randomize with seed which room gets picked
         //SpawnRoom();
-        var roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count+1); //For testing purposes
+
+        var roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count);
+        while (exhaustedNumbers.Contains(roomNumber) && exhaustedNumbers.Count != activeRoomListSo.combinedPrefabList.Count){
+            roomNumber = Random.Range(0, activeRoomListSo.combinedPrefabList.Count);
+        }
+
         var room = activeRoomListSo.combinedPrefabList[roomNumber];
+        exhaustedNumbers.Add(roomNumber);
         return room;
     }
 
