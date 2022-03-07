@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 
@@ -17,6 +18,7 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public List<RoomValidator> RoomValidators;
+    [SerializeField] RoomListSO activeRooms;
 
     bool isValidRoom = true;
 
@@ -25,11 +27,15 @@ public class Room : MonoBehaviour{
         set{
             isValidRoom = value;
             if (value){
+                activeRooms.rooms.Add(this);
                 SpawnInternals();
             }
         }
     }
 
+    void OnDisable(){
+        activeRooms.rooms.Remove(this);
+    }
 
     public bool HasFreeConnections()
     {
@@ -128,8 +134,8 @@ public class Room : MonoBehaviour{
 
             if (connection.ConnectionType is ConnectionType.OpenConnection){
                 connection.SpawnRoom();
+                connection.ConnectionType = ConnectionType.UsedConnection;
             }
-
         }
     }
 
