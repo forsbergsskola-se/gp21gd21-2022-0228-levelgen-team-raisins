@@ -17,6 +17,10 @@ public class DifficultyManager : MonoBehaviour
     public  delegate void DifficultyChangedDelegate(Difficulty difficulty);
     public static event DifficultyChangedDelegate OnDifficultyChanged;
 
+    public delegate void TimerCountdownDelegate(float remainingTime);
+
+    public static event TimerCountdownDelegate OnTimeCountDown;
+
 
     private void OnEnable()
     {
@@ -32,7 +36,13 @@ public class DifficultyManager : MonoBehaviour
             DifficultyUpEvent();
             timer.remainingTime = timerInterval;
             timer.outOfTime = false;
+            Countdown();
         }
+    }
+
+    private void Countdown()
+    {
+        OnTimeCountDown?.Invoke(timer.remainingTime);
     }
 
     private void DifficultyUpEvent()
