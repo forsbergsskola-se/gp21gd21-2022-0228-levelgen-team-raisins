@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,9 +16,16 @@ public enum Difficulty{
 public class GameDifficultySO : ScriptableObject{
 
     [System.NonSerialized] public UnityEvent<Difficulty> difficultyChangeEvent;
-     public Difficulty difficulty;
+     public static Difficulty difficulty;
 
-    public Difficulty Difficulty{
+
+     private static System.Timers.Timer difficultyTimer;
+     //one second = 1000
+     public static float timerInterval = 4000;
+     public static int currentDifficulty = 0;
+
+     public Difficulty Difficulty
+    {
         get => difficulty;
         set{
             difficulty = value;
@@ -25,6 +33,26 @@ public class GameDifficultySO : ScriptableObject{
             difficultyChangeEvent.Invoke(value);
         }
     }
+
+     private static void SetTimer()
+     {
+         difficultyTimer = new System.Timers.Timer(timerInterval);
+
+         difficultyTimer.Elapsed += DifficultyUpEvent;
+         difficultyTimer.AutoReset = true;
+         difficultyTimer.Enabled = true;
+     }
+
+     private static void DifficultyUpEvent(object sender, ElapsedEventArgs e)
+     {
+
+
+         currentDifficulty++;
+         difficulty = (Difficulty) currentDifficulty;
+     }
+
+
+
 
     void OnEnable(){
         //Creates event if none exists.
