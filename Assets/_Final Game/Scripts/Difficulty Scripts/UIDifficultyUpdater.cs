@@ -37,7 +37,7 @@ public class UIDifficultyUpdater : MonoBehaviour{
 
     void SetDifficultyText(Difficulty difficulty)
     {
-        textMeshProUGUI.text = $"Difficulty: {difficulty} \n";
+        textMeshProUGUI.text = $"Difficulty: {difficulty}";
     }
 
 

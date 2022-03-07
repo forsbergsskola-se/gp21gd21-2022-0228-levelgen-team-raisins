@@ -14,6 +14,10 @@ public class EnemySpawner_ML : MonoBehaviour
     [SerializeField] private PrefabListSO NightmareEnemies;
     private List<GameObject> currentEnemies;
 
+    public float spawnInterval = 5;
+    private MyTimer spawnTimer;
+
+    private List<GameObject> spawnPoints = new List<GameObject>();
 
     public void SpawnEnemy()
     {
@@ -24,6 +28,8 @@ public class EnemySpawner_ML : MonoBehaviour
 
     void Start()
     {
+        spawnTimer.remainingTime = spawnInterval;
+        spawnTimer.outOfTime = false;
         DifficultyManager.OnDifficultyChanged += ChangeEnemyTypes;
         ChangeEnemyTypes(Difficulty.Easy);
     }
@@ -54,6 +60,11 @@ public class EnemySpawner_ML : MonoBehaviour
 
     void Update()
     {
-
+        if (spawnTimer.outOfTime)
+        {
+            SpawnEnemy();
+            spawnTimer.remainingTime = spawnInterval;
+            spawnTimer.outOfTime = false;
+        }
     }
 }
