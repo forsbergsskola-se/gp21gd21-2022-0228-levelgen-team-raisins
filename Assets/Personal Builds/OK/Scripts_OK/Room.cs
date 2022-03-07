@@ -17,6 +17,7 @@ public enum RoomType{
 
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
+    public UnityRoomEventSO roomEventSo;
     public List<RoomValidator> RoomValidators;
 
 
@@ -28,9 +29,14 @@ public class Room : MonoBehaviour{
         set{
             isValidRoom = value;
             if (value){
+                roomEventSo.roomEvent.Invoke(this);
                 SpawnInternals();
             }
         }
+    }
+
+    void Start(){
+        roomEventSo.roomEvent.Invoke(this);
     }
 
     public bool HasFreeConnections()
@@ -147,8 +153,4 @@ public class Room : MonoBehaviour{
       //Foreach prefablistSO in ...something?
             //foreach gameobject in prefablistSO
     }
-}
-
-public interface IRoomSpawner{
-    Room OnRoomSpawn(Room room);
 }

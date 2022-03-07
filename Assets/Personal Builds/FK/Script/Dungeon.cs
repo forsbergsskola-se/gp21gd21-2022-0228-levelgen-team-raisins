@@ -9,51 +9,79 @@ using UnityEngine;
 
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
+    [SerializeField] UnityRoomEventSO roomEventSo;
 
     [SerializeField] List<Room> rooms; //Have room fire off an event with their room script as input when validated add
                                        //to this list,and when destroy, remove from list?
     [SerializeField] float roomSpawnRange = 30f;
     [SerializeField] float roomDespawnRange = 60f;
     [SerializeField] float updatePosThreshold = 1f;
-    Vector3 playerOldPosition;
+    //Vector3 playerOldPosition;
+
+    public List<Room> Rooms{
+        get => rooms;
+        set{
+            rooms = value;
+            //GenerateNewRooms();
+        }
+    }
 
     void Start(){
-        playerOldPosition = Vector3.zero;
+        playerTransform.SavePosition();
+        roomEventSo.roomEvent.AddListener(AddToActiveRooms);
         GenerateNewRooms();
     }
 
+
+    void AddToActiveRooms(Room room){
+        Rooms.Add(room);
+        GenerateNewRooms();
+    }
     void Update(){
         UpdatePlayerPos(playerTransform.position);
     }
     void UpdatePlayerPos(Vector3 playerPosition){
-        if (Vector3.Distance(playerPosition, playerOldPosition) > updatePosThreshold){
-            playerOldPosition = playerTransform.position;
+        if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > updatePosThreshold){
+            playerTransform.SavePosition();
+            ActivateSuspendedRooms();
             GenerateNewRooms();
         }
     }
 
     void GenerateNewRooms(){
-        List<Room> newRooms = new List<Room>();
+        print("Generating new rooms");
         foreach (var room in rooms){
-            if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
-                newRooms = room.SpawnRooms();
-                foreach (var newRoom in newRooms){
-                    rooms.Add(newRoom);
-                } //TODO: When we spawned the first set of rooms we need to check if we should spawn more
+            if (Vector3.Distance(room.transform.position, playerTransform.savedPosition) < roomSpawnRange){
+                room.SpawnRooms();
+            }
+        }
 
-                //here we add the new room to rooms list
+        // List<Room> newRooms = new List<Room>();
+        // foreach (var room in rooms){
+        //     if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
+        //         newRooms = room.SpawnRooms();
+        //         foreach (var newRoom in newRooms){
+        //             rooms.Add(newRoom);
+        //         } //TODO: When we spawned the first set of rooms we need to check if we should spawn more
+        //
+        //         //here we add the new room to rooms list
+        //     }
+        // }
+    }
+
+    void ActivateSuspendedRooms(){
+        foreach (var room in rooms){
+            foreach (var connection in room.connections){
+                if (connection.ConnectionType is ConnectionType.SuspendedConnection){
+                    connection.ConnectionType = ConnectionType.OpenConnection;
+                }
+
             }
         }
     }
 
-    // IEnumerator UpdateRooms(){
-    //     foreach (var room in activeRooms.rooms){
-    //         if (Vector3.Distance(room.transform.position, playerTransform.position) > roomSpawnRange){
-    //
-    //         }
-    //     }
-    //
-    // }
+
+
 
 
     void DisableRoomConnections(){
@@ -70,10 +98,10 @@ public class Dungeon : MonoBehaviour{
 
     void OnDrawGizmos(){
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(playerOldPosition,roomSpawnRange);
+        Gizmos.DrawWireSphere(playerTransform.savedPosition,roomSpawnRange);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(playerOldPosition, roomDespawnRange);
+        Gizmos.DrawWireSphere(playerTransform.savedPosition, roomDespawnRange);
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(playerOldPosition, updatePosThreshold);
+        Gizmos.DrawWireSphere(playerTransform.savedPosition, updatePosThreshold);
     }
 }

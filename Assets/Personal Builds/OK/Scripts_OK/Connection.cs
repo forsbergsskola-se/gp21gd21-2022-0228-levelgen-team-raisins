@@ -12,7 +12,8 @@ using Random = UnityEngine.Random;
 public enum ConnectionType{
     OpenConnection,
     ClosedConnection,
-    UsedConnection
+    UsedConnection,
+    SuspendedConnection
 }
 
 public enum ConnectionDirection{
@@ -75,7 +76,7 @@ public class Connection : MonoBehaviour{
 
     }
 
-    void OnEnable(){
+    void Start(){
         gameDifficultySo.difficultyChangeEvent.AddListener(SetActiveRoomList);
         SetActiveRoomList(gameDifficultySo.Difficulty);
     }
@@ -151,12 +152,10 @@ public class Connection : MonoBehaviour{
             foreach (var connection in randomRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
                     offset = connection.transform.position;
+                    connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
                 }
-
             }
-
             attempt++;
-            //random room
             //instatiate room
             var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
             validatedRoom = true;
