@@ -19,8 +19,7 @@ public class DungeonTest : MonoBehaviour
         availableRooms = GameObject.FindGameObjectsWithTag("Room").ToList();
         if (availableRooms.Count > 0)
         {
-            var aBounds = availableRooms[0].gameObject.GetComponentsInChildren<Collider>()
-                .Where(x => x.CompareTag("Bounds")).ToList();
+            var aBounds = GetRoomBounds(availableRooms[0].gameObject);
 
             SpawnedRooms.Add(new SpawnedRooms()
             {
@@ -28,38 +27,64 @@ public class DungeonTest : MonoBehaviour
                 roomColliders = aBounds
             });
         }
-        FindNextSpawnPoint(SpawnedRooms[0].roomColliders[0].bounds, SpawnDirection.ZPlus);
+        SpawnNewRoom(SpawnedRooms[0].roomColliders);
     }
 
 
-    private void FindNextSpawnPoint(Bounds roomBounds, SpawnDirection spawnDirection)
+    private List<Collider> GetRoomBounds(GameObject theRoom)
     {
-        var x = roomBounds.center.x;
+        var aBounds = theRoom.GetComponentsInChildren<Collider>()
+            .Where(x => x.CompareTag("Bounds")).ToList();
+
+        return aBounds;
+    }
+
+    private void SpawnNewRoom(List<Collider> oldRoomBounds)
+    {
+
+        var nextRoom = Instantiate(spawnRoom, new Vector3(), Quaternion.identity);
+        var newRoomBounds = GetRoomBounds(nextRoom);
+
+        var nextSpawnPoint = FindNextSpawnPoint(oldRoomBounds[0].bounds,
+            newRoomBounds[0].bounds,SpawnDirection.XMinus);
+
+        nextRoom.transform.position = nextSpawnPoint;
+
+        availableRooms.Add(nextRoom);
+
+        SpawnedRooms.Add(new SpawnedRooms()
+        {
+            spawnPos = nextSpawnPoint,
+            roomColliders = newRoomBounds
+        });
+    }
+
+
+    private Vector3 FindNextSpawnPoint(Bounds oldRoomBounds, Bounds newRoomBounds, SpawnDirection spawnDirection)
+    {
+        var x = oldRoomBounds.center.x;
         var y = 0f;
-        var z = roomBounds.center.z;
+        var z = oldRoomBounds.center.z;
 
         switch (spawnDirection)
         {
             case SpawnDirection.XMinus:
-                x = roomBounds.min.x - roomBounds.extents.x;
+                x = oldRoomBounds.min.x - (oldRoomBounds.extents.x / 2 + newRoomBounds.extents.x / 2);
                 break;
             case SpawnDirection.XPlus:
-                x = roomBounds.max.x + roomBounds.extents.x;
+                x = oldRoomBounds.max.x + (oldRoomBounds.extents.x / 2 + newRoomBounds.extents.x / 2);
                 break;
             case SpawnDirection.ZMinus:
-                z = roomBounds.min.z - roomBounds.extents.z;
+                z = oldRoomBounds.min.z - (oldRoomBounds.extents.z / 2 + newRoomBounds.extents.z / 2);
                 break;
             case SpawnDirection.ZPlus:
-                z = roomBounds.max.z + roomBounds.extents.z;
+                z = oldRoomBounds.max.z + (oldRoomBounds.extents.x / 2 + newRoomBounds.extents.x / 2);
                 break;
         }
 
-        Instantiate(spawnRoom, new Vector3(x, y, z), Quaternion.identity);
-    }
+         var outVector = new Vector3(x, y, z);
 
-    private void BoundsTest()
-    {
-        Debug.Log(SpawnedRooms[0].roomColliders[0].bounds.extents);
+        return outVector;
     }
 
     private void RoomTest()
