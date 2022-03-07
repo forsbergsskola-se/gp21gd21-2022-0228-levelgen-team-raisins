@@ -19,10 +19,16 @@ public class DungeonTest : MonoBehaviour
             SpawnedRooms.Add(new SpawnedRooms()
             {
                 spawnPos = availableRooms[0].transform.position,
-                boundsCollider = aBounds[0]
+                roomColliders = aBounds
             });
         }
+        BoundsTest();
+    }
 
+
+    private void BoundsTest()
+    {
+        Debug.Log(SpawnedRooms[0].roomColliders[0].bounds.extents);
     }
 
     private void RoomTest()
@@ -42,7 +48,6 @@ public class DungeonTest : MonoBehaviour
     public static bool IsInside(Collider collider, Vector3 point)
     {
         Vector3 closestCollider = collider.ClosestPoint(point);
-        // Because closest=point if point is inside - not clear from docs I feel
         return closestCollider == point;
     }
 
