@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class DifficultyManager : MonoBehaviour
 {
-
     public static Difficulty difficulty;
 
     public static int numberDifficultyLevels;
@@ -32,7 +31,6 @@ public class DifficultyManager : MonoBehaviour
     private static void SetTimer()
     {
         difficultyTimer = new Timer(timerInterval);
-
         difficultyTimer.Elapsed += DifficultyUpEvent;
         difficultyTimer.AutoReset = true;
         difficultyTimer.Enabled = true;
