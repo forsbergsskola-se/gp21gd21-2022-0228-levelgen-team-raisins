@@ -27,14 +27,10 @@ public class Room : MonoBehaviour{
         set{
             isValidRoom = value;
             if (value){
-                // activeRooms.rooms.Add(this); //TODO:should be here not on enable
+                activeRooms.rooms.Add(this);
                 SpawnInternals();
             }
         }
-    }
-
-    void OnEnable(){
-        activeRooms.rooms.Add(this); //TODO: for debug
     }
 
     void OnDisable(){
