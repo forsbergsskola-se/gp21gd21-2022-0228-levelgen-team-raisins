@@ -4,36 +4,38 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
-
-
 public class DifficultyManager : MonoBehaviour
 {
-    public static Difficulty difficulty;
+    private static Difficulty difficulty;
 
-    public static int numberDifficultyLevels;
-    private  static Timer difficultyTimer;
-    //one second = 1000
-    public static float timerInterval = 6000;
-    public static int currentDifficulty = 0;
+    private  int numberDifficultyLevels;
+
+
+    public float timerInterval = 6;
+    private  int currentDifficulty = 0;
+
+    private MyTimer timer;
 
     public  delegate void DifficultyChangedDelegate(Difficulty difficulty);
-
     public static event DifficultyChangedDelegate OnDifficultyChanged;
 
 
-    private void Start()
+    private void OnEnable()
     {
+        timer = GetComponent<MyTimer>();
+        timer.remainingTime = timerInterval;
         numberDifficultyLevels = Enum.GetValues(typeof(Difficulty)).Length;
-        SetTimer();
     }
 
 
-    private static void SetTimer()
+    private void Update()
     {
-        difficultyTimer = new Timer(timerInterval);
-        difficultyTimer.Elapsed += DifficultyUpEvent;
-        difficultyTimer.AutoReset = true;
-        difficultyTimer.Enabled = true;
+        if (timer.outOfTime)
+        {
+            DifficultyUpEvent();
+            timer.remainingTime = timerInterval;
+            timer.outOfTime = false;
+        }
     }
 
     private static void DifficultyChanged()
@@ -43,20 +45,16 @@ public class DifficultyManager : MonoBehaviour
             OnDifficultyChanged(difficulty);
         }
     }
-    private static void DifficultyUpEvent(object sender, ElapsedEventArgs e)
+    private void DifficultyUpEvent()
     {
         currentDifficulty++;
+
         if (currentDifficulty < numberDifficultyLevels)
         {
             difficulty = (Difficulty) currentDifficulty;
             DifficultyChanged();
             Debug.Log(difficulty);
         }
-        else
-        {
-            difficultyTimer.Elapsed -= DifficultyUpEvent;
-            difficultyTimer.AutoReset = false;
-            difficultyTimer.Enabled = false;
-        }
+
     }
 }
