@@ -5,6 +5,8 @@ using Random = UnityEngine.Random;
 
 public class FillRooms : MonoBehaviour{
     [SerializeField] PrefabListSO spawnedObjects;
+    [SerializeField][Range(0,100)] int chanceToSpawn;
+
     List<Transform> spawnPoints = new List<Transform>();
 
 
