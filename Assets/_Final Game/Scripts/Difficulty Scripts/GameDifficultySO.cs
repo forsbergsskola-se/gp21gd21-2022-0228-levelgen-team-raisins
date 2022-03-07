@@ -18,10 +18,10 @@ public class GameDifficultySO : ScriptableObject{
     [System.NonSerialized] public UnityEvent<Difficulty> difficultyChangeEvent;
      public static Difficulty difficulty;
 
-
-     private static System.Timers.Timer difficultyTimer;
+     public static int numberDifficultyLevels;
+     private  static Timer difficultyTimer;
      //one second = 1000
-     public static float timerInterval = 4000;
+     public static float timerInterval = 6000;
      public static int currentDifficulty = 0;
 
      public Difficulty Difficulty
@@ -36,7 +36,7 @@ public class GameDifficultySO : ScriptableObject{
 
      private static void SetTimer()
      {
-         difficultyTimer = new System.Timers.Timer(timerInterval);
+         difficultyTimer = new Timer(timerInterval);
 
          difficultyTimer.Elapsed += DifficultyUpEvent;
          difficultyTimer.AutoReset = true;
@@ -45,10 +45,12 @@ public class GameDifficultySO : ScriptableObject{
 
      private static void DifficultyUpEvent(object sender, ElapsedEventArgs e)
      {
-
-
          currentDifficulty++;
-         difficulty = (Difficulty) currentDifficulty;
+         if (currentDifficulty < numberDifficultyLevels)
+         {
+             difficulty = (Difficulty) currentDifficulty;
+             Debug.Log(difficulty);
+         }
      }
 
 
@@ -61,6 +63,9 @@ public class GameDifficultySO : ScriptableObject{
         }
 
         Difficulty = Difficulty.Easy;
+        numberDifficultyLevels = Enum.GetValues(typeof(Difficulty)).Length;
+
+        SetTimer();
     }
 
     [ContextMenu("Change Difficulty to Hard")]
