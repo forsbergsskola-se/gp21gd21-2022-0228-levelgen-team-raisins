@@ -11,7 +11,7 @@ using UnityEngine.AI;
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] UnityRoomEventSO roomEventSo;
-    [SerializeField] NavMeshSurface navMesh;
+    [SerializeField] NavMeshData navMesh;
 
     [SerializeField] List<Room> rooms; //Have room fire off an event with their room script as input when validated add
                                        //to this list,and when destroy, remove from list?
@@ -32,12 +32,11 @@ public class Dungeon : MonoBehaviour{
         playerTransform.SavePosition();
         roomEventSo.roomEvent.AddListener(AddToActiveRooms);
         GenerateNewRooms();
-        navMesh = GetComponent<NavMeshSurface>();
     }
 
 
     void AddToActiveRooms(Room room){
-        Rooms.Add(room);
+        rooms.Add(room);
         GenerateNewRooms();
     }
     void Update(){
@@ -59,7 +58,7 @@ public class Dungeon : MonoBehaviour{
                 room.SpawnRooms();
             }
         }
-        //TODO:navmesh magic here
+        //TODO:Navmesh
         // List<Room> newRooms = new List<Room>();
         // foreach (var room in rooms){
         //     if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
