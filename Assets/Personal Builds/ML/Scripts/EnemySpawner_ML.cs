@@ -18,7 +18,7 @@ public class EnemySpawner_ML : MonoBehaviour
     [SerializeField] private PrefabListSO HardEnemies;
     [SerializeField] private PrefabListSO NightmareEnemies;
     private List<GameObject> currentEnemies;
-
+    public int maxEnemiesToSpawn = 5;
     private List<Transform> spawnPoints = new List<Transform>();
 
     public void SpawnEnemy()
@@ -29,12 +29,12 @@ public class EnemySpawner_ML : MonoBehaviour
     }
 
 
-    public void SpawnRandomNumberEnemies(int maxNumber)
+    public void SpawnRandomNumberEnemies()
     {
         var pointsToSpawn = GetComponentsInChildren<Transform>()
             .Where(x => x.CompareTag("EnemySpawnPoints")).ToList();
 
-        for (int i = 0; i < maxNumber; i++)
+        for (int i = 0; i < maxEnemiesToSpawn; i++)
         {
             var spawnOrNot = Random.Range(0, 2);
 
@@ -55,8 +55,7 @@ public class EnemySpawner_ML : MonoBehaviour
     {
         DifficultyManager.OnDifficultyChanged += ChangeEnemyTypes;
         ChangeEnemyTypes(Difficulty.Easy);
-        SpawnRandomNumberEnemies(6);
-    //    SetSpawnPoints();
+        SpawnRandomNumberEnemies();
     }
 
 
