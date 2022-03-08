@@ -21,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3688950541947916327, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.94285613
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3688950541947916327, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3688950541947916327, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.712972
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3688950541947916327, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3688950541947916333, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_Name
-      value: ImpBoss_Gold
+      value: ImpBoss_Gold Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3749727407989933610, guid: 365e94337fd10fe4ebde1906df413ac7, type: 3}
       propertyPath: m_Materials.Array.data[0]

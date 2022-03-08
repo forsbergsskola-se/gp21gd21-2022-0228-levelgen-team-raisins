@@ -9,7 +9,7 @@ public class DifficultyManager : MonoBehaviour
     private static Difficulty difficulty;
 
     private  int numberDifficultyLevels;
-    public float timerInterval = 6;
+    [Tooltip("Time in seconds until Difficulty Increase")] public float timerInterval = 6;
     private  int currentDifficulty = 0;
 
     private MyTimer timer;
