@@ -149,6 +149,10 @@ PrefabInstance:
       propertyPath: PrefabHashGenerator
       value: Imp
       objectReference: {fileID: 0}
+    - target: {fileID: 3288448142974003546, guid: 64cfd098f62285f42918875fef849e88, type: 3}
+      propertyPath: AlwaysReplicateAsRoot
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3288448142974003547, guid: 64cfd098f62285f42918875fef849e88, type: 3}
       propertyPath: m_RootOrder
       value: 0

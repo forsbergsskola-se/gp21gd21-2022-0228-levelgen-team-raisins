@@ -11,7 +11,7 @@ using UnityEngine.AI;
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] UnityRoomEventSO roomEventSo;
-    [SerializeField] NavMeshData navMesh;
+    [SerializeField] NavMeshSurface navMesh;
 
     [SerializeField] List<Room> rooms; //Have room fire off an event with their room script as input when validated add
                                        //to this list,and when destroy, remove from list?
