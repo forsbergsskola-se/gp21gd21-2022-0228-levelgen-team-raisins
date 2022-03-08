@@ -18,7 +18,7 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public UnityRoomEventSO roomEventSo;
-    public List<RoomValidator> RoomValidators;
+    public List<RoomValidator> roomValidators;
 
 
 
@@ -27,8 +27,12 @@ public class Room : MonoBehaviour{
     public bool IsValidRoom{
         get => isValidRoom;
         set{
+            Debug.Log(this.name + "Is valid room:"+ value);
             isValidRoom = value;
-            if (value){
+            // if (!value){
+            //     Destroy(this.gameObject);
+            // }
+             if (value){
                 roomEventSo.roomEvent.Invoke(this);
                 SpawnInternals();
             }
@@ -117,16 +121,12 @@ public class Room : MonoBehaviour{
  //       }
  //   }
 
-
-    // void AddActiveConnections(){
-    //     activeConnections++;
-    // }
-    // void ReduceActiveConnections(){
-    //     activeConnections--;
-    // }
-
-    public void ValidateRoom(bool value){
-        isValidRoom = value;
+ public void ValidateRoom(){
+        foreach (var roomValidator in roomValidators){
+            if (roomValidator.isColliding){
+                IsValidRoom = false;
+            }
+        }
         //if boids boxcast tell us the room is spawned outside the old room its allowed to spawn
     }
 

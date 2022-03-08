@@ -4924,7 +4924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242417005836767595}
   - component: {fileID: 5156207031546123943}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Connection1S
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -4976,7 +4976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6577940463593709718}
   - component: {fileID: 3039266628766789984}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Connection2N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29588,9 +29588,10 @@ GameObject:
   - component: {fileID: 3430897462366253538}
   - component: {fileID: 6798570656396848774}
   - component: {fileID: 5139523922214265257}
+  - component: {fileID: 965905850193772165}
   m_Layer: 0
   m_Name: 'Boxcollider '
-  m_TagString: Untagged
+  m_TagString: Validation_Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29603,8 +29604,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836095672848244372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.4732013, y: 1.4, z: 26.824768}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.4732013, y: -5.9111347, z: 26.824768}
+  m_LocalScale: {x: 1, y: 0.54613, z: 0.86072284}
   m_Children: []
   m_Father: {fileID: 7547029830249843694}
   m_RootOrder: 0
@@ -29617,7 +29618,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836095672848244372}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 20, y: 15, z: 50}
@@ -29635,6 +29636,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 8411093197031910180}
+  isColliding: 0
+--- !u!54 &965905850193772165
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836095672848244372}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7090401389210261349
 GameObject:
   m_ObjectHideFlags: 0
@@ -34919,7 +34937,7 @@ MonoBehaviour:
   - {fileID: 5156207031546123943}
   - {fileID: 3039266628766789984}
   roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
-  RoomValidators:
+  roomValidators:
   - {fileID: 5139523922214265257}
   activeConnections: 0
 --- !u!1 &9010610697929814648
