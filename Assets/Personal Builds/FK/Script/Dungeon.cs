@@ -5,11 +5,13 @@ using Photon.Realtime;
 using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Multiplayer.Samples.BossRoom.Client;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] UnityRoomEventSO roomEventSo;
+    [SerializeField] NavMeshSurface navMesh;
 
     [SerializeField] List<Room> rooms; //Have room fire off an event with their room script as input when validated add
                                        //to this list,and when destroy, remove from list?
@@ -30,6 +32,7 @@ public class Dungeon : MonoBehaviour{
         playerTransform.SavePosition();
         roomEventSo.roomEvent.AddListener(AddToActiveRooms);
         GenerateNewRooms();
+        navMesh = GetComponent<NavMeshSurface>();
     }
 
 
@@ -45,6 +48,7 @@ public class Dungeon : MonoBehaviour{
             playerTransform.SavePosition();
             ActivateSuspendedRooms();
             GenerateNewRooms();
+
         }
     }
 
@@ -55,6 +59,7 @@ public class Dungeon : MonoBehaviour{
                 room.SpawnRooms();
             }
         }
+        navMesh.
 
         // List<Room> newRooms = new List<Room>();
         // foreach (var room in rooms){
