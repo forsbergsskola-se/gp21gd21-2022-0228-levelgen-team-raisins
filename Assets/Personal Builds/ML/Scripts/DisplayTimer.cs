@@ -5,10 +5,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
+public enum CounterType
+{
+    Up,Down
+}
 public class DisplayTimer : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private float counter = 0;
+    public CounterType CounterType = CounterType.Up;
+
+
     void DisplayTime(float timeToDisplay)
     {
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
@@ -20,19 +27,28 @@ public class DisplayTimer : MonoBehaviour
 
     private void Update()
     {
-        counter += Time.deltaTime;
-        DisplayTime(counter);
+        if (CounterType == CounterType.Up)
+        {
+            counter += Time.deltaTime;
+            DisplayTime(counter);
+        }
     }
 
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-    //    DifficultyManager.OnTimeCountDown += DisplayTime;
+        if (CounterType == CounterType.Down)
+        {
+            DifficultyManager.OnTimeCountDown += DisplayTime;
+        }
     }
 
     private void OnDisable()
     {
-    //    DifficultyManager.OnTimeCountDown -= DisplayTime;
+        if (CounterType == CounterType.Down)
+        {
+            DifficultyManager.OnTimeCountDown -= DisplayTime;
+        }
     }
 
 }
