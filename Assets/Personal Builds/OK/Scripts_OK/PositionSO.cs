@@ -8,7 +8,7 @@ public class PositionSO : ScriptableObject{
     public Vector3 savedPosition;
 
     void OnEnable(){
-        savedPosition = position;
+        savedPosition = new Vector3(20,20,20);
     }
 
     public void SavePosition(){
