@@ -14,6 +14,7 @@ public class DisplayTimer : MonoBehaviour
     private TextMeshProUGUI text;
     private float counter = 0;
     public CounterType CounterType = CounterType.Up;
+    public string name;
 
 
     void DisplayTime(float timeToDisplay)
@@ -21,7 +22,7 @@ public class DisplayTimer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        text.text = $"Time spent: {minutes} : {seconds}";
+        text.text = $"{name}: {minutes} : {seconds}";
     }
 
 
@@ -36,10 +37,23 @@ public class DisplayTimer : MonoBehaviour
 
     void Start()
     {
+        SetName();
         text = GetComponent<TextMeshProUGUI>();
         if (CounterType == CounterType.Down)
         {
             DifficultyManager.OnTimeCountDown += DisplayTime;
+        }
+    }
+
+    private void SetName()
+    {
+        if (CounterType == CounterType.Up)
+        {
+            name = "Time spent";
+        }
+        else if (CounterType == CounterType.Down)
+        {
+            name = "Time Left";
         }
     }
 
