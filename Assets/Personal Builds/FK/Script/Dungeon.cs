@@ -59,8 +59,7 @@ public class Dungeon : MonoBehaviour{
                 room.SpawnRooms();
             }
         }
-        navMesh.
-
+        //TODO:navmesh magic here
         // List<Room> newRooms = new List<Room>();
         // foreach (var room in rooms){
         //     if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
