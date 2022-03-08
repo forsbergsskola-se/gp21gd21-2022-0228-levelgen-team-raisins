@@ -14,7 +14,6 @@ public class DungeonTest : MonoBehaviour
     private List<SpawnedRooms> SpawnedRooms = new List<SpawnedRooms>();
     public GameObject spawnRoom;
 
-
     void Start()
     {
         availableRooms = GameObject.FindGameObjectsWithTag("Room").ToList();

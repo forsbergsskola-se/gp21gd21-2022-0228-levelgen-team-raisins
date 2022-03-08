@@ -13,7 +13,7 @@ public class FillRooms : MonoBehaviour{
         set => SpawnProcentage = chanceToSpawn / 100;
     }
 
-    void Update(){ //TODO: change to on validate when that script is done.
+    void Update(){
         if (Input.GetKeyDown(KeyCode.A)){
             OnButtonpressForDebug();
         }

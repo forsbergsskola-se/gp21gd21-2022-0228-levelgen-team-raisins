@@ -8,6 +8,7 @@ using Unity.Multiplayer.Samples.BossRoom.Client;
 using Unity.Multiplayer.Samples.BossRoom.Server;
 
 using Unity.Netcode;
+
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,9 +22,9 @@ public class EnemySpawner_ML : MonoBehaviour
     private List<GameObject> currentEnemies;
     public int maxEnemiesToSpawn = 5;
 
+
     public float spawnInterval = 5;
     private MyTimer spawnTimer;
-
 
     private List<Transform> spawnPoints = new List<Transform>();
 
@@ -58,9 +59,12 @@ public class EnemySpawner_ML : MonoBehaviour
 
     void Start()
     {
+        spawnTimer = GetComponent<MyTimer>();
+        spawnTimer.remainingTime = spawnInterval;
+        spawnTimer.outOfTime = false;
         DifficultyManager.OnDifficultyChanged += ChangeEnemyTypes;
         ChangeEnemyTypes(Difficulty.Easy);
-        SpawnRandomNumberEnemies();
+        SetSpawnPoints();
     }
 
 
@@ -95,4 +99,13 @@ public class EnemySpawner_ML : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (spawnTimer.outOfTime)
+        {
+            SpawnEnemy();
+            spawnTimer.remainingTime = spawnInterval;
+            spawnTimer.outOfTime = false;
+        }
+    }
 }
