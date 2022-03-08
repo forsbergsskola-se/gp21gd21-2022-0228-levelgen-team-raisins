@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 8752645154878505280}
   m_Layer: 0
   m_Name: EnemySpawnPoint (13)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 1930168662071099074}
   m_Layer: 0
   m_Name: EnemySpawnPoint (11)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1806,7 +1806,7 @@ GameObject:
   - component: {fileID: 3991859201798455460}
   m_Layer: 0
   m_Name: EnemySpawnPoint (16)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1836,7 +1836,7 @@ GameObject:
   - component: {fileID: 2888181083635339934}
   m_Layer: 0
   m_Name: EnemySpawnPoint (17)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3542,7 +3542,7 @@ GameObject:
   - component: {fileID: 2231232368473021316}
   m_Layer: 0
   m_Name: EnemySpawnPoint (9)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3939,7 +3939,7 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 0
+  connectionType: 2
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 7822351762426177924}
@@ -4402,7 +4402,7 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 0
+  connectionType: 2
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 3242126034237957053}
@@ -4528,7 +4528,7 @@ GameObject:
   - component: {fileID: 4028729518338275535}
   m_Layer: 0
   m_Name: EnemySpawnPoint (14)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5295,7 +5295,7 @@ GameObject:
   - component: {fileID: 7608111075025641021}
   m_Layer: 0
   m_Name: EnemySpawnPoint (5)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5411,7 +5411,7 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 0
+  connectionType: 2
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 2235724691824331920}
@@ -5742,7 +5742,7 @@ GameObject:
   - component: {fileID: 7102945539471959006}
   m_Layer: 0
   m_Name: EnemySpawnPoint (6)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6029,7 +6029,7 @@ GameObject:
   - component: {fileID: 2248747444204707751}
   m_Layer: 0
   m_Name: EnemySpawnPoint (18)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6059,7 +6059,7 @@ GameObject:
   - component: {fileID: 4154496221089671841}
   m_Layer: 0
   m_Name: EnemySpawnPoint (10)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6886,7 +6886,7 @@ GameObject:
   - component: {fileID: 1407626165483829083}
   m_Layer: 0
   m_Name: EnemySpawnPoint (7)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7686,7 +7686,7 @@ GameObject:
   - component: {fileID: 6616565319011780126}
   m_Layer: 0
   m_Name: EnemySpawnPoint (12)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8941,7 +8941,7 @@ GameObject:
   - component: {fileID: 1077266039068797464}
   m_Layer: 0
   m_Name: EnemySpawnPoint (1)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10071,7 +10071,7 @@ GameObject:
   - component: {fileID: 6812511246887832992}
   m_Layer: 8
   m_Name: Hallway_Intersection_Banner
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10713,7 +10713,7 @@ GameObject:
   - component: {fileID: 3818350582790737454}
   m_Layer: 0
   m_Name: EnemySpawnPoint (15)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11995,7 +11995,7 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 0
+  connectionType: 2
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 5048941414472224746}
@@ -13456,7 +13456,7 @@ GameObject:
   - component: {fileID: 3673695866755092551}
   m_Layer: 0
   m_Name: EnemySpawnPoint (3)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13486,7 +13486,7 @@ GameObject:
   - component: {fileID: 6410786789774929144}
   m_Layer: 0
   m_Name: EnemySpawnPoint (2)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14150,7 +14150,7 @@ GameObject:
   - component: {fileID: 885498242945725286}
   m_Layer: 0
   m_Name: EnemySpawnPoint (4)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14290,7 +14290,7 @@ GameObject:
   - component: {fileID: 4278709310197581004}
   m_Layer: 0
   m_Name: EnemySpawnPoint
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17396,7 +17396,7 @@ GameObject:
   - component: {fileID: 4463558644797337803}
   m_Layer: 0
   m_Name: EnemySpawnPoint (8)
-  m_TagString: Untagged
+  m_TagString: EnemySpawnPoints
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
