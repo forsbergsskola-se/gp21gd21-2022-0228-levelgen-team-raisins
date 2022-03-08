@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Multiplayer.Samples.BossRoom.Client;
 using Unity.Multiplayer.Samples.BossRoom.Server;
+using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -41,7 +43,10 @@ public class EnemySpawner_ML : MonoBehaviour
                 var enemyNum =  Random.Range(0, currentEnemies.Count);
                 var spawnNum = Random.Range(0, pointsToSpawn.Count);
                 var enemy = Instantiate(currentEnemies[enemyNum], pointsToSpawn[spawnNum].position, Quaternion.identity);
-                enemy.GetComponent<ClientCharacter>().ChildVizObject.OnNetworkSpawn();
+             //   enemy.GetComponent<ClientCharacter>().ChildVizObject.OnNetworkSpawn();
+                enemy.GetComponent<NetworkObject>().Spawn();
+              //  enemy.GetComponent<PhysicsWrapper>().OnNetworkSpawn();
+              //  enemy.GetComponent<ServerCharacter>().OnNetworkSpawn();
             }
         }
     }
