@@ -11,10 +11,9 @@ using UnityEngine.AI;
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] UnityRoomEventSO roomEventSo;
-    [SerializeField] NavMeshSurface navMesh;
+    [SerializeField] List<NavMeshSurface> navMeshSurfaces;
+    [SerializeField] List<Room> rooms;
 
-    [SerializeField] List<Room> rooms; //Have room fire off an event with their room script as input when validated add
-                                       //to this list,and when destroy, remove from list?
     [SerializeField] float roomSpawnRange = 30f;
     [SerializeField] float roomDespawnRange = 60f;
     [SerializeField] float updatePosThreshold = 1f;
@@ -32,11 +31,20 @@ public class Dungeon : MonoBehaviour{
         playerTransform.SavePosition();
         roomEventSo.roomEvent.AddListener(AddToActiveRooms);
         GenerateNewRooms();
+        StartCoroutine("BuildNavmesh");
     }
-
+    IEnumerator BuildNavmesh(){
+        while (true){
+            foreach (var surface in navMeshSurfaces){
+                    yield return new WaitForSeconds(1);
+                    surface.BuildNavMesh();
+            }
+        }
+    }
 
     void AddToActiveRooms(Room room){
         rooms.Add(room);
+        navMeshSurfaces.Add(room.GetComponent<NavMeshSurface>());
         GenerateNewRooms();
     }
     void Update(){
@@ -51,6 +59,8 @@ public class Dungeon : MonoBehaviour{
         }
     }
 
+
+
     void GenerateNewRooms(){
         print("Generating new rooms");
         foreach (var room in rooms){
@@ -58,7 +68,6 @@ public class Dungeon : MonoBehaviour{
                 room.SpawnRooms();
             }
         }
-        //TODO:Navmesh
         // List<Room> newRooms = new List<Room>();
         // foreach (var room in rooms){
         //     if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
