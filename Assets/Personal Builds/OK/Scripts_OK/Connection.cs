@@ -137,7 +137,7 @@ public class Connection : MonoBehaviour{
     public void SpawnRoom(){
 
         attempt = 0;
-        while (ConnectionType is ConnectionType.OpenConnection &&  spawnedRoom == null && attempt < activeRoomListSo.combinedPrefabList.Count){
+        while (ConnectionType is ConnectionType.OpenConnection && attempt < activeRoomListSo.combinedPrefabList.Count){
             var randomPrefabRoom = PickRoomToSpawn();
             var randomRoom = randomPrefabRoom.GetComponent<Room>();
 
@@ -178,16 +178,6 @@ public class Connection : MonoBehaviour{
         yield return new WaitForSeconds(0.3f);
         room.transform.position = vector3;
     }
-
-    // IEnumerator ValidRoomCheck(Room room){
-    //     yield return new WaitForSeconds(0.5f);
-    //     if (!room.IsValidRoom){
-    //         Destroy(room); //TODO: instead of destroying we want to try the other connections
-    //         ConnectionType = ConnectionType.ClosedConnection;
-    //         validatedRoom = false;
-    //     }
-    // }
-
     IEnumerator DestroyOnTimer(GameObject room){
         yield return new WaitForSeconds(1f);
         Destroy(room);
@@ -243,16 +233,6 @@ public class Connection : MonoBehaviour{
         else if (newDifficulty is Difficulty.Nightmare){
             activeRoomListSo = nightmareRoomListSo;
         }
-    }
-
-    [ContextMenu("Connection type check")]
-    void Test1(){
-        ConnectionType = ConnectionType.ClosedConnection;
-    }
-
-    [ContextMenu("Connection type check2")]
-    void Test2(){
-        ConnectionType = ConnectionType.OpenConnection;
     }
 
 

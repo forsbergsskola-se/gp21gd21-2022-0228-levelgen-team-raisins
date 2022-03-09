@@ -18,21 +18,25 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] public List<Connection> connections; //Reference door scripts
-    [SerializeField] float roomSpawnDistance = 40;
-    public UnityRoomEventSO roomEventSo;
+    [SerializeField] RangesSO rangesSO;
+
+    [SerializeField] UnityEventSO onPlayerPosUpdate;
+    // public UnityRoomEventSO roomEventSo;
     public List<RoomValidator> roomValidators;
     static int id;
 
-    bool eventHasBeenInvoked;
+    //bool eventHasBeenInvoked;
 
 
-    bool isValidRoom = true;
+    [SerializeField] bool isValidRoom = false;
 
     public bool IsValidRoom{
         get => isValidRoom;
         set{
             isValidRoom = value;
             if (isValidRoom){
+                Debug.Log(name +": Is valid");
+                SpawnRooms();
                 SpawnInternals();
             }
 
@@ -44,11 +48,16 @@ public class Room : MonoBehaviour{
 
     void Awake(){
         gameObject.name = $"room {id++}";
+
     }
 
     void Start(){
-        SpawnRooms();
+        onPlayerPosUpdate.roomEvent.AddListener(SpawnRooms);
         this.GetComponent<NavMeshSurface>().BuildNavMesh();
+    }
+
+    void OnDisable(){
+        onPlayerPosUpdate.roomEvent.RemoveListener(SpawnRooms);
     }
 
 
@@ -63,9 +72,9 @@ public class Room : MonoBehaviour{
             }
         }
 
-        if (isValidRoom && !eventHasBeenInvoked){
-            eventHasBeenInvoked = true;
-        }
+        // if (isValidRoom && !eventHasBeenInvoked){
+        //     eventHasBeenInvoked = true;
+        // }
 
         return IsValidRoom;
     }
@@ -73,7 +82,8 @@ public class Room : MonoBehaviour{
 
     [ContextMenu("Spawn All Available Rooms")]
     public void SpawnRooms(){
-        if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) < roomSpawnDistance){
+        Debug.Log(name + "Spawning rooms");
+        if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) < rangesSO.roomSpawnRange.value){
             foreach (var connection in connections){
                 connection.SpawnRoom();
             }
