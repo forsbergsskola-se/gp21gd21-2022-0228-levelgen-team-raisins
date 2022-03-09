@@ -38,6 +38,8 @@ public class Connection : MonoBehaviour{
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
+    public GameObject spawnedRoom;
+
     List<int> exhaustedNumbers = new List<int>();
 
     int roomNumber;
@@ -60,7 +62,7 @@ public class Connection : MonoBehaviour{
         }
     }
 
-    bool validatedRoom;
+    //bool validatedRoom;
     int attempt;
 
 
@@ -143,7 +145,7 @@ public class Connection : MonoBehaviour{
     public Room SpawnRoom(){
 
         attempt = 0;
-        while (validatedRoom == false && attempt < activeRoomListSo.combinedPrefabList.Count){
+        while (ConnectionType is ConnectionType.OpenConnection &&  spawnedRoom == null && attempt < activeRoomListSo.combinedPrefabList.Count){
             var randomRoom = PickRoomToSpawn();
             var randomRoomRoom = randomRoom.GetComponent<Room>();
 
@@ -152,29 +154,34 @@ public class Connection : MonoBehaviour{
             foreach (var connection in randomRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
                     offset = connection.transform.position;
-                    connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+                    //connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
                 }
             }
             attempt++;
-            //instatiate room
-            var spawnedRoom = Instantiate(randomRoom,new Vector3(1000,1000,1000),quaternion.identity);
+            spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
             //validatedRoom = true;
 
             StartCoroutine(MoveOnTimer(spawnedRoom,transform.position-offset));
             // spawnedRoom.transform.position = transform.position - offset;
             var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
-            //spawnedRoomRoom.ValidateRoom();
+
+
+            if (!spawnedRoomRoom.ValidateRoom()){
+                StartCoroutine(DestroyOnTimer(spawnedRoom));
+                ConnectionType = ConnectionType.ClosedConnection;
+                break;
+            }
 
             //StartCoroutine(ValidRoomCheck(spawnedRoomRoom));
 
 
 
-            if (!spawnedRoomRoom.IsValidRoom){
-                //Destroy(spawnedRoom); //TODO: instead of destroying we want to try the other connections
-                StartCoroutine(DestroyOnTimer(spawnedRoom));
-                ConnectionType = ConnectionType.ClosedConnection;
-                break;
-            }
+            // if (!spawnedRoomRoom.IsValidRoom){
+            //     //Destroy(spawnedRoom); //TODO: instead of destroying we want to try the other connections
+            //     StartCoroutine(DestroyOnTimer(spawnedRoom));
+            //     ConnectionType = ConnectionType.ClosedConnection;
+            //     break;
+            // }
 
             foreach (var connection in spawnedRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
@@ -200,7 +207,6 @@ public class Connection : MonoBehaviour{
     // }
 
     IEnumerator DestroyOnTimer(GameObject room){
-
         yield return new WaitForSeconds(1f);
         Destroy(room);
     }
