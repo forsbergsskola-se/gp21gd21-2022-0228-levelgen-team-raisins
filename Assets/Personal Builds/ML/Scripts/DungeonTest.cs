@@ -87,19 +87,7 @@ public class DungeonTest : MonoBehaviour
         return outVector;
     }
 
-    private void RoomTest()
-    {
-        for (int i = 0; i < 6; i++)
-        {
-            var rand = Random.Range(0, availableRooms.Count - 1);
-           var bValue = availableRooms[rand].GetComponent<Room>().SingleRoomSpawn(SpawnedRooms);
 
-           Debug.Log(bValue);
-            availableRooms = GameObject.FindGameObjectsWithTag("Room").ToList();
-        }
-
-
-    }
 
     public static bool IsInside(Collider collider, Vector3 point)
     {

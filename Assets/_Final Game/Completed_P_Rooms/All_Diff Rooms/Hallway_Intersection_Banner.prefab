@@ -3944,6 +3944,7 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 7822351762426177924}
   connectionDirection: 2
+  spawnedRoom: {fileID: 0}
 --- !u!1 &2622041346691361586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4402,11 +4403,12 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 2
+  connectionType: 0
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 3242126034237957053}
   connectionDirection: 3
+  spawnedRoom: {fileID: 0}
 --- !u!1 &2844493919422609026
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,6 +5418,7 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 2235724691824331920}
   connectionDirection: 1
+  spawnedRoom: {fileID: 0}
 --- !u!1 &3627602217287223838
 GameObject:
   m_ObjectHideFlags: 0
@@ -10109,6 +10112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b4001799a711342a2f4cb4c6802755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 11400000, guid: 89f5e408dce1a1342865b5e213cf9fe5, type: 2}
   connections:
   - {fileID: 5052154296838543691}
   - {fileID: 6346399140626593573}
@@ -10117,7 +10121,6 @@ MonoBehaviour:
   roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
   roomValidators:
   - {fileID: 7083151467695240465}
-  activeConnections: 0
 --- !u!114 &4664758996694344378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12025,11 +12028,12 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 2
+  connectionType: 0
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 5048941414472224746}
   connectionDirection: 4
+  spawnedRoom: {fileID: 0}
 --- !u!1 &6842137812104941640
 GameObject:
   m_ObjectHideFlags: 0
@@ -17994,6 +17998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 6812511246887832992}
+  isColliding: 0
 --- !u!54 &1328785947109470658
 Rigidbody:
   m_ObjectHideFlags: 0

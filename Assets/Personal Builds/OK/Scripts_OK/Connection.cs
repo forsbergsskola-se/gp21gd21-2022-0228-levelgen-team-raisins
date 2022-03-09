@@ -142,26 +142,26 @@ public class Connection : MonoBehaviour{
     }
 
     [ContextMenu("Spawn Room")]
-    public Room SpawnRoom(){
+    public void SpawnRoom(){
 
         attempt = 0;
         while (ConnectionType is ConnectionType.OpenConnection &&  spawnedRoom == null && attempt < activeRoomListSo.combinedPrefabList.Count){
-            var randomRoom = PickRoomToSpawn();
-            var randomRoomRoom = randomRoom.GetComponent<Room>();
+            var randomPrefabRoom = PickRoomToSpawn();
+            var randomRoom = randomPrefabRoom.GetComponent<Room>();
 
             Vector3 offset = Vector3.zero;
 
-            foreach (var connection in randomRoomRoom.connections){
+            foreach (var connection in randomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
                     offset = connection.transform.position;
                     //connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
                 }
             }
             attempt++;
-            spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
+            spawnedRoom = Instantiate(randomPrefabRoom,transform.position - offset,quaternion.identity);
             //validatedRoom = true;
 
-            StartCoroutine(MoveOnTimer(spawnedRoom,transform.position-offset));
+            // StartCoroutine(MoveOnTimer(spawnedRoom,transform.position-offset));
             // spawnedRoom.transform.position = transform.position - offset;
             var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
 
@@ -169,27 +169,17 @@ public class Connection : MonoBehaviour{
             if (!spawnedRoomRoom.ValidateRoom()){
                 StartCoroutine(DestroyOnTimer(spawnedRoom));
                 ConnectionType = ConnectionType.ClosedConnection;
-                break;
             }
 
-            //StartCoroutine(ValidRoomCheck(spawnedRoomRoom));
-
-
-
-            // if (!spawnedRoomRoom.IsValidRoom){
-            //     //Destroy(spawnedRoom); //TODO: instead of destroying we want to try the other connections
-            //     StartCoroutine(DestroyOnTimer(spawnedRoom));
-            //     ConnectionType = ConnectionType.ClosedConnection;
-            //     break;
-            // }
-
-            foreach (var connection in spawnedRoomRoom.connections){
-                if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-                    connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+            else{
+                foreach (var connection in spawnedRoomRoom.connections){
+                    if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+                        connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+                    }
                 }
             }
+
         }
-        return null;
     }
 
     IEnumerator MoveOnTimer(GameObject room, Vector3 vector3){
