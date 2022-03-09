@@ -33,15 +33,19 @@ public class FillRooms : MonoBehaviour{
                 spawnPoints.Add(point);
                 var newObject = RandomizeSpawnedObject();
                 Instantiate(newObject, point.position, point.rotation, point);
+                SetEnemyHealth(newObject);
             }
         }
     }
 
-    private void IncreaseHealth(GameObject enemy, int increaseAmount)
+    public void IncreaseEnemyHealth(int increaseAmount)
+    {
+        healthAmount += increaseAmount;
+    }
+
+    private void SetEnemyHealth(GameObject enemy)
     {
         if (enemy.GetComponent<CharacterClassContainer>() == null) return;
-
-        healthAmount += increaseAmount;
         IntVariable theHealth = ScriptableObject.CreateInstance<IntVariable>();
         theHealth.Value = healthAmount;
         enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
