@@ -88,7 +88,7 @@ Transform:
   - {fileID: 6076440750646326779}
   - {fileID: 6076440751478533033}
   m_Father: {fileID: 8824401863552041265}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3879026683291379263
 GameObject:
@@ -256,7 +256,7 @@ Transform:
   - {fileID: 4562819313501878524}
   - {fileID: 7322786194379701594}
   m_Father: {fileID: 8824401863552041265}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5779545897915212839
 GameObject:
@@ -301,7 +301,7 @@ Transform:
   - {fileID: 5418997342473180405}
   - {fileID: 8222495193001625337}
   m_Father: {fileID: 8824401863552041265}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6836095672848244372
 GameObject:
@@ -313,8 +313,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3430897462366253538}
   - component: {fileID: 6798570656396848774}
+  - component: {fileID: 6405165358526468738}
   m_Layer: 0
-  m_Name: ValidatorCollider
+  m_Name: BoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +332,7 @@ Transform:
   m_LocalPosition: {x: 0.52, y: 14.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8824401863552041265}
+  m_Father: {fileID: 4357199940521254276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6798570656396848774
@@ -347,6 +348,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22, y: 20, z: 51}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6405165358526468738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836095672848244372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  room: {fileID: 8744064055704987671}
+  isColliding: 0
 --- !u!1 &7962623308970283351
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +452,7 @@ Transform:
   - {fileID: 3352011446372840485}
   - {fileID: 4645081519394986149}
   m_Father: {fileID: 8824401863552041265}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8551578876489956431
 GameObject:
@@ -470,7 +485,7 @@ Transform:
   - {fileID: 8235479872088738898}
   - {fileID: 8723909035736817973}
   m_Father: {fileID: 8824401863552041265}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8824401863552041264
 GameObject:
@@ -481,6 +496,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8824401863552041265}
+  - component: {fileID: 8744064055704987671}
+  - component: {fileID: 6305866009089458902}
   m_Layer: 0
   m_Name: Corridor5TilesWide12TilesLong (Nightmare) 2
   m_TagString: Untagged
@@ -499,15 +516,95 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3430897462366253538}
   - {fileID: 3871029336742926907}
   - {fileID: 6759994457389866797}
   - {fileID: 1072159559074154102}
   - {fileID: 3614739103833740747}
   - {fileID: 539223261107158572}
   - {fileID: 7655154977995022720}
+  - {fileID: 4357199940521254276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8744064055704987671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824401863552041264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b4001799a711342a2f4cb4c6802755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 11400000, guid: 89f5e408dce1a1342865b5e213cf9fe5, type: 2}
+  connections:
+  - {fileID: 4738171873229606514}
+  - {fileID: 3198255206867626421}
+  roomSpawnDistance: 40
+  roomEventSo: {fileID: 0}
+  roomValidators:
+  - {fileID: 6405165358526468738}
+--- !u!114 &6305866009089458902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824401863552041264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &9058264565863160813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4357199940521254276}
+  m_Layer: 0
+  m_Name: ValidatorCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4357199940521254276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058264565863160813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3430897462366253538}
+  m_Father: {fileID: 8824401863552041265}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &523299281957005347
 PrefabInstance:
@@ -518,7 +615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 694172940738244181, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 694172940738244181, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,6 +663,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
+--- !u!114 &4738171873229606514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5080763905397663313, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
+  m_PrefabInstance: {fileID: 523299281957005347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3198255206867626421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3107868326171296150, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
+  m_PrefabInstance: {fileID: 523299281957005347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1072159559074154102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 694172940738244181, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
@@ -3076,6 +3195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -3142,6 +3265,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -3204,6 +3331,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -3270,6 +3401,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -3402,6 +3537,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -3468,6 +3607,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3534,6 +3677,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3666,6 +3813,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -3732,6 +3883,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -3794,6 +3949,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -3926,6 +4085,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -3992,6 +4155,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -4058,6 +4225,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4124,6 +4295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -4186,6 +4361,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4248,6 +4427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -4310,6 +4493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -4376,6 +4563,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -4636,6 +4827,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4698,6 +4893,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -4764,6 +4963,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -4830,6 +5033,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -4892,6 +5099,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -4954,6 +5165,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -5020,6 +5235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5082,6 +5301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -5144,6 +5367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -5206,6 +5433,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -5334,6 +5565,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -5396,6 +5631,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -5524,6 +5763,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -5586,6 +5829,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -5648,6 +5895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -5904,6 +6155,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -5966,6 +6221,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -6028,6 +6287,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -6094,6 +6357,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -6156,6 +6423,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -6222,6 +6493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -6284,6 +6559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6412,6 +6691,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -6474,6 +6757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -6536,6 +6823,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -6598,6 +6889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -6660,6 +6955,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -7048,6 +7347,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -7176,6 +7479,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -7238,6 +7545,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -7304,6 +7615,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -7366,6 +7681,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -7432,6 +7751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -7494,6 +7817,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -7754,6 +8081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -7816,6 +8147,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -7948,6 +8283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8076,6 +8415,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -8204,6 +8547,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -8266,6 +8613,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -8328,6 +8679,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -8394,6 +8749,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614739103833740747}
     m_Modifications:
+    - target: {fileID: 2224417301425682026, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_RootOrder
       value: 46
