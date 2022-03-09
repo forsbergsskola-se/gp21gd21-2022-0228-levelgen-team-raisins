@@ -23,14 +23,14 @@ public class Dungeon : MonoBehaviour{
         get => rooms;
         set{
             rooms = value;
-            //GenerateNewRooms();
+            GenerateNewRooms();
         }
     }
 
     void Start(){
         playerTransform.SavePosition();
         roomEventSo.roomEvent.AddListener(AddToActiveRooms);
-        GenerateNewRooms();
+        StartCoroutine(nameof(GenerateNewRooms));
         StartCoroutine("BuildNavmesh");
     }
     IEnumerator BuildNavmesh(){
@@ -45,40 +45,48 @@ public class Dungeon : MonoBehaviour{
     void AddToActiveRooms(Room room){
         rooms.Add(room);
         navMeshSurfaces.Add(room.GetComponent<NavMeshSurface>());
-        GenerateNewRooms();
+        StopCoroutine(nameof(GenerateNewRooms));
+        StartCoroutine(nameof(GenerateNewRooms));
     }
+
     void Update(){
         UpdatePlayerPos(playerTransform.position);
-    }
-    void UpdatePlayerPos(Vector3 playerPosition){
-        if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > updatePosThreshold){
+        if (Vector3.Distance(playerTransform.position, playerTransform.savedPosition) > updatePosThreshold){
             playerTransform.SavePosition();
             ActivateSuspendedRooms();
-            GenerateNewRooms();
+            StopCoroutine(nameof(GenerateNewRooms));
+            StartCoroutine(nameof(GenerateNewRooms));
+        }
 
+        void UpdatePlayerPos(Vector3 playerPosition){
+            if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > updatePosThreshold){
+                playerTransform.SavePosition();
+                ActivateSuspendedRooms();
+                GenerateNewRooms();
+
+            }
         }
     }
 
 
 
-    void GenerateNewRooms(){
-        print("Generating new rooms");
-        foreach (var room in rooms){
-            if (Vector3.Distance(room.transform.position, playerTransform.savedPosition) < roomSpawnRange){
-                room.SpawnRooms();
+    IEnumerator GenerateNewRooms(){
+            print("Generating new rooms");
+            foreach (var room in rooms){
+                if (Vector3.Distance(room.transform.position, playerTransform.savedPosition) < roomSpawnRange){
+                    room.SpawnRooms();
+                    yield return new WaitForSeconds(0.3f);
+                }
+                else{
+                    foreach (var connection in room.connections){
+                        if (connection.ConnectionType is ConnectionType.OpenConnection){
+                            connection.ConnectionType = ConnectionType.SuspendedConnection;
+                        }
+                    }
+                }
+
             }
-        }
-        // List<Room> newRooms = new List<Room>();
-        // foreach (var room in rooms){
-        //     if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
-        //         newRooms = room.SpawnRooms();
-        //         foreach (var newRoom in newRooms){
-        //             rooms.Add(newRoom);
-        //         } //TODO: When we spawned the first set of rooms we need to check if we should spawn more
-        //
-        //         //here we add the new room to rooms list
-        //     }
-        // }
+
     }
 
     void ActivateSuspendedRooms(){
