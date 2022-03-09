@@ -40,21 +40,15 @@ public class Connection : MonoBehaviour{
     public ConnectionDirection connectionDirection; //TODO: remove public
 
     public GameObject spawnedRoom;
-
     List<int> exhaustedNumbers = new List<int>();
 
     int roomNumber;
 
-    [System.NonSerialized] public UnityEvent becameOpenConnectionEvent;
-
-
     public ConnectionType ConnectionType{
         get => connectionType;
         set{
-            Debug.Log(value);
             connectionType = value;
             if (value is ConnectionType.OpenConnection){
-                //becameOpenConnectionEvent.Invoke();
                 DeactivateEnvironmentBlockers();
             }
             else if (value is ConnectionType.ClosedConnection){
@@ -63,12 +57,9 @@ public class Connection : MonoBehaviour{
         }
     }
 
-    //bool validatedRoom;
     int attempt;
 
-
     void Awake(){
-        //ConnectionType = ConnectionType.UndecidedConnection;
         AssignConnectionDirection();
         if (ConnectionType == ConnectionType.OpenConnection){
             DeactivateEnvironmentBlockers();
@@ -131,7 +122,7 @@ public class Connection : MonoBehaviour{
         print(roomNumber);
         print("Count:" + activeRoomListSo.combinedPrefabList.Count);
         var room = activeRoomListSo.combinedPrefabList[roomNumber];
-        exhaustedNumbers.Add(roomNumber);
+        exhaustedNumbers.Add(roomNumber); //TODO: Not used, but should be!
         return room;
     }
 
@@ -144,14 +135,11 @@ public class Connection : MonoBehaviour{
 
             Vector3 offset = GetOffset(randomRoom);
 
-
-
-           // var validBoxCheck =  Physics.OverlapBox[transform.position - offset,]
             Collider[] intersecting = Physics.OverlapBox(transform.position - offset,
                 randomPrefabRoom.transform.localScale / 2,Quaternion.identity, LayerMask.GetMask("Validators"));
 
             if (intersecting.Length > 0){
-                ConnectionType = ConnectionType.UsedConnection;
+                ConnectionType = ConnectionType.ClosedConnection;
                 break;
             }
 
@@ -167,24 +155,6 @@ public class Connection : MonoBehaviour{
                     connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
                 }
             }
-
-
-
-            // if (!spawnedRoomRoom.ValidateRoom()){
-            //     //StartCoroutine(DestroyOnTimer(spawnedRoom));
-            //     Destroy(spawnedRoom);
-            //     ConnectionType = ConnectionType.ClosedConnection;
-            // }
-
-
-
-            // else{
-            //     foreach (var connection in spawnedRoomRoom.connections){
-            //         if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-            //             connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
-            //         }
-            //     }
-            // }
         }
     }
 
@@ -198,12 +168,6 @@ public class Connection : MonoBehaviour{
         return default;
     }
 
-    // IEnumerator DestroyOnTimer(GameObject room){
-    //     yield return new WaitForSeconds(1f);
-    //     Destroy(room);
-    // }
-
-
     bool CheckOppositeDirection(ConnectionDirection direction1, ConnectionDirection direction2){
         if (direction1 is ConnectionDirection.Up && direction2 is ConnectionDirection.Down) return true;
         else if (direction1 is ConnectionDirection.Down && direction2 is ConnectionDirection.Up) return true;
@@ -211,16 +175,6 @@ public class Connection : MonoBehaviour{
         else if (direction1 is ConnectionDirection.Right && direction2 is ConnectionDirection.Left) return true;
         else return false;
     }
-
-    //If validate fails, open up new connection
-
-    // void ValidateRoom(GameObject prefab){
-    //     //Check if room overlaps
-    //
-    //
-    //     //if successful, set validatedRoom = true;
-    // }
-
 
     void DeactivateEnvironmentBlockers(){
         foreach (var _gameObject in environmentToggleList){

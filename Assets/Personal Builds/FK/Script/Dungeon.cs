@@ -13,9 +13,9 @@ public class Dungeon : MonoBehaviour{
     [SerializeField] RangesSO rangesSO;
     [SerializeField] UnityEventSO onPlayerPosUpdate;
 
-    // void Start(){
-    //     onPlayerPosUpdate.roomEvent.Invoke();
-    // }
+    void Start(){
+        onPlayerPosUpdate.roomEvent.Invoke();
+    }
 
     void Update(){
         UpdatePlayerPos(playerTransform.position);

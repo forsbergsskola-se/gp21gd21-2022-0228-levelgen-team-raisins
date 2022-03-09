@@ -19,38 +19,9 @@ public class Room : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] public List<Connection> connections; //Reference door scripts
     [SerializeField] RangesSO rangesSO;
-
     [SerializeField] UnityEventSO onPlayerPosUpdate;
-    // public UnityRoomEventSO roomEventSo;
-    public List<RoomValidator> roomValidators;
+
     static int id;
-
-
-    //bool isValidRoom = true;
-    //bool hasBeenValidated;
-
-    // public bool IsValidRoom{
-    //     get => isValidRoom;
-    //     set{
-    //         isValidRoom = value;
-    //         if (isValidRoom && !hasBeenValidated){
-    //             Debug.Log(name +": Is valid");
-    //             hasBeenValidated = true;
-    //             foreach (var validator in roomValidators){
-    //                 validator.canTrigger = false;
-    //             }
-    //             //SpawnRooms();
-    //             //SpawnInternals();
-    //         }
-    //
-    //         // if (!isValidRoom && !hasBeenValidated){
-    //         //     Destroy(this.gameObject);
-    //         // }
-    //
-    //         hasBeenValidated = true;
-    //     }
-    // }
-
     void Awake(){
         gameObject.name = $"room {id++}";
 
@@ -64,24 +35,6 @@ public class Room : MonoBehaviour{
     void OnDisable(){
         onPlayerPosUpdate.roomEvent.RemoveListener(SpawnRooms);
     }
-
-
-    //bool isCompletedRoom;
-
-    // public bool ValidateRoom(){
-    //     Debug.Log("Validating "+ name);
-    //     foreach (var roomValidator in roomValidators){
-    //         Debug.Log(name +": Validator: "+ roomValidator.isColliding);
-    //         if (roomValidator.isColliding){
-    //             Debug.Log("is colliding");
-    //             IsValidRoom = false;
-    //             return IsValidRoom;
-    //         }
-    //     }
-    //
-    //     hasBeenValidated = true;
-    //     return IsValidRoom;
-    // }
 
     void SpawnRooms(){
         StartCoroutine(nameof(CoroutineSpawnRooms));
