@@ -12,6 +12,8 @@ public class FillRooms : MonoBehaviour{
 
     List<Transform> spawnPoints = new List<Transform>();
 
+    public MyTimer spawnTimer;
+    public float spawnInterval = 60;
     public int healthAmount = 10;
 
     float SpawnProcentage{
@@ -22,7 +24,10 @@ public class FillRooms : MonoBehaviour{
     private void Start()
     {
         DisplayTimer.OnIncreaseEnemyHealth += SetEnemyHealth;
-        SpawnRandNumberObjects(1);
+        spawnTimer = gameObject.AddComponent<MyTimer>();
+        spawnTimer.remainingTime = spawnInterval;
+        spawnTimer.outOfTime = false;
+    //    SpawnRandNumberObjects(1);
     }
 
     private void OnDisable()
@@ -31,10 +36,23 @@ public class FillRooms : MonoBehaviour{
     }
 
 
-    void Update(){
+    void Update()
+    {
+        if (spawnTimer.outOfTime)
+        {
+            SpawnOnTimer();
+        }
+
         if (Input.GetKeyDown(KeyCode.A)){
             OnButtonpressForDebug();
         }
+    }
+
+    private void SpawnOnTimer()
+    {
+        spawnTimer.outOfTime = false;
+        spawnTimer.remainingTime = spawnInterval;
+        SpawnRandNumberObjects(2);
     }
 
     void OnButtonpressForDebug(){
