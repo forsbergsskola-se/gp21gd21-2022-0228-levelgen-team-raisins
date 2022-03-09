@@ -145,6 +145,7 @@ public class Connection : MonoBehaviour{
             Vector3 offset = GetOffset(randomRoom);
 
             spawnedRoom = Instantiate(randomPrefabRoom, transform.position - offset, quaternion.identity);
+
             ConnectionType = ConnectionType.UsedConnection;
             attempt++;
 
@@ -176,17 +177,11 @@ public class Connection : MonoBehaviour{
     Vector3 GetOffset(Room room){
         foreach (var connection in room.connections){
             if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-                //connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
-                return connection.transform.position;
+               return connection.transform.position;
             }
         }
 
         return default;
-    }
-
-    IEnumerator MoveOnTimer(GameObject room, Vector3 vector3){
-        yield return new WaitForSeconds(0.3f);
-        room.transform.position = vector3;
     }
 
     IEnumerator DestroyOnTimer(GameObject room){

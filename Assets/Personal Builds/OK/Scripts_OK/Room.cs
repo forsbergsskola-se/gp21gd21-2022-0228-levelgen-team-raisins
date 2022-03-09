@@ -40,9 +40,9 @@ public class Room : MonoBehaviour{
                 SpawnInternals();
             }
 
-            // if (!isValidRoom){
-            //     Destroy(this.gameObject);
-            // }
+            if (!isValidRoom){
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -73,10 +73,6 @@ public class Room : MonoBehaviour{
                 return IsValidRoom;
             }
         }
-
-        // if (isValidRoom && !eventHasBeenInvoked){
-        //     eventHasBeenInvoked = true;
-        // }
 
         return IsValidRoom;
     }
