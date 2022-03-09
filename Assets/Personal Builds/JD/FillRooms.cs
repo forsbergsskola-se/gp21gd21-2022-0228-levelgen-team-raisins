@@ -20,12 +20,10 @@ public class FillRooms : MonoBehaviour{
     public MyTimer spawnTimer;
     public float spawnInterval = 60;
     public int healthAmount = 10;
+    public int MaxObjectsToSpawn;
     public SpawnType SpawnType;
 
-    float SpawnProcentage{
-        get => chanceToSpawn;
-        set => SpawnProcentage = chanceToSpawn / 100;
-    }
+    float SpawnProcentage => (float) chanceToSpawn/100f;
 
     private void Start()
     {
@@ -40,7 +38,7 @@ public class FillRooms : MonoBehaviour{
 
         else if(SpawnType == SpawnType.OnStart)
         {
-            SpawnRandNumberObjects(1);
+            SpawnRandNumberObjects();
         }
     }
 
@@ -65,16 +63,17 @@ public class FillRooms : MonoBehaviour{
     {
         spawnTimer.outOfTime = false;
         spawnTimer.remainingTime = spawnInterval;
-        SpawnRandNumberObjects(2);
+        SpawnRandNumberObjects();
     }
 
     void OnButtonpressForDebug(){
         var children = GetComponentsInChildren<Transform>();
-        var willItSpawnComparator = Random.Range(0f, 1f);
         foreach (var point in children){
             if (point == transform){
                 continue;
             }
+            var willItSpawnComparator = Random.Range(0f, 1f);
+
             if (willItSpawnComparator <= SpawnProcentage){
                 spawnPoints.Add(point);
                 var newObject = RandomizeSpawnedObject();
@@ -84,14 +83,14 @@ public class FillRooms : MonoBehaviour{
     }
 
 
-    private void SpawnRandNumberObjects(int maxObjectsToSpawn)
+    private void SpawnRandNumberObjects()
     {
         var points = GetComponentsInChildren<Transform>()
             .Where(x => x.CompareTag("EnemySpawnPoints")).ToList();
 
-        for (var i = 0; i < maxObjectsToSpawn; i++)
+        for (var i = 0; i < MaxObjectsToSpawn; i++)
         {
-            if (Random.Range(0, 2) == 0) continue;
+            if (Random.Range(0, 1f) ! <= SpawnProcentage) continue;
 
             var randPoint= Random.Range(0, points.Count);
             var randList= Random.Range(0, spawnedObjects.prefabLists.Count);
