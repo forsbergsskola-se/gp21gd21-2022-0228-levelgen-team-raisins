@@ -9,8 +9,8 @@ public class DisplayTimer : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private float counter = 0;
-    public float increaseEnemyHealthInterval;
-    public int enemyHealthIncreaseAmount = 10;
+    public float increaseEnemyHealthInterval = 500;
+    public int enemyHealthIncreaseAmount = 5;
 
     private MyTimer healthTimer;
     public delegate void IncreaseEnemyHealthDelegate(int increaseAmount);
@@ -50,6 +50,7 @@ public class DisplayTimer : MonoBehaviour
         healthTimer.outOfTime = false;
         //    DifficultyManager.OnTimeCountDown += DisplayTime;
     }
+
 
 
 
