@@ -4403,7 +4403,7 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 2
+  connectionType: 0
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 3242126034237957053}
@@ -10133,7 +10133,6 @@ MonoBehaviour:
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   roomValidators:
   - {fileID: 7083151467695240465}
-  isValidRoom: 0
 --- !u!114 &4664758996694344378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12011,7 +12010,7 @@ MonoBehaviour:
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
   nightmareRoomListSo: {fileID: 11400000, guid: 23148c80dfcfd3b49aeb9d0a4856a1d7, type: 2}
-  connectionType: 2
+  connectionType: 0
   gameDifficultySo: {fileID: 11400000, guid: d7aa49ef94c038443aa3a22e490b60b1, type: 2}
   environmentToggleList:
   - {fileID: 5048941414472224746}
