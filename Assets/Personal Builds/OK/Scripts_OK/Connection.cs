@@ -165,16 +165,16 @@ public class Connection : MonoBehaviour{
             var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
             //spawnedRoomRoom.ValidateRoom();
 
-            //StartCoroutine(ValidRoomCheck(spawnedRoomRoom));
+            StartCoroutine(ValidRoomCheck(spawnedRoomRoom));
 
 
 
-            if (!spawnedRoomRoom.IsValidRoom){
-                //Destroy(spawnedRoom); //TODO: instead of destroying we want to try the other connections
-                StartCoroutine(DestroyOnTimer(spawnedRoom));
-                ConnectionType = ConnectionType.ClosedConnection;
-                break;
-            }
+            // if (!spawnedRoomRoom.IsValidRoom){
+            //     //Destroy(spawnedRoom); //TODO: instead of destroying we want to try the other connections
+            //     StartCoroutine(DestroyOnTimer(spawnedRoom));
+            //     ConnectionType = ConnectionType.ClosedConnection;
+            //     break;
+            // }
 
             foreach (var connection in spawnedRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
