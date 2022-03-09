@@ -11,7 +11,6 @@ using UnityEngine.AI;
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] UnityRoomEventSO roomEventSo;
-    [SerializeField] List<NavMeshSurface> navMeshSurfaces;
     [SerializeField] List<Room> rooms;
 
     [SerializeField] float roomSpawnRange = 30f;
@@ -46,7 +45,6 @@ public class Dungeon : MonoBehaviour{
 
     void AddToActiveRooms(Room room){
         rooms.Add(room);
-        navMeshSurfaces.Add(room.GetComponent<NavMeshSurface>());
         StopCoroutine(nameof(GenerateNewRooms));
         StartCoroutine(nameof(GenerateNewRooms));
     }
