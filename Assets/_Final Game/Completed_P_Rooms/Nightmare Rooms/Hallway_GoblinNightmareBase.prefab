@@ -26586,7 +26586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4101011051302573423}
   m_Layer: 0
-  m_Name: Crystal_SpawnCointainer
+  m_Name: Hard_CrystalContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
