@@ -327,10 +327,11 @@ MonoBehaviour:
   connections:
   - {fileID: 4738171873229606514}
   - {fileID: 3198255206867626421}
-  roomSpawnDistance: 40
-  roomEventSo: {fileID: 0}
+  rangesSO: {fileID: 0}
+  onPlayerPosUpdate: {fileID: 0}
   roomValidators:
   - {fileID: 6405165358526468738}
+  isValidRoom: 1
 --- !u!114 &6305866009089458902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +443,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2535411958550150040, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 3136139519329757330, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
       propertyPath: m_Name
       value: Connection Holder
