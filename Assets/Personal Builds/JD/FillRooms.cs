@@ -53,13 +53,9 @@ public class FillRooms : MonoBehaviour{
     void Update()
     {
         if (SpawnType == SpawnType.OnTimer)
-        {
             if (spawnTimer.outOfTime)
-            {
                 SpawnOnTimer();
-            }
-        }
-
+        
         if (Input.GetKeyDown(KeyCode.A)){
             OnButtonpressForDebug();
         }
