@@ -61,7 +61,7 @@ public class FillRooms : MonoBehaviour{
         for (var i = 0; i < maxObjectsToSpawn; i++)
         {
             if (Random.Range(0, 2) == 0) continue;
-            
+
             var randPoint= Random.Range(0, points.Count);
             var randList= Random.Range(0, spawnedObjects.prefabLists.Count);
             var randPrefab= Random.Range(0, spawnedObjects.prefabLists[randList].prefabs.Count);
@@ -72,14 +72,15 @@ public class FillRooms : MonoBehaviour{
         }
     }
 
-    public void SetEnemyHealth(int increaseAmount)
+    public void SetEnemyHealth(int setHealth)
     {
-        healthAmount = increaseAmount;
+        healthAmount = setHealth;
     }
 
     private void SetupEnemy(GameObject enemy)
     {
         if (enemy.GetComponent<CharacterClassContainer>() == null) return;
+
         enemy.GetComponent<NetworkObject>().Spawn();
         var theHealth = ScriptableObject.CreateInstance<IntVariable>();
         theHealth.Value = healthAmount;
