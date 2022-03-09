@@ -22,10 +22,7 @@ public class FillRooms : MonoBehaviour{
     public int healthAmount = 10;
     public SpawnType SpawnType;
 
-    float SpawnProcentage{
-        get => chanceToSpawn;
-        set => SpawnProcentage = chanceToSpawn / 100;
-    }
+    float SpawnProcentage => (float) chanceToSpawn/100f;
 
     private void Start()
     {
@@ -70,11 +67,12 @@ public class FillRooms : MonoBehaviour{
 
     void OnButtonpressForDebug(){
         var children = GetComponentsInChildren<Transform>();
-        var willItSpawnComparator = Random.Range(0f, 1f);
         foreach (var point in children){
             if (point == transform){
                 continue;
             }
+            var willItSpawnComparator = Random.Range(0f, 1f);
+
             if (willItSpawnComparator <= SpawnProcentage){
                 spawnPoints.Add(point);
                 var newObject = RandomizeSpawnedObject();
