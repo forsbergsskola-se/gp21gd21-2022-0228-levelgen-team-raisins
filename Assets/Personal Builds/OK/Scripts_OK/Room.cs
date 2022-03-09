@@ -25,26 +25,31 @@ public class Room : MonoBehaviour{
     public List<RoomValidator> roomValidators;
     static int id;
 
-    //bool eventHasBeenInvoked;
 
+    //bool isValidRoom = true;
+    //bool hasBeenValidated;
 
-    bool isValidRoom = true;
-
-    public bool IsValidRoom{
-        get => isValidRoom;
-        set{
-            isValidRoom = value;
-            if (isValidRoom){
-                Debug.Log(name +": Is valid");
-                SpawnRooms();
-                SpawnInternals();
-            }
-
-            if (!isValidRoom){
-                Destroy(this.gameObject);
-            }
-        }
-    }
+    // public bool IsValidRoom{
+    //     get => isValidRoom;
+    //     set{
+    //         isValidRoom = value;
+    //         if (isValidRoom && !hasBeenValidated){
+    //             Debug.Log(name +": Is valid");
+    //             hasBeenValidated = true;
+    //             foreach (var validator in roomValidators){
+    //                 validator.canTrigger = false;
+    //             }
+    //             //SpawnRooms();
+    //             //SpawnInternals();
+    //         }
+    //
+    //         // if (!isValidRoom && !hasBeenValidated){
+    //         //     Destroy(this.gameObject);
+    //         // }
+    //
+    //         hasBeenValidated = true;
+    //     }
+    // }
 
     void Awake(){
         gameObject.name = $"room {id++}";
@@ -61,30 +66,38 @@ public class Room : MonoBehaviour{
     }
 
 
-    bool isCompletedRoom;
+    //bool isCompletedRoom;
 
-    public bool ValidateRoom(){
-        Debug.Log("Validating "+ name);
-        foreach (var roomValidator in roomValidators){
-            Debug.Log(name +": Validator: "+ roomValidator.isColliding);
-            if (roomValidator.isColliding){
-                Debug.Log("is colliding");
-                IsValidRoom = false;
-                return IsValidRoom;
-            }
-        }
+    // public bool ValidateRoom(){
+    //     Debug.Log("Validating "+ name);
+    //     foreach (var roomValidator in roomValidators){
+    //         Debug.Log(name +": Validator: "+ roomValidator.isColliding);
+    //         if (roomValidator.isColliding){
+    //             Debug.Log("is colliding");
+    //             IsValidRoom = false;
+    //             return IsValidRoom;
+    //         }
+    //     }
+    //
+    //     hasBeenValidated = true;
+    //     return IsValidRoom;
+    // }
 
-        return IsValidRoom;
+    void SpawnRooms(){
+        StartCoroutine(nameof(CoroutineSpawnRooms));
+        onPlayerPosUpdate.roomEvent.RemoveListener(SpawnRooms);
     }
 
 
     [ContextMenu("Spawn All Available Rooms")]
-    public void SpawnRooms(){
+    IEnumerator CoroutineSpawnRooms(){
         Debug.Log(name + "Spawning rooms");
         if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) < rangesSO.roomSpawnRange.value){
             foreach (var connection in connections){
                 connection.SpawnRoom();
+                yield return new WaitForSeconds(1f);
             }
+            SpawnInternals();
         }
     }
     public void SpawnInternals(){

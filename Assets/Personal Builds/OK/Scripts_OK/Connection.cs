@@ -106,21 +106,21 @@ public class Connection : MonoBehaviour{
     }
 
 
-    public Vector3 GetSpawnPosition(){
-        // var randomRoom = PickRoomToSpawn();
-        // var randomRoomRoom = randomRoom.GetComponent<Room>();
-        //
-        // Vector3 offset = Vector3.zero;
-        //
-        // foreach (var connection in randomRoomRoom.connections){
-        //     if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-        //         offset = connection.transform.position;
-        //     }
-        // }
-        //
-        // return transform.position - offset;
-        return default;
-    }
+    // public Vector3 GetSpawnPosition(){
+    //     // var randomRoom = PickRoomToSpawn();
+    //     // var randomRoomRoom = randomRoom.GetComponent<Room>();
+    //     //
+    //     // Vector3 offset = Vector3.zero;
+    //     //
+    //     // foreach (var connection in randomRoomRoom.connections){
+    //     //     if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+    //     //         offset = connection.transform.position;
+    //     //     }
+    //     // }
+    //     //
+    //     // return transform.position - offset;
+    //     return default;
+    // }
 
     int GetRandomNumber(int maxInt){
         return Random.Range(0, maxInt);
@@ -144,6 +144,17 @@ public class Connection : MonoBehaviour{
 
             Vector3 offset = GetOffset(randomRoom);
 
+
+
+           // var validBoxCheck =  Physics.OverlapBox[transform.position - offset,]
+            Collider[] intersecting = Physics.OverlapBox(transform.position - offset,
+                randomPrefabRoom.transform.localScale / 2,Quaternion.identity, LayerMask.GetMask("Validators"));
+
+            if (intersecting.Length > 0){
+                ConnectionType = ConnectionType.UsedConnection;
+                break;
+            }
+
             spawnedRoom = Instantiate(randomPrefabRoom, transform.position - offset, quaternion.identity);
 
             ConnectionType = ConnectionType.UsedConnection;
@@ -159,18 +170,21 @@ public class Connection : MonoBehaviour{
 
 
 
-            if (!spawnedRoomRoom.ValidateRoom()){
-                StartCoroutine(DestroyOnTimer(spawnedRoom));
-                //ConnectionType = ConnectionType.ClosedConnection;
-            }
+            // if (!spawnedRoomRoom.ValidateRoom()){
+            //     //StartCoroutine(DestroyOnTimer(spawnedRoom));
+            //     Destroy(spawnedRoom);
+            //     ConnectionType = ConnectionType.ClosedConnection;
+            // }
 
-            else{
-                foreach (var connection in spawnedRoomRoom.connections){
-                    if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-                        connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
-                    }
-                }
-            }
+
+
+            // else{
+            //     foreach (var connection in spawnedRoomRoom.connections){
+            //         if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+            //             connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+            //         }
+            //     }
+            // }
         }
     }
 
@@ -184,10 +198,10 @@ public class Connection : MonoBehaviour{
         return default;
     }
 
-    IEnumerator DestroyOnTimer(GameObject room){
-        yield return new WaitForSeconds(1f);
-        Destroy(room);
-    }
+    // IEnumerator DestroyOnTimer(GameObject room){
+    //     yield return new WaitForSeconds(1f);
+    //     Destroy(room);
+    // }
 
 
     bool CheckOppositeDirection(ConnectionDirection direction1, ConnectionDirection direction2){
@@ -200,12 +214,12 @@ public class Connection : MonoBehaviour{
 
     //If validate fails, open up new connection
 
-    void ValidateRoom(GameObject prefab){
-        //Check if room overlaps
-
-
-        //if successful, set validatedRoom = true;
-    }
+    // void ValidateRoom(GameObject prefab){
+    //     //Check if room overlaps
+    //
+    //
+    //     //if successful, set validatedRoom = true;
+    // }
 
 
     void DeactivateEnvironmentBlockers(){
