@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.Multiplayer.Samples.BossRoom;
 using UnityEngine;
@@ -15,6 +16,17 @@ public class FillRooms : MonoBehaviour{
         get => chanceToSpawn;
         set => SpawnProcentage = chanceToSpawn / 100;
     }
+
+    private void Start()
+    {
+        DisplayTimer.OnIncreaseEnemyHealth += IncreaseEnemyHealth;
+    }
+    
+    private void OnDisable()
+    {
+        DisplayTimer.OnIncreaseEnemyHealth -= IncreaseEnemyHealth;
+    }
+
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.A)){
@@ -46,7 +58,7 @@ public class FillRooms : MonoBehaviour{
     private void SetEnemyHealth(GameObject enemy)
     {
         if (enemy.GetComponent<CharacterClassContainer>() == null) return;
-        IntVariable theHealth = ScriptableObject.CreateInstance<IntVariable>();
+        var theHealth = ScriptableObject.CreateInstance<IntVariable>();
         theHealth.Value = healthAmount;
         enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
     }

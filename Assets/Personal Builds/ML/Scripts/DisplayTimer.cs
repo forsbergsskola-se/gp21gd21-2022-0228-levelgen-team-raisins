@@ -15,7 +15,7 @@ public class DisplayTimer : MonoBehaviour
     private MyTimer healthTimer;
     public delegate void IncreaseEnemyHealthDelegate(int increaseAmount);
     public static event IncreaseEnemyHealthDelegate OnIncreaseEnemyHealth;
-    
+
     void DisplayTime(float timeToDisplay)
     {
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
