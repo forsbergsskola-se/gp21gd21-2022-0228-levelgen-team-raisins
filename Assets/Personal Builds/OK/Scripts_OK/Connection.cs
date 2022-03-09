@@ -24,16 +24,17 @@ public enum ConnectionDirection{
     Right
 }
 
-[ExecuteInEditMode]//TODO:REMOVE used for debug
+[ExecuteInEditMode] //TODO:REMOVE used for debug
 public class Connection : MonoBehaviour{
     [SerializeField] DifficultyDependantRoomList activeRoomListSo;
-    [Header("Changable Difficulty Rooms")]
-    [SerializeField] DifficultyDependantRoomList easyRoomListSo;
+
+    [Header("Changable Difficulty Rooms")] [SerializeField]
+    DifficultyDependantRoomList easyRoomListSo;
+
     [SerializeField] DifficultyDependantRoomList mediumRoomListSo;
     [SerializeField] DifficultyDependantRoomList hardRoomListSo;
     [SerializeField] DifficultyDependantRoomList nightmareRoomListSo;
-    [Header("")]
-    [SerializeField] ConnectionType connectionType;
+    [Header("")] [SerializeField] ConnectionType connectionType;
     [SerializeField] GameDifficultySO gameDifficultySo;
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
@@ -75,7 +76,6 @@ public class Connection : MonoBehaviour{
         else if (ConnectionType == ConnectionType.ClosedConnection){
             ActivateEnvironmentBlockers();
         }
-
     }
 
     void Start(){
@@ -91,20 +91,22 @@ public class Connection : MonoBehaviour{
         if (this.transform.localPosition.z > Vector3.forward.z){
             connectionDirection = ConnectionDirection.Up;
         }
+
         if (this.transform.localPosition.z < Vector3.back.z){
             connectionDirection = ConnectionDirection.Down;
         }
+
         if (this.transform.localPosition.x < Vector3.left.x){
             connectionDirection = ConnectionDirection.Left;
         }
+
         if (this.transform.localPosition.x > Vector3.right.x){
             connectionDirection = ConnectionDirection.Right;
         }
     }
 
 
-    public Vector3 GetSpawnPosition()
-    {
+    public Vector3 GetSpawnPosition(){
         // var randomRoom = PickRoomToSpawn();
         // var randomRoomRoom = randomRoom.GetComponent<Room>();
         //
@@ -135,32 +137,30 @@ public class Connection : MonoBehaviour{
 
     [ContextMenu("Spawn Room")]
     public void SpawnRoom(){
-
         attempt = 0;
         while (ConnectionType is ConnectionType.OpenConnection && attempt < activeRoomListSo.combinedPrefabList.Count){
             var randomPrefabRoom = PickRoomToSpawn();
             var randomRoom = randomPrefabRoom.GetComponent<Room>();
 
-            Vector3 offset = Vector3.zero;
+            Vector3 offset = GetOffset(randomRoom);
 
-            foreach (var connection in randomRoom.connections){
+            spawnedRoom = Instantiate(randomPrefabRoom, transform.position - offset, quaternion.identity);
+            ConnectionType = ConnectionType.UsedConnection;
+            attempt++;
+
+            var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
+
+            foreach (var connection in spawnedRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-                    offset = connection.transform.position;
-                    //connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+                    connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
                 }
             }
-            attempt++;
-            spawnedRoom = Instantiate(randomPrefabRoom,transform.position - offset,quaternion.identity);
-            //validatedRoom = true;
 
-            // StartCoroutine(MoveOnTimer(spawnedRoom,transform.position-offset));
-            // spawnedRoom.transform.position = transform.position - offset;
-            var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
 
 
             if (!spawnedRoomRoom.ValidateRoom()){
                 StartCoroutine(DestroyOnTimer(spawnedRoom));
-                ConnectionType = ConnectionType.ClosedConnection;
+                //ConnectionType = ConnectionType.ClosedConnection;
             }
 
             else{
@@ -170,22 +170,32 @@ public class Connection : MonoBehaviour{
                     }
                 }
             }
-
         }
+    }
+
+    Vector3 GetOffset(Room room){
+        foreach (var connection in room.connections){
+            if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+                //connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+                return connection.transform.position;
+            }
+        }
+
+        return default;
     }
 
     IEnumerator MoveOnTimer(GameObject room, Vector3 vector3){
         yield return new WaitForSeconds(0.3f);
         room.transform.position = vector3;
     }
+
     IEnumerator DestroyOnTimer(GameObject room){
         yield return new WaitForSeconds(1f);
         Destroy(room);
     }
 
 
-
-    bool CheckOppositeDirection(ConnectionDirection direction1,ConnectionDirection direction2){
+    bool CheckOppositeDirection(ConnectionDirection direction1, ConnectionDirection direction2){
         if (direction1 is ConnectionDirection.Up && direction2 is ConnectionDirection.Down) return true;
         else if (direction1 is ConnectionDirection.Down && direction2 is ConnectionDirection.Up) return true;
         else if (direction1 is ConnectionDirection.Left && direction2 is ConnectionDirection.Right) return true;
@@ -220,7 +230,6 @@ public class Connection : MonoBehaviour{
     /// </summary>
     /// <param name="newDifficulty"></param>
     void SetActiveRoomList(Difficulty newDifficulty){
-
         if (newDifficulty is Difficulty.Easy){
             activeRoomListSo = easyRoomListSo;
         }
@@ -234,6 +243,4 @@ public class Connection : MonoBehaviour{
             activeRoomListSo = nightmareRoomListSo;
         }
     }
-
-
 }
