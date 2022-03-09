@@ -10,26 +10,23 @@ using UnityEngine.AI;
 
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
-
-    [SerializeField] float roomSpawnRange = 30f;
-    [SerializeField] float roomDespawnRange = 60f;
-    [SerializeField] float updatePosThreshold = 1f;
+    [SerializeField] RangesSO rangesSO;
 
     void Update(){
         UpdatePlayerPos(playerTransform.position);
     }
     void UpdatePlayerPos(Vector3 playerPosition){
-        if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > updatePosThreshold){
+        if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > rangesSO.updatePosThreshold.value){
             Debug.Log("updating player pos");
             playerTransform.SavePosition();
         }
     }
     void OnDrawGizmos(){
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(playerTransform.savedPosition,roomSpawnRange);
+        Gizmos.DrawWireSphere(playerTransform.savedPosition,rangesSO.roomSpawnRange.value);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(playerTransform.savedPosition, roomDespawnRange);
+        Gizmos.DrawWireSphere(playerTransform.savedPosition, rangesSO.roomDespawnRange.value);
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(playerTransform.savedPosition, updatePosThreshold);
+        Gizmos.DrawWireSphere(playerTransform.savedPosition, rangesSO.updatePosThreshold.value);
     }
 }
