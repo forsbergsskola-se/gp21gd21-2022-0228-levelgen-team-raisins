@@ -17860,7 +17860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5929968145470845014}
   - component: {fileID: 6812511246887832992}
-  - component: {fileID: 3301058048637342917}
   - component: {fileID: 2116203711370065189}
   m_Layer: 8
   m_Name: Hallway_Starting-Room
@@ -17910,20 +17909,6 @@ MonoBehaviour:
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   roomValidators:
   - {fileID: 7083151467695240465}
-  isValidRoom: 0
---- !u!65 &3301058048637342917
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5929968145470845015}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 36.096367, y: 7.965613, z: 35.914024}
-  m_Center: {x: 0.22261429, y: 3.4828064, z: -0.26826096}
 --- !u!114 &2116203711370065189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39258,14 +39243,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17970f637385b264ca9ec576ecbd3e17, type: 3}
---- !u!4 &8966159478713216801 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3325143161705299546, guid: 17970f637385b264ca9ec576ecbd3e17, type: 3}
-  m_PrefabInstance: {fileID: 5929968145282404731}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4626985002355440284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1332257092475825127, guid: 17970f637385b264ca9ec576ecbd3e17, type: 3}
+  m_PrefabInstance: {fileID: 5929968145282404731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8966159478713216801 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3325143161705299546, guid: 17970f637385b264ca9ec576ecbd3e17, type: 3}
   m_PrefabInstance: {fileID: 5929968145282404731}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6060889455767924909
@@ -40429,6 +40414,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4624227725711097875, guid: 4e2ccdc22ce4a0f4f84280f1d3025a46, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949194989826243662, guid: 4e2ccdc22ce4a0f4f84280f1d3025a46, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

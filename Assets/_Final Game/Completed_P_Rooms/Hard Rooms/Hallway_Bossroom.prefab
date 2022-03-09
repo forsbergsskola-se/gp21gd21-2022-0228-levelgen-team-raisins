@@ -27665,7 +27665,6 @@ MonoBehaviour:
   - {fileID: 2428398345517362283}
   - {fileID: 3473992036553923842}
   - {fileID: 2337695540394233290}
-  isValidRoom: 0
 --- !u!114 &8840240992742129206
 MonoBehaviour:
   m_ObjectHideFlags: 0
