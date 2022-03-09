@@ -8354,7 +8354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8948270749360752840
 Transform:
   m_ObjectHideFlags: 0
@@ -9603,15 +9603,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b4001799a711342a2f4cb4c6802755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   connections:
   - {fileID: 5052154296838543691}
   - {fileID: 6346399140626593573}
   - {fileID: 6833586521545923424}
   - {fileID: 1067329705008147413}
-  roomSpawnDistance: 40
   roomEventSo: {fileID: 0}
   roomValidators: []
+  activeConnections: 0
 --- !u!1 &5980795622472790837
 GameObject:
   m_ObjectHideFlags: 0
