@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 7382856577871304245}
   - component: {fileID: 5847335271050138031}
   - component: {fileID: 5102031322573347077}
+  - component: {fileID: 7316400396496880022}
   - component: {fileID: 7316400396496880023}
   m_Layer: 11
   m_Name: pot_piece02
@@ -125,6 +126,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &7316400396496880022
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000997464242422746}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &7316400396496880023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -134,7 +151,7 @@ BoxCollider:
   m_GameObject: {fileID: 2000997464242422746}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.5657971, y: 0.3637293, z: 0.8767269}
   m_Center: {x: -0.0000038594007, y: -0.000000007450577, z: -0.0000000745049}
@@ -149,6 +166,7 @@ GameObject:
   - component: {fileID: 7753815232026500415}
   - component: {fileID: 2638005838588601400}
   - component: {fileID: 4284841184029010151}
+  - component: {fileID: 7030181784247546204}
   - component: {fileID: 7030181784247546205}
   m_Layer: 11
   m_Name: pot_piece03
@@ -220,6 +238,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &7030181784247546204
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296223278154838804}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &7030181784247546205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -229,7 +263,7 @@ BoxCollider:
   m_GameObject: {fileID: 2296223278154838804}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.7987268, y: 1.1158249, z: 0.41721863}
   m_Center: {x: 0.0000018030405, y: -0.0000020563614, z: -0.04218236}
@@ -244,6 +278,7 @@ GameObject:
   - component: {fileID: 6754721325708043197}
   - component: {fileID: 1367051925699813941}
   - component: {fileID: 1564840416498919607}
+  - component: {fileID: 5654591369161803064}
   - component: {fileID: 5654591369161803065}
   m_Layer: 11
   m_Name: pot_piece10
@@ -315,6 +350,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &5654591369161803064
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473628906340796280}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &5654591369161803065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -324,7 +375,7 @@ BoxCollider:
   m_GameObject: {fileID: 3473628906340796280}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.6082166, y: 1.3344221, z: 1.1953827}
   m_Center: {x: -0.03870055, y: -0.0000003576281, z: -0.0000006258482}
@@ -339,6 +390,7 @@ GameObject:
   - component: {fileID: 2286299300085102041}
   - component: {fileID: 7558031564652689489}
   - component: {fileID: 4642817318826410789}
+  - component: {fileID: 5502483849794461408}
   - component: {fileID: 5502483849794461409}
   m_Layer: 11
   m_Name: pot_piece13
@@ -410,6 +462,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &5502483849794461408
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607757249131011216}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &5502483849794461409
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -419,7 +487,7 @@ BoxCollider:
   m_GameObject: {fileID: 3607757249131011216}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.22699758, y: 1.1682104, z: 0.71389276}
   m_Center: {x: -0.0000005289912, y: 0.0000005066397, z: 0.0000026822113}
@@ -434,6 +502,7 @@ GameObject:
   - component: {fileID: 2604336236866891358}
   - component: {fileID: 2266569715726176542}
   - component: {fileID: 3232500743808386206}
+  - component: {fileID: 4475943091721427540}
   - component: {fileID: 4475943091721427541}
   m_Layer: 11
   m_Name: pot_piece07
@@ -505,6 +574,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &4475943091721427540
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634297977697114140}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &4475943091721427541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -514,7 +599,7 @@ BoxCollider:
   m_GameObject: {fileID: 4634297977697114140}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.64211416, y: 1.6091908, z: 0.7452115}
   m_Center: {x: 0.00787212, y: -0.000001668931, z: 0.009240662}
@@ -529,6 +614,7 @@ GameObject:
   - component: {fileID: 3693356806295462420}
   - component: {fileID: 6703078558837742101}
   - component: {fileID: 625183139435398373}
+  - component: {fileID: 4066725310200487071}
   - component: {fileID: 4066725310200487072}
   m_Layer: 11
   m_Name: pot_piece09
@@ -600,6 +686,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &4066725310200487071
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5053604951185350353}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &4066725310200487072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -609,7 +711,7 @@ BoxCollider:
   m_GameObject: {fileID: 5053604951185350353}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.9576051, y: 0.89734405, z: 0.7308911}
   m_Center: {x: 0.0000031739473, y: 0.000000044703476, z: 0.009240006}
@@ -624,6 +726,7 @@ GameObject:
   - component: {fileID: 229747819733310392}
   - component: {fileID: 7047653032580790079}
   - component: {fileID: 125874915884235309}
+  - component: {fileID: 4024810855340819945}
   - component: {fileID: 4024810855340819946}
   m_Layer: 11
   m_Name: pot_piece12
@@ -695,6 +798,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &4024810855340819945
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302684907303077799}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &4024810855340819946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -704,7 +823,7 @@ BoxCollider:
   m_GameObject: {fileID: 5302684907303077799}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.22679946, y: 0.72139406, z: 0.6260479}
   m_Center: {x: -0.00000028312206, y: 0.0000025480997, z: -0.000003993512}
@@ -719,6 +838,7 @@ GameObject:
   - component: {fileID: 5445555453785806076}
   - component: {fileID: 6360449631928695770}
   - component: {fileID: 8501642573400431748}
+  - component: {fileID: 4014756192185213945}
   - component: {fileID: 4014756192185213946}
   m_Layer: 11
   m_Name: pot_piece11
@@ -790,6 +910,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &4014756192185213945
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5330762836205773239}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &4014756192185213946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -799,7 +935,7 @@ BoxCollider:
   m_GameObject: {fileID: 5330762836205773239}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.22698769, y: 0.7472497, z: 0.63165593}
   m_Center: {x: -0.0000004172325, y: -0.0000021308672, z: -0.0000056326408}
@@ -814,6 +950,7 @@ GameObject:
   - component: {fileID: 2565892920574879259}
   - component: {fileID: 8991731596975151401}
   - component: {fileID: 3942842255344410754}
+  - component: {fileID: 3520790560474682876}
   - component: {fileID: 3520790560474682877}
   m_Layer: 11
   m_Name: pot_piece04
@@ -885,6 +1022,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &3520790560474682876
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5661508166055991220}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &3520790560474682877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -894,7 +1047,7 @@ BoxCollider:
   m_GameObject: {fileID: 5661508166055991220}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.243263, y: 0.36409062, z: 0.57807946}
   m_Center: {x: 0, y: -0.0000022277247, z: -0.02363358}
@@ -909,6 +1062,7 @@ GameObject:
   - component: {fileID: 8818580106360345398}
   - component: {fileID: 9124652970716264194}
   - component: {fileID: 2746033278100512162}
+  - component: {fileID: 2324344701996622366}
   - component: {fileID: 2324344701996622367}
   m_Layer: 11
   m_Name: pot_piece01
@@ -980,6 +1134,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &2324344701996622366
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776880337953235026}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &2324344701996622367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -989,7 +1159,7 @@ BoxCollider:
   m_GameObject: {fileID: 6776880337953235026}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.81895995, y: 0.70327693, z: 0.7123425}
   m_Center: {x: 0.0000039041042, y: 0.00000005960466, z: 0.00000026822204}
@@ -1004,6 +1174,7 @@ GameObject:
   - component: {fileID: 4956485742093211485}
   - component: {fileID: 7150078119522765993}
   - component: {fileID: 8328842720681741872}
+  - component: {fileID: 1147113023832309412}
   - component: {fileID: 1147113023832309413}
   m_Layer: 11
   m_Name: pot_piece08
@@ -1075,6 +1246,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &1147113023832309412
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189433932490898668}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1147113023832309413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1084,7 +1271,7 @@ BoxCollider:
   m_GameObject: {fileID: 8189433932490898668}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.2695205, y: 0.9948707, z: 0.80508816}
   m_Center: {x: 0.000003427267, y: 0.0000015795238, z: 0.009239842}
@@ -1099,6 +1286,7 @@ GameObject:
   - component: {fileID: 8277994404804969434}
   - component: {fileID: 2575265848607180879}
   - component: {fileID: 2126109533107805869}
+  - component: {fileID: 146260849925775089}
   - component: {fileID: 146260849925775090}
   m_Layer: 11
   m_Name: pot_piece05
@@ -1170,6 +1358,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &146260849925775089
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8956098927103745215}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &146260849925775090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1179,7 +1383,7 @@ BoxCollider:
   m_GameObject: {fileID: 8956098927103745215}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.56042826, y: 1.1158249, z: 0.6771287}
   m_Center: {x: 0.022007868, y: -0.0000019669542, z: 0.0000030696415}
@@ -1194,6 +1398,7 @@ GameObject:
   - component: {fileID: 1501326634009535117}
   - component: {fileID: 4003893012086273006}
   - component: {fileID: 94611510085585439}
+  - component: {fileID: 72387556096851665}
   - component: {fileID: 72387556096851666}
   m_Layer: 11
   m_Name: pot_piece06
@@ -1265,6 +1470,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &72387556096851665
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172926354257509535}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 5
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &72387556096851666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1274,7 +1495,7 @@ BoxCollider:
   m_GameObject: {fileID: 9172926354257509535}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.42383552, y: 0.80080247, z: 1.0675453}
   m_Center: {x: 0.054933406, y: 0.0000023692855, z: -0.0000016689299}

@@ -11,14 +11,16 @@ using UnityEngine.AI;
 public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] RangesSO rangesSO;
+    [SerializeField] UnityEventSO onPlayerPosUpdate;
 
     void Update(){
         UpdatePlayerPos(playerTransform.position);
     }
     void UpdatePlayerPos(Vector3 playerPosition){
         if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > rangesSO.updatePosThreshold.value){
-            Debug.Log("updating player pos");
+            Debug.Log("Updating player pos");
             playerTransform.SavePosition();
+            onPlayerPosUpdate.roomEvent.Invoke();
         }
     }
     void OnDrawGizmos(){
