@@ -4,7 +4,7 @@
 
 {description}
 
-## Team Name
+## Team Unicorn Raisins
 
 {team members and roles}
 
@@ -14,13 +14,5 @@
 * Jesper Danielsson, Engineer [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
 * Felix Kjellberg, Engineer [LinkedIn](https://www.linkedin.com/in/felix-kjellberg-837321228/)
 * Mattias Lönnqvist, Engineer [LinkedIn](https://www.linkedin.com/in/mattias-l%C3%B6nnqvist-a12929230/)
-
-## Design Documents
-
-{gdd}
-
-{tdd}
-
-{art-bible}
 
 ## Media

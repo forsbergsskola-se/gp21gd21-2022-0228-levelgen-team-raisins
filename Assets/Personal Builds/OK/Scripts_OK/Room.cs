@@ -18,7 +18,7 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public UnityRoomEventSO roomEventSo;
-    public List<RoomValidator> RoomValidators;
+    public List<RoomValidator> roomValidators;
 
 
 
@@ -32,11 +32,15 @@ public class Room : MonoBehaviour{
                 roomEventSo.roomEvent.Invoke(this);
                 SpawnInternals();
             }
+
+            if (!value){
+                Destroy(this.gameObject);
+            }
         }
     }
 
     void Start(){
-        roomEventSo.roomEvent.Invoke(this);
+        //roomEventSo.roomEvent.Invoke(this);
     }
 
     public bool HasFreeConnections()
@@ -115,33 +119,45 @@ public class Room : MonoBehaviour{
  //       foreach (var connection in connections){
  //           connection.becameOpenConnectionEvent.RemoveListener(ReduceActiveConnections);
  //       }
- //   }
+ //   }4
 
 
-    // void AddActiveConnections(){
-    //     activeConnections++;
-    // }
-    // void ReduceActiveConnections(){
-    //     activeConnections--;
-    // }
+ public bool ValidateRoom(){
 
-    public void ValidateRoom(bool value){
-        isValidRoom = value;
-        //if boids boxcast tell us the room is spawned outside the old room its allowed to spawn
-    }
+     foreach (var roomValidator in roomValidators){
+         if (roomValidator.isColliding){
+             IsValidRoom = false;
+             return IsValidRoom;
+         }
+     }
+
+     return IsValidRoom;
+
+ }
+
+
 
     [ContextMenu("Spawn All Available Rooms")]
-    public List<Room> SpawnRooms(){
-        List<Room> rooms = new List<Room>();
+    public void SpawnRooms(){
+        if (ValidateRoom()){
+            StartCoroutine(nameof(SpawnRoomsOnTimer));
+        }
+
+    }
+
+    IEnumerator SpawnRoomsOnTimer(){
+        //List<Room> rooms = new List<Room>();
         foreach (var connection in connections){
 
             if (connection.ConnectionType is ConnectionType.OpenConnection){
                 var room = connection.SpawnRoom();
-                connection.ConnectionType = ConnectionType.UsedConnection;
-                rooms.Add(room);
+                //connection.ConnectionType = ConnectionType.UsedConnection;
+                //rooms.Add(room);
+                yield return new WaitForSeconds(0.4f);
             }
         }
-        return rooms;
+       // yield return rooms;
+       yield return null;
     }
 
     public void SpawnInternals(){

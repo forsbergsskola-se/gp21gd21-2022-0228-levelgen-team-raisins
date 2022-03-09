@@ -29588,7 +29588,7 @@ GameObject:
   - component: {fileID: 3430897462366253538}
   - component: {fileID: 6798570656396848774}
   - component: {fileID: 5139523922214265257}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: 'Boxcollider '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34919,7 +34919,7 @@ MonoBehaviour:
   - {fileID: 5156207031546123943}
   - {fileID: 3039266628766789984}
   roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
-  RoomValidators:
+  roomValidators:
   - {fileID: 5139523922214265257}
   activeConnections: 0
 --- !u!1 &9010610697929814648

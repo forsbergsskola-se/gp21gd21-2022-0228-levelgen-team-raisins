@@ -8,9 +8,11 @@ using UnityEngine.Events;
 public class RoomValidator : MonoBehaviour{
     [SerializeField] Room room;
 
-    void OnCollisionEnter(Collision collision){
-        if (collision.transform.CompareTag("Validation_Collider")){
-            room.IsValidRoom = false;
-        }
+    public bool isColliding;
+
+    void OnTriggerEnter(Collider other){
+        Debug.Log("Colliding with " + other);
+        room.IsValidRoom = false;
+        isColliding = true;
     }
 }
