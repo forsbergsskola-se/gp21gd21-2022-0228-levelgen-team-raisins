@@ -77,7 +77,7 @@ public class FillRooms : MonoBehaviour{
             if (willItSpawnComparator <= SpawnProcentage){
                 spawnPoints.Add(point);
                 var newObject = RandomizeSpawnedObject();
-                Instantiate(newObject, point.position, point.rotation, point);
+                Instantiate(newObject, point.position, newObject.transform.rotation, point);
             }
         }
     }
