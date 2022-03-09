@@ -55,7 +55,7 @@ public class FillRooms : MonoBehaviour{
         if (SpawnType == SpawnType.OnTimer)
             if (spawnTimer.outOfTime)
                 SpawnOnTimer();
-        
+
         if (Input.GetKeyDown(KeyCode.A)){
             OnButtonpressForDebug();
         }
@@ -103,7 +103,7 @@ public class FillRooms : MonoBehaviour{
         }
     }
 
-    public void SetEnemyHealth(int setHealth)
+    private void SetEnemyHealth(int setHealth)
     {
         healthAmount = setHealth;
     }
