@@ -32,10 +32,9 @@ public class Dungeon : MonoBehaviour{
         playerTransform.SavePosition();
         roomEventSo.roomEvent.AddListener(AddToActiveRooms);
         StartCoroutine(nameof(GenerateNewRooms));
-        StartCoroutine(nameof(BuildNavmesh));
+        StartCoroutine(nameof(UpdateNavmesh));
     }
-    IEnumerator BuildNavmesh(){
-        yield return navMeshIsComplete = false;
+    IEnumerator UpdateNavmesh(){
         while (!navMeshIsComplete){
             yield return new WaitForSeconds(1);
             rooms[rooms.Count-1].GetComponent<NavMeshSurface>().BuildNavMesh();
@@ -79,9 +78,9 @@ public class Dungeon : MonoBehaviour{
                         }
                     }
                 }
+                StopCoroutine(nameof(UpdateNavmesh));
                 navMeshIsComplete = false;
-                StopCoroutine(nameof(BuildNavmesh));
-                StartCoroutine(nameof(BuildNavmesh));
+                StartCoroutine(nameof(UpdateNavmesh));
             }
     }
 
