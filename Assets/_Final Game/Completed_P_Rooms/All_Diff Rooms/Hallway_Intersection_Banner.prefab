@@ -10129,10 +10129,11 @@ MonoBehaviour:
   - {fileID: 6346399140626593573}
   - {fileID: 6833586521545923424}
   - {fileID: 1067329705008147413}
-  roomSpawnDistance: 40
-  roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
+  rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
+  onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   roomValidators:
   - {fileID: 7083151467695240465}
+  isValidRoom: 0
 --- !u!114 &4664758996694344378
 MonoBehaviour:
   m_ObjectHideFlags: 0
