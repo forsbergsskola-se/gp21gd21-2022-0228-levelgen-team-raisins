@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8154179123098163593}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &19943683669981152
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5344179737031628592}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &41289047415982169
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7270330679442607574}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &96486196368817132
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 500867225733979057}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &103037071666644616
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2279551528839726009}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &119726814476336307
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3783212908760477986}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &123539597926557325
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8570266558470420773}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &165607043866054448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 9077142161978197965}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &323221386723946985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7599105726063030541}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &394172892648425218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2021452907742555856}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &404722053673973917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6754460047320256719}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &411383182406776961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4109636394293373702}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &426029673224864176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 9174669560421687267}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &443383595974375933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2523781242896618015}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &525682770513179776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +1940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5624776505522268048}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &682676828826949297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5951708699249248901}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &705868384117636670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4863662566301071672}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &715192050002558292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6415744862763992361}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &718347177064418747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,7 +2475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8247100541003462567}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &719142171970959035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,7 +2815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7087160588294726029}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &838557401379828406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,7 +2985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5161927321253452739}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &884920808596315744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,7 +3290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7489391148061631172}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1103287633431482049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,7 +3400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2679253983956918267}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1163823943023883932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,7 +3510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7614418852907600540}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1243671139766833984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5912155845936803441}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1284072161413930114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,7 +3730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 9032418863487007502}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1327920450004993717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,7 +3840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7817155896181666260}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1334052969522330109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,7 +4031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4697161563125209997}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1429530820420644339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4141,7 +4141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4057776151743473004}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1529329437321882412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4251,7 +4251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6944078621264343116}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1596248153809893091
 GameObject:
   m_ObjectHideFlags: 0
@@ -4966,7 +4966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5147007728214324840}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1687768974927234916
 GameObject:
   m_ObjectHideFlags: 0
@@ -5076,7 +5076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2946536903464345376}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1763819727146402323
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,7 +5186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6814121425951952138}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1764936663269361874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5676,7 +5676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1145806269640663678}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1947203213271924751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5816,7 +5816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1349764917607337677}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &1957816182099795378
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,7 +5986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7498409727055036686}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2036250465175278602
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,7 +6096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6286691502054920002}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2043177992245368122
 GameObject:
   m_ObjectHideFlags: 0
@@ -6206,7 +6206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4528817252898573766}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2072403188831977928
 GameObject:
   m_ObjectHideFlags: 0
@@ -6920,7 +6920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6600581758368845281}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2257056937108041153
 GameObject:
   m_ObjectHideFlags: 0
@@ -7060,7 +7060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8229041607047327860}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2401659219967921719
 GameObject:
   m_ObjectHideFlags: 0
@@ -7200,7 +7200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2923438604569988584}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2589754728785578080
 GameObject:
   m_ObjectHideFlags: 0
@@ -7310,7 +7310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4152804113056157845}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2595289496788204823
 GameObject:
   m_ObjectHideFlags: 0
@@ -7529,7 +7529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8735687658678464382}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2607439242878623972
 GameObject:
   m_ObjectHideFlags: 0
@@ -7669,7 +7669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8919345493837353604}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2745681882368206263
 GameObject:
   m_ObjectHideFlags: 0
@@ -7779,7 +7779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2925675189375374732}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2783871483212207853
 GameObject:
   m_ObjectHideFlags: 0
@@ -7889,7 +7889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6454813990344052485}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2826719974054929998
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,7 +7999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7856289911428404172}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2827689508805263175
 GameObject:
   m_ObjectHideFlags: 0
@@ -8201,7 +8201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3094447118726900466}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &2918192724015214959
 GameObject:
   m_ObjectHideFlags: 0
@@ -8345,7 +8345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1742655694128617884}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3023867663434025782
 GameObject:
   m_ObjectHideFlags: 0
@@ -8455,7 +8455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1150981276633062133}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3030347086644778274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8736,7 +8736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2124436984464997958}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3131321320604042613
 GameObject:
   m_ObjectHideFlags: 0
@@ -8971,7 +8971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7955745247252324325}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3176945276980302828
 GameObject:
   m_ObjectHideFlags: 0
@@ -9081,7 +9081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1668115021844537057}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3184829356054900729
 GameObject:
   m_ObjectHideFlags: 0
@@ -9191,7 +9191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2240176114219238474}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3202736790799120381
 GameObject:
   m_ObjectHideFlags: 0
@@ -9301,7 +9301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7985464434842560953}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3283797827062718851
 GameObject:
   m_ObjectHideFlags: 0
@@ -9411,7 +9411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4567072709150368687}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3315640999402929162
 GameObject:
   m_ObjectHideFlags: 0
@@ -9602,7 +9602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4467860390264782178}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3347452471510172778
 GameObject:
   m_ObjectHideFlags: 0
@@ -9712,7 +9712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3555885225485394221}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3380729225781210445
 GameObject:
   m_ObjectHideFlags: 0
@@ -9931,7 +9931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4384990911382786556}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3444632618320888918
 GameObject:
   m_ObjectHideFlags: 0
@@ -10122,7 +10122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6507253740342471231}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3494617557550322021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10327,7 +10327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5593577914583126825}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3542618397648586159
 GameObject:
   m_ObjectHideFlags: 0
@@ -10576,7 +10576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6847762288938411535}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3572357827951773510
 GameObject:
   m_ObjectHideFlags: 0
@@ -10732,7 +10732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2340723548646546576}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3638554818733502018
 GameObject:
   m_ObjectHideFlags: 0
@@ -10842,7 +10842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 346164965327976187}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3673149797489932628
 GameObject:
   m_ObjectHideFlags: 0
@@ -10952,7 +10952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 9172656578535470331}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3684399433555299852
 GameObject:
   m_ObjectHideFlags: 0
@@ -11062,7 +11062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 896131091700457762}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3769936339610200110
 GameObject:
   m_ObjectHideFlags: 0
@@ -11172,7 +11172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3071519918667541080}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3780037053352020125
 GameObject:
   m_ObjectHideFlags: 0
@@ -11282,7 +11282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8086624944740276002}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3801416854751223481
 GameObject:
   m_ObjectHideFlags: 0
@@ -11473,7 +11473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3566593227847318675}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3842597118692321955
 GameObject:
   m_ObjectHideFlags: 0
@@ -11583,7 +11583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3316941213085488982}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3848926883212656141
 GameObject:
   m_ObjectHideFlags: 0
@@ -11693,7 +11693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7249516009497297471}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3850813528801211657
 GameObject:
   m_ObjectHideFlags: 0
@@ -11803,7 +11803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6991005041490977078}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3860276397144053215
 GameObject:
   m_ObjectHideFlags: 0
@@ -11913,7 +11913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2090253633671994747}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3863614922724873756
 GameObject:
   m_ObjectHideFlags: 0
@@ -12132,7 +12132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 87019535915748045}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3916180685248313726
 GameObject:
   m_ObjectHideFlags: 0
@@ -12242,7 +12242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1770841100394332447}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3959374773884215631
 GameObject:
   m_ObjectHideFlags: 0
@@ -12433,7 +12433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6595818069237366048}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3973994557595872690
 GameObject:
   m_ObjectHideFlags: 0
@@ -12573,7 +12573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 262191705514749569}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3998200058495275806
 GameObject:
   m_ObjectHideFlags: 0
@@ -12683,7 +12683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1838053584213401032}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &3998227023563869541
 GameObject:
   m_ObjectHideFlags: 0
@@ -12740,6 +12740,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
+  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &4084203407571000901
 GameObject:
@@ -13045,7 +13046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1776400838553024666}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4166890888222440194
 GameObject:
   m_ObjectHideFlags: 0
@@ -13155,7 +13156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3445203653643221652}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4319479735811003680
 GameObject:
   m_ObjectHideFlags: 0
@@ -13265,7 +13266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8676288505540141347}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4321392255557498075
 GameObject:
   m_ObjectHideFlags: 0
@@ -13375,7 +13376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6443949715676637150}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4346033543014069667
 GameObject:
   m_ObjectHideFlags: 0
@@ -13545,7 +13546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8279709204296555179}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4404817456098622028
 GameObject:
   m_ObjectHideFlags: 0
@@ -13685,7 +13686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 9018877211243018545}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4465167638475717470
 GameObject:
   m_ObjectHideFlags: 0
@@ -13795,7 +13796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7232787903936865794}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129270292744
 GameObject:
   m_ObjectHideFlags: 0
@@ -13905,7 +13906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175973929556}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129305402118
 GameObject:
   m_ObjectHideFlags: 0
@@ -14015,7 +14016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175937775706}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129440160707
 GameObject:
   m_ObjectHideFlags: 0
@@ -14125,7 +14126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175804065951}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129516663805
 GameObject:
   m_ObjectHideFlags: 0
@@ -14235,7 +14236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127176287449249}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129563430715
 GameObject:
   m_ObjectHideFlags: 0
@@ -14375,7 +14376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127176141506737}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129749142241
 GameObject:
   m_ObjectHideFlags: 0
@@ -14485,7 +14486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127176049863101}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129856210936
 GameObject:
   m_ObjectHideFlags: 0
@@ -14595,7 +14596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175385474212}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129886925057
 GameObject:
   m_ObjectHideFlags: 0
@@ -14705,7 +14706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175382348381}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515129952447411
 GameObject:
   m_ObjectHideFlags: 0
@@ -14815,7 +14816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175309490415}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515130023841147
 GameObject:
   m_ObjectHideFlags: 0
@@ -14925,7 +14926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175246667303}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515130037330496
 GameObject:
   m_ObjectHideFlags: 0
@@ -15035,7 +15036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175231025436}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515130102169762
 GameObject:
   m_ObjectHideFlags: 0
@@ -15145,7 +15146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127175694062590}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515130107327205
 GameObject:
   m_ObjectHideFlags: 0
@@ -15285,7 +15286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127176921015099}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515130671411701
 GameObject:
   m_ObjectHideFlags: 0
@@ -15395,7 +15396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127177274417833}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515130719134140
 GameObject:
   m_ObjectHideFlags: 0
@@ -15505,7 +15506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127177217258208}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515131032350925
 GameObject:
   m_ObjectHideFlags: 0
@@ -15615,7 +15616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127176360289169}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4644515131182029435
 GameObject:
   m_ObjectHideFlags: 0
@@ -15725,7 +15726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2598127176744847655}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4658792088663146317
 GameObject:
   m_ObjectHideFlags: 0
@@ -15835,7 +15836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8139143349204200319}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4763647582632452690
 GameObject:
   m_ObjectHideFlags: 0
@@ -16062,7 +16063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2573774026739814942}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4864292896994729463
 GameObject:
   m_ObjectHideFlags: 0
@@ -16226,7 +16227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2194603478157217096}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &4970843336237685436
 GameObject:
   m_ObjectHideFlags: 0
@@ -16669,7 +16670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3609364016657365644}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5302939437201932808
 GameObject:
   m_ObjectHideFlags: 0
@@ -16841,7 +16842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2993013719439002949}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5414935627137984618
 GameObject:
   m_ObjectHideFlags: 0
@@ -16951,7 +16952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3788298086873014354}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5417542482281822012
 GameObject:
   m_ObjectHideFlags: 0
@@ -17121,7 +17122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3115266776396968750}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5451440450904215175
 GameObject:
   m_ObjectHideFlags: 0
@@ -17231,7 +17232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2855344153977369442}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5452851420757267790
 GameObject:
   m_ObjectHideFlags: 0
@@ -17341,7 +17342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1438912127184204441}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5469159505646765682
 GameObject:
   m_ObjectHideFlags: 0
@@ -17451,7 +17452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1392996820668608947}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5472154342048848525
 GameObject:
   m_ObjectHideFlags: 0
@@ -17700,7 +17701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3953648154159172624}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5521864843713440883
 GameObject:
   m_ObjectHideFlags: 0
@@ -17870,7 +17871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2780582259478889594}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5553720013501944058
 GameObject:
   m_ObjectHideFlags: 0
@@ -17980,7 +17981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5583665956538517893}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5582711551870879043
 GameObject:
   m_ObjectHideFlags: 0
@@ -18090,7 +18091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1298853855571301228}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5661287044654120968
 GameObject:
   m_ObjectHideFlags: 0
@@ -18200,7 +18201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3668430615090354456}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5695844806504465390
 GameObject:
   m_ObjectHideFlags: 0
@@ -18310,7 +18311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1283416972962849165}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5709819054774798518
 GameObject:
   m_ObjectHideFlags: 0
@@ -18531,7 +18532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3717990490466469729}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5797057768784234931
 GameObject:
   m_ObjectHideFlags: 0
@@ -18641,7 +18642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7462233928990341721}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5904622049722705515
 GameObject:
   m_ObjectHideFlags: 0
@@ -18751,7 +18752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3670687445793547082}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &5935848408058808872
 GameObject:
   m_ObjectHideFlags: 0
@@ -18891,7 +18892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2970332920918694460}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6024929559756414652
 GameObject:
   m_ObjectHideFlags: 0
@@ -19001,7 +19002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5301502708377475195}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6084600462726765433
 GameObject:
   m_ObjectHideFlags: 0
@@ -19111,7 +19112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1607890097244476472}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6132194826922522816
 GameObject:
   m_ObjectHideFlags: 0
@@ -19281,7 +19282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 26866432206833881}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6246395265658590464
 GameObject:
   m_ObjectHideFlags: 0
@@ -19561,7 +19562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5543310075133579964}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6383433808611482210
 GameObject:
   m_ObjectHideFlags: 0
@@ -19800,7 +19801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8638438240587016801}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6440317715852872387
 GameObject:
   m_ObjectHideFlags: 0
@@ -19910,7 +19911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 187004838824930185}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6450404377559788127
 GameObject:
   m_ObjectHideFlags: 0
@@ -20020,7 +20021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1656496106184376242}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6463468125687500874
 GameObject:
   m_ObjectHideFlags: 0
@@ -20130,7 +20131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7846796627329911314}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6503744889662786357
 GameObject:
   m_ObjectHideFlags: 0
@@ -20240,7 +20241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4805549748145091940}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6547966118735500902
 GameObject:
   m_ObjectHideFlags: 0
@@ -20350,7 +20351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2373240177290429407}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6573504875544633801
 GameObject:
   m_ObjectHideFlags: 0
@@ -20460,7 +20461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7868588079698317021}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6615173303810513342
 GameObject:
   m_ObjectHideFlags: 0
@@ -20694,7 +20695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5843124386713344561}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6718253113784729496
 GameObject:
   m_ObjectHideFlags: 0
@@ -20899,7 +20900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3554504557880162622}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6753325254463323066
 GameObject:
   m_ObjectHideFlags: 0
@@ -21039,7 +21040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 205658376445951427}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6886690317789640020
 GameObject:
   m_ObjectHideFlags: 0
@@ -21230,7 +21231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 375944167933509300}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6928421406485389549
 GameObject:
   m_ObjectHideFlags: 0
@@ -21370,7 +21371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1546747281189456199}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &6976192500308147107
 GameObject:
   m_ObjectHideFlags: 0
@@ -21480,7 +21481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 9200111554830105391}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7050529924132337864
 GameObject:
   m_ObjectHideFlags: 0
@@ -21590,7 +21591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1530614264074918916}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7065151838363283329
 GameObject:
   m_ObjectHideFlags: 0
@@ -21904,7 +21905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 39389793691173157}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7152225006475136535
 GameObject:
   m_ObjectHideFlags: 0
@@ -22014,7 +22015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3418619767896874974}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7163140890919524999
 GameObject:
   m_ObjectHideFlags: 0
@@ -22570,7 +22571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8557525263106244018}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7421964957084083901
 GameObject:
   m_ObjectHideFlags: 0
@@ -22872,7 +22873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8067310965236384497}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7531146883042149436
 GameObject:
   m_ObjectHideFlags: 0
@@ -23194,7 +23195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2799247518992033116}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7720935551268594546
 GameObject:
   m_ObjectHideFlags: 0
@@ -23413,7 +23414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5265105030091268327}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7782803711613634352
 GameObject:
   m_ObjectHideFlags: 0
@@ -23523,7 +23524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7980365368932280704}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7783370951760807827
 GameObject:
   m_ObjectHideFlags: 0
@@ -23663,7 +23664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5062776050123104692}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7828483165851563664
 GameObject:
   m_ObjectHideFlags: 0
@@ -23773,7 +23774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1703602198921434086}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &7896991983382649248
 GameObject:
   m_ObjectHideFlags: 0
@@ -23964,7 +23965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4907693015703480329}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8068318939776887183
 GameObject:
   m_ObjectHideFlags: 0
@@ -24155,7 +24156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 911824719185021126}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8093096635789608978
 GameObject:
   m_ObjectHideFlags: 0
@@ -24363,7 +24364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7805913390830898697}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8111436837422006728
 GameObject:
   m_ObjectHideFlags: 0
@@ -24646,7 +24647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 7540010691101402637}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8159626141497881023
 GameObject:
   m_ObjectHideFlags: 0
@@ -24756,7 +24757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 5198887555301217255}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8189429863177408553
 GameObject:
   m_ObjectHideFlags: 0
@@ -25131,7 +25132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8931514649501709749}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8304259130982476570
 GameObject:
   m_ObjectHideFlags: 0
@@ -25350,7 +25351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 3393485512678004186}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8329940199703479975
 GameObject:
   m_ObjectHideFlags: 0
@@ -25460,7 +25461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 728286156050100019}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8394865847711270309
 GameObject:
   m_ObjectHideFlags: 0
@@ -25570,7 +25571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2497112001108595484}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8402956316830512481
 GameObject:
   m_ObjectHideFlags: 0
@@ -25965,7 +25966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4407486487707396569}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8446989604149132057
 GameObject:
   m_ObjectHideFlags: 0
@@ -26237,7 +26238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6221228130326412200}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8483036286969270173
 GameObject:
   m_ObjectHideFlags: 0
@@ -26347,7 +26348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 422860739011930313}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8526755515844929579
 GameObject:
   m_ObjectHideFlags: 0
@@ -27062,7 +27063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 9209224541880544875}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8863299315844929871
 GameObject:
   m_ObjectHideFlags: 0
@@ -27267,7 +27268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1052598685708393613}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8893716824154501372
 GameObject:
   m_ObjectHideFlags: 0
@@ -27377,7 +27378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 4689025981702597884}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8934372923480497446
 GameObject:
   m_ObjectHideFlags: 0
@@ -27487,7 +27488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6627094041865947603}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8935674940093092739
 GameObject:
   m_ObjectHideFlags: 0
@@ -27597,7 +27598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 327117703189524236}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &8997639943317584769
 GameObject:
   m_ObjectHideFlags: 0
@@ -27608,6 +27609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8997639943317584768}
   - component: {fileID: 8079340796546827894}
+  - component: {fileID: 8840240992742129206}
   m_Layer: 8
   m_Name: Hallway_Bossroom
   m_TagString: Untagged
@@ -27650,18 +27652,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b4001799a711342a2f4cb4c6802755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 11400000, guid: 89f5e408dce1a1342865b5e213cf9fe5, type: 2}
   connections:
   - {fileID: 7532737496143286941}
   - {fileID: 8540939407857876211}
   - {fileID: 8088665021216772278}
   - {fileID: 2331345018614128643}
-  roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
+  rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
+  onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   roomValidators:
   - {fileID: 5537487986580946631}
   - {fileID: 2428398345517362283}
   - {fileID: 3473992036553923842}
   - {fileID: 2337695540394233290}
-  activeConnections: 0
+  isValidRoom: 0
+--- !u!114 &8840240992742129206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8997639943317584769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &9021651337727435011
 GameObject:
   m_ObjectHideFlags: 0
@@ -27771,7 +27804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 6605589883635875779}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &9036941790990391268
 GameObject:
   m_ObjectHideFlags: 0
@@ -28010,7 +28043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 905870672184993552}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &9195642707653155537
 GameObject:
   m_ObjectHideFlags: 0
@@ -28120,7 +28153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 580257078813840127}
-  m_EnableStateOnAwake: 0
+  m_EnableStateOnAwake: 1
 --- !u!1 &9214678199972066017
 GameObject:
   m_ObjectHideFlags: 0
@@ -29136,6 +29169,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3209294123278068963}
     m_Modifications:
+    - target: {fileID: -8984582022675039030, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4756247935159238973, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
       propertyPath: m_RootOrder
       value: 172
@@ -31068,6 +31105,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3209294123278068963}
     m_Modifications:
+    - target: {fileID: -8984582022675039030, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4756247935159238973, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
       propertyPath: m_RootOrder
       value: 170
@@ -32042,6 +32083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3209294123278068963}
     m_Modifications:
+    - target: {fileID: -8984582022675039030, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4756247935159238973, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
       propertyPath: m_RootOrder
       value: 175
@@ -32422,6 +32467,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3209294123278068963}
     m_Modifications:
+    - target: {fileID: -8984582022675039030, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4756247935159238973, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
       propertyPath: m_RootOrder
       value: 171
@@ -32546,6 +32595,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3209294123278068963}
     m_Modifications:
+    - target: {fileID: -8984582022675039030, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4756247935159238973, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
       propertyPath: m_RootOrder
       value: 176
@@ -32736,6 +32789,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3209294123278068963}
     m_Modifications:
+    - target: {fileID: -8984582022675039030, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
+      propertyPath: m_EnableStateOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4756247935159238973, guid: 8e4f47eeb73492f49afe2f5f41d3ca0e, type: 3}
       propertyPath: m_RootOrder
       value: 169
