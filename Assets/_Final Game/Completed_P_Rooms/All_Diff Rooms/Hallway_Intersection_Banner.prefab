@@ -5375,6 +5375,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 0
   healthAmount: 10
+  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &3528791392436169595
 GameObject:
@@ -7321,6 +7322,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
+  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &4410679362504990909
 GameObject:
@@ -10121,15 +10123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b4001799a711342a2f4cb4c6802755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 11400000, guid: 89f5e408dce1a1342865b5e213cf9fe5, type: 2}
   connections:
   - {fileID: 5052154296838543691}
   - {fileID: 6346399140626593573}
   - {fileID: 6833586521545923424}
   - {fileID: 1067329705008147413}
+  roomSpawnDistance: 40
   roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
   roomValidators:
   - {fileID: 7083151467695240465}
-  activeConnections: 0
 --- !u!114 &4664758996694344378
 MonoBehaviour:
   m_ObjectHideFlags: 0
