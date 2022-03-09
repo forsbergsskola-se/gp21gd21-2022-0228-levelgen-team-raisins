@@ -9,14 +9,33 @@ public class DisplayTimer : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private float counter = 0;
+    public float increaseEnemyHealthInterval;
+
+
+
+    public delegate void IncreaseEnemyHealthDelegate();
+    public static event IncreaseEnemyHealthDelegate OnIncreaseEnemyHealth;
+
+
+
     void DisplayTime(float timeToDisplay)
     {
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
+        if (increaseEnemyHealthInterval % timeToDisplay == 0)
+        {
+            IncreaseEnemyHealth();
+        }
+
         text.text = $"Time spent: {minutes} : {seconds}";
     }
 
+
+    private void IncreaseEnemyHealth()
+    {
+        OnIncreaseEnemyHealth?.Invoke();
+    }
 
     private void Update()
     {

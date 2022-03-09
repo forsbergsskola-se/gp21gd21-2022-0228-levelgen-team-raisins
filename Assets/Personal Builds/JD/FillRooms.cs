@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Multiplayer.Samples.BossRoom;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,6 +8,8 @@ public class FillRooms : MonoBehaviour{
     [SerializeField][Range(0,100)] int chanceToSpawn;
 
     List<Transform> spawnPoints = new List<Transform>();
+
+    public int healthAmount = 10;
 
     float SpawnProcentage{
         get => chanceToSpawn;
@@ -32,6 +35,16 @@ public class FillRooms : MonoBehaviour{
                 Instantiate(newObject, point.position, point.rotation, point);
             }
         }
+    }
+
+    private void IncreaseHealth(GameObject enemy, int increaseAmount)
+    {
+        if (enemy.GetComponent<CharacterClassContainer>() == null) return;
+
+        healthAmount += increaseAmount;
+        IntVariable theHealth = ScriptableObject.CreateInstance<IntVariable>();
+        theHealth.Value = healthAmount;
+        enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
     }
 
     GameObject RandomizeSpawnedObject(){
