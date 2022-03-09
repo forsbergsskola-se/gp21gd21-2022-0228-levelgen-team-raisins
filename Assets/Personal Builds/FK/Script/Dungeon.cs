@@ -62,7 +62,8 @@ public class Dungeon : MonoBehaviour{
             if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > updatePosThreshold){
                 playerTransform.SavePosition();
                 ActivateSuspendedRooms();
-                GenerateNewRooms();
+                StopCoroutine(nameof(GenerateNewRooms));
+                StartCoroutine(nameof(GenerateNewRooms));
 
             }
         }
