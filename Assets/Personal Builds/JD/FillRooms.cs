@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Multiplayer.Samples.BossRoom;
+using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -19,12 +21,13 @@ public class FillRooms : MonoBehaviour{
 
     private void Start()
     {
-        DisplayTimer.OnIncreaseEnemyHealth += IncreaseEnemyHealth;
+        DisplayTimer.OnIncreaseEnemyHealth += SetEnemyHealth;
+        SpawnOnStart(1);
     }
 
     private void OnDisable()
     {
-        DisplayTimer.OnIncreaseEnemyHealth -= IncreaseEnemyHealth;
+        DisplayTimer.OnIncreaseEnemyHealth -= SetEnemyHealth;
     }
 
 
@@ -49,14 +52,28 @@ public class FillRooms : MonoBehaviour{
         }
     }
 
-    public void IncreaseEnemyHealth(int increaseAmount)
+
+    private void SpawnOnStart(int objectsToSpawn)
     {
-        healthAmount += increaseAmount;
+        var points = GetComponentsInChildren<Transform>()
+            .Where(x => x.CompareTag("EnemySpawnPoints")).ToList();
+
+        for (int i = 0; i < objectsToSpawn; i++)
+        {
+            var newObject = Instantiate(spawnedObjects.prefabLists[0].prefabs[0], points[0].position, Quaternion.identity);
+            SetEnemyHealth(newObject);
+        }
+    }
+
+    public void SetEnemyHealth(int increaseAmount)
+    {
+        healthAmount = increaseAmount;
     }
 
     private void SetEnemyHealth(GameObject enemy)
     {
         if (enemy.GetComponent<CharacterClassContainer>() == null) return;
+        enemy.GetComponent<NetworkObject>().Spawn();
         var theHealth = ScriptableObject.CreateInstance<IntVariable>();
         theHealth.Value = healthAmount;
         enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
