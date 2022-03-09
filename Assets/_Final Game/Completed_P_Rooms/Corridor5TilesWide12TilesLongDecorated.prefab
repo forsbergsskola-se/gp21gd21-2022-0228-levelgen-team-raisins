@@ -29588,7 +29588,7 @@ GameObject:
   - component: {fileID: 3430897462366253538}
   - component: {fileID: 6798570656396848774}
   - component: {fileID: 5139523922214265257}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: 'Boxcollider '
   m_TagString: Untagged
   m_Icon: {fileID: 0}

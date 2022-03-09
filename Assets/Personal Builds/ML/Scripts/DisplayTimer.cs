@@ -9,6 +9,13 @@ public class DisplayTimer : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private float counter = 0;
+    public float increaseEnemyHealthInterval = 500;
+    public int enemyHealthIncreaseAmount = 5;
+
+    private MyTimer healthTimer;
+    public delegate void IncreaseEnemyHealthDelegate(int increaseAmount);
+    public static event IncreaseEnemyHealthDelegate OnIncreaseEnemyHealth;
+
     void DisplayTime(float timeToDisplay)
     {
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
@@ -17,18 +24,35 @@ public class DisplayTimer : MonoBehaviour
         text.text = $"Time spent: {minutes} : {seconds}";
     }
 
+    private void IncreaseEnemyHealth()
+    {
+        healthTimer.remainingTime = increaseEnemyHealthInterval;
+        healthTimer.outOfTime = false;
+        OnIncreaseEnemyHealth?.Invoke(enemyHealthIncreaseAmount);
+    }
 
     private void Update()
     {
         counter += Time.deltaTime;
         DisplayTime(counter);
+
+        if (healthTimer.outOfTime)
+        {
+           IncreaseEnemyHealth();
+        }
     }
 
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-    //    DifficultyManager.OnTimeCountDown += DisplayTime;
+        healthTimer = gameObject.AddComponent<MyTimer>();
+        healthTimer.remainingTime = increaseEnemyHealthInterval;
+        healthTimer.outOfTime = false;
+        //    DifficultyManager.OnTimeCountDown += DisplayTime;
     }
+
+
+
 
     private void OnDisable()
     {

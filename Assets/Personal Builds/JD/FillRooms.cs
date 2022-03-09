@@ -1,17 +1,32 @@
+using System;
 using System.Collections.Generic;
+using Unity.Multiplayer.Samples.BossRoom;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class FillRooms : MonoBehaviour{
-    [SerializeField] PrefabListSO spawnedObjects;
+    [SerializeField] DifficultyDependantPrefabList spawnedObjects;
     [SerializeField][Range(0,100)] int chanceToSpawn;
 
     List<Transform> spawnPoints = new List<Transform>();
+
+    public int healthAmount = 10;
 
     float SpawnProcentage{
         get => chanceToSpawn;
         set => SpawnProcentage = chanceToSpawn / 100;
     }
+
+    private void Start()
+    {
+        DisplayTimer.OnIncreaseEnemyHealth += IncreaseEnemyHealth;
+    }
+
+    private void OnDisable()
+    {
+        DisplayTimer.OnIncreaseEnemyHealth -= IncreaseEnemyHealth;
+    }
+
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.A)){
@@ -23,6 +38,9 @@ public class FillRooms : MonoBehaviour{
         var children = GetComponentsInChildren<Transform>();
         var willItSpawnComparator = Random.Range(0f, 1f);
         foreach (var point in children){
+            if (point == transform){
+                continue;
+            }
             if (willItSpawnComparator <= SpawnProcentage){
                 spawnPoints.Add(point);
                 var newObject = RandomizeSpawnedObject();
@@ -31,9 +49,23 @@ public class FillRooms : MonoBehaviour{
         }
     }
 
+    public void IncreaseEnemyHealth(int increaseAmount)
+    {
+        healthAmount += increaseAmount;
+    }
+
+    private void SetEnemyHealth(GameObject enemy)
+    {
+        if (enemy.GetComponent<CharacterClassContainer>() == null) return;
+        var theHealth = ScriptableObject.CreateInstance<IntVariable>();
+        theHealth.Value = healthAmount;
+        enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
+    }
+
     GameObject RandomizeSpawnedObject(){
-        var spawnedObject = Random.Range(0, spawnedObjects.prefabs.Count);
-        var objectToSpawn = spawnedObjects.prefabs[spawnedObject];
+        var spawnedObject = Random.Range(0, spawnedObjects.combinedPrefabList.Count);
+        var objectToSpawn = spawnedObjects.combinedPrefabList[spawnedObject];
+        SetEnemyHealth(objectToSpawn);
         return objectToSpawn;
     }
 }
