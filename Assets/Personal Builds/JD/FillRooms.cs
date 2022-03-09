@@ -21,7 +21,7 @@ public class FillRooms : MonoBehaviour{
     {
         DisplayTimer.OnIncreaseEnemyHealth += IncreaseEnemyHealth;
     }
-    
+
     private void OnDisable()
     {
         DisplayTimer.OnIncreaseEnemyHealth -= IncreaseEnemyHealth;
@@ -45,7 +45,6 @@ public class FillRooms : MonoBehaviour{
                 spawnPoints.Add(point);
                 var newObject = RandomizeSpawnedObject();
                 Instantiate(newObject, point.position, point.rotation, point);
-                SetEnemyHealth(newObject);
             }
         }
     }
@@ -66,6 +65,7 @@ public class FillRooms : MonoBehaviour{
     GameObject RandomizeSpawnedObject(){
         var spawnedObject = Random.Range(0, spawnedObjects.combinedPrefabList.Count);
         var objectToSpawn = spawnedObjects.combinedPrefabList[spawnedObject];
+        SetEnemyHealth(objectToSpawn);
         return objectToSpawn;
     }
 }

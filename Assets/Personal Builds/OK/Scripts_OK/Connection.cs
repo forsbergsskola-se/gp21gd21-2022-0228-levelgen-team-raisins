@@ -157,18 +157,53 @@ public class Connection : MonoBehaviour{
             }
             attempt++;
             //instatiate room
-            var spawnedRoom = Instantiate(randomRoom,transform.position - offset,quaternion.identity);
-            validatedRoom = true;
-            return randomRoomRoom;
-            // if (!spawnedRoom.GetComponent<Room>().IsValidRoom){
-            //     DestroyImmediate(spawnedRoom); //TODO: instead of destroying we want to try the other connections
-            // }
-            // if (ValidateRoom()){
-            //     break;
-            // }
+            var spawnedRoom = Instantiate(randomRoom,new Vector3(1000,1000,1000),quaternion.identity);
+            //validatedRoom = true;
+
+            StartCoroutine(MoveOnTimer(spawnedRoom,transform.position-offset));
+            // spawnedRoom.transform.position = transform.position - offset;
+            var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
+            //spawnedRoomRoom.ValidateRoom();
+
+            //StartCoroutine(ValidRoomCheck(spawnedRoomRoom));
+
+
+
+            if (!spawnedRoomRoom.IsValidRoom){
+                //Destroy(spawnedRoom); //TODO: instead of destroying we want to try the other connections
+                StartCoroutine(DestroyOnTimer(spawnedRoom));
+                ConnectionType = ConnectionType.ClosedConnection;
+                break;
+            }
+
+            foreach (var connection in spawnedRoomRoom.connections){
+                if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+                    connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+                }
+            }
         }
         return null;
     }
+
+    IEnumerator MoveOnTimer(GameObject room, Vector3 vector3){
+        yield return new WaitForSeconds(0.3f);
+        room.transform.position = vector3;
+    }
+
+    IEnumerator ValidRoomCheck(Room room){
+        yield return new WaitForSeconds(0.5f);
+        if (!room.IsValidRoom){
+            Destroy(room); //TODO: instead of destroying we want to try the other connections
+            ConnectionType = ConnectionType.ClosedConnection;
+        }
+    }
+
+    IEnumerator DestroyOnTimer(GameObject room){
+
+        yield return new WaitForSeconds(1f);
+        Destroy(room);
+    }
+
 
 
     bool CheckOppositeDirection(ConnectionDirection direction1,ConnectionDirection direction2){
