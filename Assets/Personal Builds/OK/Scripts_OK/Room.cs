@@ -44,13 +44,13 @@ public class Room : MonoBehaviour{
 
     void Awake(){
         gameObject.name = $"room {id++}";
-        this.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     void Start(){
         SpawnRooms();
+        this.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
-    
+
 
     bool isCompletedRoom;
 
@@ -79,20 +79,6 @@ public class Room : MonoBehaviour{
             }
         }
     }
-
-    // IEnumerator SpawnRoomsOnTimer(){
-    //     Debug.Log(name + "has spawned");
-    //     foreach (var connection in connections){
-    //         if (connection.ConnectionType is ConnectionType.OpenConnection){
-    //             connection.SpawnRoom();
-    //             yield return new WaitForSeconds(0.4f);
-    //         }
-    //     }
-    //
-    //     roomEventSo.roomEvent.Invoke(this);
-    //     yield return null;
-    // }
-
     public void SpawnInternals(){
         //This should spawn all items inside the room.
         //The items need to be picked at random from a list of possible items

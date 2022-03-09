@@ -125,15 +125,7 @@ public class Connection : MonoBehaviour{
     }
 
     GameObject PickRoomToSpawn(){
-        //Randomize with seed which room gets picked
-        //SpawnRoom();
-
-
         roomNumber = GetRandomNumber(activeRoomListSo.combinedPrefabList.Count);
-        // while (exhaustedNumbers.Contains(roomNumber) && exhaustedNumbers.Count < activeRoomListSo.combinedPrefabList.Count){
-        //     roomNumber = GetRandomNumber(activeRoomListSo.combinedPrefabList.Count);
-        // }
-
         print(roomNumber);
         print("Count:" + activeRoomListSo.combinedPrefabList.Count);
         var room = activeRoomListSo.combinedPrefabList[roomNumber];
