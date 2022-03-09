@@ -190,13 +190,14 @@ public class Connection : MonoBehaviour{
         room.transform.position = vector3;
     }
 
-    IEnumerator ValidRoomCheck(Room room){
-        yield return new WaitForSeconds(0.5f);
-        if (!room.IsValidRoom){
-            Destroy(room); //TODO: instead of destroying we want to try the other connections
-            ConnectionType = ConnectionType.ClosedConnection;
-        }
-    }
+    // IEnumerator ValidRoomCheck(Room room){
+    //     yield return new WaitForSeconds(0.5f);
+    //     if (!room.IsValidRoom){
+    //         Destroy(room); //TODO: instead of destroying we want to try the other connections
+    //         ConnectionType = ConnectionType.ClosedConnection;
+    //         validatedRoom = false;
+    //     }
+    // }
 
     IEnumerator DestroyOnTimer(GameObject room){
 

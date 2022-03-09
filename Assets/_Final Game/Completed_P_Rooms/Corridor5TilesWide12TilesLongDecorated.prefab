@@ -34919,7 +34919,7 @@ MonoBehaviour:
   - {fileID: 5156207031546123943}
   - {fileID: 3039266628766789984}
   roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
-  RoomValidators:
+  roomValidators:
   - {fileID: 5139523922214265257}
   activeConnections: 0
 --- !u!1 &9010610697929814648

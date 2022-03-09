@@ -1,8 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Multiplayer.Samples.BossRoom;
+using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
+public enum SpawnType
+{
+    OnStart, OnTimer
+}
 
 public class FillRooms : MonoBehaviour{
     [SerializeField] DifficultyDependantPrefabList spawnedObjects;
@@ -10,7 +17,10 @@ public class FillRooms : MonoBehaviour{
 
     List<Transform> spawnPoints = new List<Transform>();
 
+    public MyTimer spawnTimer;
+    public float spawnInterval = 60;
     public int healthAmount = 10;
+    public SpawnType SpawnType;
 
     float SpawnProcentage{
         get => chanceToSpawn;
@@ -19,19 +29,43 @@ public class FillRooms : MonoBehaviour{
 
     private void Start()
     {
-        DisplayTimer.OnIncreaseEnemyHealth += IncreaseEnemyHealth;
+        DisplayTimer.OnIncreaseEnemyHealth += SetEnemyHealth;
+
+        if (SpawnType == SpawnType.OnTimer)
+        {
+            spawnTimer = gameObject.AddComponent<MyTimer>();
+            spawnTimer.remainingTime = spawnInterval;
+            spawnTimer.outOfTime = false;
+        }
+
+        else if(SpawnType == SpawnType.OnStart)
+        {
+            SpawnRandNumberObjects(1);
+        }
     }
 
     private void OnDisable()
     {
-        DisplayTimer.OnIncreaseEnemyHealth -= IncreaseEnemyHealth;
+        DisplayTimer.OnIncreaseEnemyHealth -= SetEnemyHealth;
     }
 
 
-    void Update(){
+    void Update()
+    {
+        if (SpawnType == SpawnType.OnTimer)
+            if (spawnTimer.outOfTime)
+                SpawnOnTimer();
+        
         if (Input.GetKeyDown(KeyCode.A)){
             OnButtonpressForDebug();
         }
+    }
+
+    private void SpawnOnTimer()
+    {
+        spawnTimer.outOfTime = false;
+        spawnTimer.remainingTime = spawnInterval;
+        SpawnRandNumberObjects(2);
     }
 
     void OnButtonpressForDebug(){
@@ -49,14 +83,36 @@ public class FillRooms : MonoBehaviour{
         }
     }
 
-    public void IncreaseEnemyHealth(int increaseAmount)
+
+    private void SpawnRandNumberObjects(int maxObjectsToSpawn)
     {
-        healthAmount += increaseAmount;
+        var points = GetComponentsInChildren<Transform>()
+            .Where(x => x.CompareTag("EnemySpawnPoints")).ToList();
+
+        for (var i = 0; i < maxObjectsToSpawn; i++)
+        {
+            if (Random.Range(0, 2) == 0) continue;
+
+            var randPoint= Random.Range(0, points.Count);
+            var randList= Random.Range(0, spawnedObjects.prefabLists.Count);
+            var randPrefab= Random.Range(0, spawnedObjects.prefabLists[randList].prefabs.Count);
+            var objectToSpawn = spawnedObjects.prefabLists[randList].prefabs[randPrefab];
+
+            var newObject = Instantiate(objectToSpawn, points[randPoint].position, Quaternion.identity);
+            SetupEnemy(newObject);
+        }
     }
 
-    private void SetEnemyHealth(GameObject enemy)
+    public void SetEnemyHealth(int setHealth)
+    {
+        healthAmount = setHealth;
+    }
+
+    private void SetupEnemy(GameObject enemy)
     {
         if (enemy.GetComponent<CharacterClassContainer>() == null) return;
+
+        enemy.GetComponent<NetworkObject>().Spawn();
         var theHealth = ScriptableObject.CreateInstance<IntVariable>();
         theHealth.Value = healthAmount;
         enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
@@ -65,7 +121,7 @@ public class FillRooms : MonoBehaviour{
     GameObject RandomizeSpawnedObject(){
         var spawnedObject = Random.Range(0, spawnedObjects.combinedPrefabList.Count);
         var objectToSpawn = spawnedObjects.combinedPrefabList[spawnedObject];
-        SetEnemyHealth(objectToSpawn);
+        SetupEnemy(objectToSpawn);
         return objectToSpawn;
     }
 }
