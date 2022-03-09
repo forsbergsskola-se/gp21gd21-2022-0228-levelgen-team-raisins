@@ -17,6 +17,8 @@ public class Dungeon : MonoBehaviour{
     [SerializeField] float roomSpawnRange = 30f;
     [SerializeField] float roomDespawnRange = 60f;
     [SerializeField] float updatePosThreshold = 1f;
+
+    bool navMeshIsComplete;
     //Vector3 playerOldPosition;
 
     public List<Room> Rooms{
@@ -31,14 +33,14 @@ public class Dungeon : MonoBehaviour{
         playerTransform.SavePosition();
         roomEventSo.roomEvent.AddListener(AddToActiveRooms);
         GenerateNewRooms();
-        StartCoroutine("BuildNavmesh");
+        StartCoroutine(nameof(BuildNavmesh));
     }
     IEnumerator BuildNavmesh(){
-        while (true){
-            foreach (var surface in navMeshSurfaces){
-                    yield return new WaitForSeconds(1);
-                    surface.BuildNavMesh();
-            }
+        yield return navMeshIsComplete = false;
+        while (!navMeshIsComplete){
+            yield return new WaitForSeconds(1);
+            rooms[rooms.Count-1].GetComponent<NavMeshSurface>().BuildNavMesh();
+            navMeshIsComplete = true;
         }
     }
 
@@ -55,7 +57,6 @@ public class Dungeon : MonoBehaviour{
             playerTransform.SavePosition();
             ActivateSuspendedRooms();
             GenerateNewRooms();
-
         }
     }
 
@@ -68,6 +69,10 @@ public class Dungeon : MonoBehaviour{
                 room.SpawnRooms();
             }
         }
+
+        navMeshIsComplete = false;
+        StopCoroutine(nameof(BuildNavmesh));
+        StartCoroutine(nameof(BuildNavmesh));
         // List<Room> newRooms = new List<Room>();
         // foreach (var room in rooms){
         //     if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
