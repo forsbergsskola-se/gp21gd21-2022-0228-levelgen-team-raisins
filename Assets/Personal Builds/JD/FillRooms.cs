@@ -6,6 +6,11 @@ using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+public enum SpawnType
+{
+    OnStart, OnTimer
+}
+
 public class FillRooms : MonoBehaviour{
     [SerializeField] DifficultyDependantPrefabList spawnedObjects;
     [SerializeField][Range(0,100)] int chanceToSpawn;
@@ -15,6 +20,7 @@ public class FillRooms : MonoBehaviour{
     public MyTimer spawnTimer;
     public float spawnInterval = 60;
     public int healthAmount = 10;
+    public SpawnType SpawnType;
 
     float SpawnProcentage{
         get => chanceToSpawn;
@@ -24,10 +30,18 @@ public class FillRooms : MonoBehaviour{
     private void Start()
     {
         DisplayTimer.OnIncreaseEnemyHealth += SetEnemyHealth;
-        spawnTimer = gameObject.AddComponent<MyTimer>();
-        spawnTimer.remainingTime = spawnInterval;
-        spawnTimer.outOfTime = false;
-    //    SpawnRandNumberObjects(1);
+
+        if (SpawnType == SpawnType.OnTimer)
+        {
+            spawnTimer = gameObject.AddComponent<MyTimer>();
+            spawnTimer.remainingTime = spawnInterval;
+            spawnTimer.outOfTime = false;
+        }
+
+        else if(SpawnType == SpawnType.OnStart)
+        {
+            SpawnRandNumberObjects(1);
+        }
     }
 
     private void OnDisable()
@@ -38,9 +52,12 @@ public class FillRooms : MonoBehaviour{
 
     void Update()
     {
-        if (spawnTimer.outOfTime)
+        if (SpawnType == SpawnType.OnTimer)
         {
-            SpawnOnTimer();
+            if (spawnTimer.outOfTime)
+            {
+                SpawnOnTimer();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.A)){
