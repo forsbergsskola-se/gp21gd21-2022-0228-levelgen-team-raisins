@@ -22,7 +22,7 @@ public class FillRooms : MonoBehaviour{
     private void Start()
     {
         DisplayTimer.OnIncreaseEnemyHealth += SetEnemyHealth;
-        SpawnOnStart(1);
+        SpawnRandNumberObjects(1);
     }
 
     private void OnDisable()
@@ -53,15 +53,22 @@ public class FillRooms : MonoBehaviour{
     }
 
 
-    private void SpawnOnStart(int objectsToSpawn)
+    private void SpawnRandNumberObjects(int maxObjectsToSpawn)
     {
         var points = GetComponentsInChildren<Transform>()
             .Where(x => x.CompareTag("EnemySpawnPoints")).ToList();
 
-        for (int i = 0; i < objectsToSpawn; i++)
+        for (var i = 0; i < maxObjectsToSpawn; i++)
         {
-            var newObject = Instantiate(spawnedObjects.prefabLists[0].prefabs[0], points[0].position, Quaternion.identity);
-            SetEnemyHealth(newObject);
+            if (Random.Range(0, 2) == 0) continue;
+            
+            var randPoint= Random.Range(0, points.Count);
+            var randList= Random.Range(0, spawnedObjects.prefabLists.Count);
+            var randPrefab= Random.Range(0, spawnedObjects.prefabLists[randList].prefabs.Count);
+            var objectToSpawn = spawnedObjects.prefabLists[randList].prefabs[randPrefab];
+
+            var newObject = Instantiate(objectToSpawn, points[randPoint].position, Quaternion.identity);
+            SetupEnemy(newObject);
         }
     }
 
@@ -70,7 +77,7 @@ public class FillRooms : MonoBehaviour{
         healthAmount = increaseAmount;
     }
 
-    private void SetEnemyHealth(GameObject enemy)
+    private void SetupEnemy(GameObject enemy)
     {
         if (enemy.GetComponent<CharacterClassContainer>() == null) return;
         enemy.GetComponent<NetworkObject>().Spawn();
@@ -82,7 +89,7 @@ public class FillRooms : MonoBehaviour{
     GameObject RandomizeSpawnedObject(){
         var spawnedObject = Random.Range(0, spawnedObjects.combinedPrefabList.Count);
         var objectToSpawn = spawnedObjects.combinedPrefabList[spawnedObject];
-        SetEnemyHealth(objectToSpawn);
+        SetupEnemy(objectToSpawn);
         return objectToSpawn;
     }
 }
