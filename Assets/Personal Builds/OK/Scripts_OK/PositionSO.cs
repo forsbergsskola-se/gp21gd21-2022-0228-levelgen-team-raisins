@@ -9,4 +9,8 @@ public class PositionSO : ScriptableObject{
     public void SavePosition(){
         savedPosition = position;
     }
+
+    void OnEnable(){
+        savedPosition = position;
+    }
 }
