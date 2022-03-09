@@ -5371,11 +5371,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnedObjects: {fileID: 11400000, guid: 1b5455444ac8a5e4083cd7fcfd7b67c5, type: 2}
-  chanceToSpawn: 100
+  chanceToSpawn: 10
   spawnTimer: {fileID: 0}
   spawnInterval: 0
   healthAmount: 10
-  MaxObjectsToSpawn: 0
+  MaxObjectsToSpawn: 11
   SpawnType: 0
 --- !u!1 &3528791392436169595
 GameObject:
