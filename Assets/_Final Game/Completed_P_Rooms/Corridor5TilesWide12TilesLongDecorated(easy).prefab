@@ -19416,7 +19416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5687272820411675659}
   m_Layer: 0
-  m_Name: RandomObject
+  m_Name: DecorationObject1
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -19446,7 +19446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1989131078529351721}
   m_Layer: 0
-  m_Name: RandomObject (7)
+  m_Name: BreakableObject4
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24491,7 +24491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3352011446372840485}
   m_Layer: 0
-  m_Name: RandomObject (2)
+  m_Name: DecorationObject3
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24521,7 +24521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8723909035736817973}
   m_Layer: 0
-  m_Name: RandomObject (3)
+  m_Name: DecorationObject4
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24551,7 +24551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7555477138255111264}
   m_Layer: 0
-  m_Name: RandomObject (6)
+  m_Name: BreakableObject3
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24635,7 +24635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8118159303157094221}
   m_Layer: 0
-  m_Name: RandomObject (5)
+  m_Name: BreakableObject2
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29755,7 +29755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3655939553284322588}
   m_Layer: 0
-  m_Name: RandomObject (4)
+  m_Name: BreakableObject1
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29985,7 +29985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8235479872088738898}
   m_Layer: 0
-  m_Name: RandomObject (1)
+  m_Name: DecorationObject2
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
