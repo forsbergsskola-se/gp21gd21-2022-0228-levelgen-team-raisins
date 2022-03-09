@@ -28,8 +28,8 @@ public class Room : MonoBehaviour{
     }
 
     void Start(){
-        onPlayerPosUpdate.roomEvent.AddListener(SpawnRooms);
         this.GetComponent<NavMeshSurface>().BuildNavMesh();
+        onPlayerPosUpdate.roomEvent.AddListener(SpawnRooms);
     }
 
     void OnDisable(){
@@ -47,6 +47,9 @@ public class Room : MonoBehaviour{
         Debug.Log(name + "Spawning rooms");
         if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) < rangesSO.roomSpawnRange.value){
             foreach (var connection in connections){
+                if (connection == null){
+                    continue;
+                }
                 connection.SpawnRoom();
                 yield return new WaitForSeconds(1f);
             }

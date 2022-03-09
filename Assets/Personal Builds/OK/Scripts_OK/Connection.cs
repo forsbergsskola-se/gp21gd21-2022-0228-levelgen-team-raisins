@@ -51,7 +51,7 @@ public class Connection : MonoBehaviour{
             if (value is ConnectionType.OpenConnection){
                 DeactivateEnvironmentBlockers();
             }
-            else if (value is ConnectionType.ClosedConnection){
+            else if (value is ConnectionType.ClosedConnection || value is ConnectionType.SuspendedConnection){
                 ActivateEnvironmentBlockers();
             }
         }
@@ -61,10 +61,10 @@ public class Connection : MonoBehaviour{
 
     void Awake(){
         AssignConnectionDirection();
-        if (ConnectionType == ConnectionType.OpenConnection){
+        if (ConnectionType is ConnectionType.OpenConnection){
             DeactivateEnvironmentBlockers();
         }
-        else if (ConnectionType == ConnectionType.ClosedConnection){
+        else if (ConnectionType is ConnectionType.ClosedConnection|| ConnectionType is ConnectionType.SuspendedConnection){
             ActivateEnvironmentBlockers();
         }
     }
