@@ -18,7 +18,7 @@ public enum RoomType{
 public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     public UnityRoomEventSO roomEventSo;
-    public List<RoomValidator> RoomValidators;
+    public List<RoomValidator> roomValidators;
 
 
 
@@ -35,9 +35,9 @@ public class Room : MonoBehaviour{
         }
     }
 
-    void Start(){
-        roomEventSo.roomEvent.Invoke(this);
-    }
+    // void Start(){
+    //     roomEventSo.roomEvent.Invoke(this);
+    // }
 
     public bool HasFreeConnections()
     {
@@ -118,17 +118,6 @@ public class Room : MonoBehaviour{
  //   }
 
 
-    // void AddActiveConnections(){
-    //     activeConnections++;
-    // }
-    // void ReduceActiveConnections(){
-    //     activeConnections--;
-    // }
-
-    public void ValidateRoom(bool value){
-        isValidRoom = value;
-        //if boids boxcast tell us the room is spawned outside the old room its allowed to spawn
-    }
 
     [ContextMenu("Spawn All Available Rooms")]
     public List<Room> SpawnRooms(){

@@ -9,8 +9,7 @@ public class RoomValidator : MonoBehaviour{
     [SerializeField] Room room;
 
     void OnCollisionEnter(Collision collision){
-        if (collision.transform.CompareTag("Validation_Collider")){
-            room.IsValidRoom = false;
-        }
+        Debug.Log("Colliding with " + collision);
+        room.IsValidRoom = false;
     }
 }

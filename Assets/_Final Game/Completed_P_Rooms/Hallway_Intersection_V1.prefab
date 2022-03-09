@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 0}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 0}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
@@ -4054,7 +4054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 0}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
@@ -13281,9 +13281,9 @@ GameObject:
   - component: {fileID: 5903147343675277696}
   - component: {fileID: 106775142966798115}
   - component: {fileID: 5537487986580946631}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Validation_Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13327,7 +13327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 0}
+  room: {fileID: 8079340796546827894}
 --- !u!1 &6383433808611482210
 GameObject:
   m_ObjectHideFlags: 0
@@ -16508,7 +16508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 0}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: 0f97724f2e992ff40a9d5ce4ad07aca1, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: 60ca147589aa55a47be605e7031a118d, type: 2}
@@ -18442,7 +18442,7 @@ MonoBehaviour:
   - {fileID: 8088665021216772278}
   - {fileID: 2331345018614128643}
   roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
-  RoomValidators:
+  roomValidators:
   - {fileID: 5537487986580946631}
   activeConnections: 0
 --- !u!114 &-4267980809051980753

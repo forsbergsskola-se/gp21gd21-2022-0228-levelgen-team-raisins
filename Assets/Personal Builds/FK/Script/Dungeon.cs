@@ -25,14 +25,14 @@ public class Dungeon : MonoBehaviour{
         get => rooms;
         set{
             rooms = value;
-            //GenerateNewRooms();
+            GenerateNewRooms();
         }
     }
 
     void Start(){
         playerTransform.SavePosition();
         roomEventSo.roomEvent.AddListener(AddToActiveRooms);
-        GenerateNewRooms();
+        StartCoroutine(nameof(GenerateNewRooms));
         StartCoroutine(nameof(BuildNavmesh));
     }
     IEnumerator BuildNavmesh(){
@@ -47,32 +47,47 @@ public class Dungeon : MonoBehaviour{
     void AddToActiveRooms(Room room){
         rooms.Add(room);
         navMeshSurfaces.Add(room.GetComponent<NavMeshSurface>());
-        GenerateNewRooms();
+        StopCoroutine(nameof(GenerateNewRooms));
+        StartCoroutine(nameof(GenerateNewRooms));
     }
+
     void Update(){
         UpdatePlayerPos(playerTransform.position);
     }
+
     void UpdatePlayerPos(Vector3 playerPosition){
         if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > updatePosThreshold){
+            Debug.Log("updating player pos");
             playerTransform.SavePosition();
             ActivateSuspendedRooms();
-            GenerateNewRooms();
+            StopCoroutine(nameof(GenerateNewRooms));
+            StartCoroutine(nameof(GenerateNewRooms));
         }
     }
 
 
 
-    void GenerateNewRooms(){
-        print("Generating new rooms");
-        foreach (var room in rooms){
-            if (Vector3.Distance(room.transform.position, playerTransform.savedPosition) < roomSpawnRange){
-                room.SpawnRooms();
+    IEnumerator GenerateNewRooms(){
+            print("Generating new rooms");
+            foreach (var room in rooms){
+                if (Vector3.Distance(room.transform.position, playerTransform.position) < roomSpawnRange){
+                    room.SpawnRooms();
+                    yield return new WaitForSeconds(0.3f);
+                }
+                else{
+                    foreach (var connection in room.connections){
+                        if (connection.ConnectionType is ConnectionType.OpenConnection){
+                            connection.ConnectionType = ConnectionType.SuspendedConnection;
+                        }
+                    }
+                }
+                navMeshIsComplete = false;
+                StopCoroutine(nameof(BuildNavmesh));
+                StartCoroutine(nameof(BuildNavmesh));
             }
-        }
+    }
 
-        navMeshIsComplete = false;
-        StopCoroutine(nameof(BuildNavmesh));
-        StartCoroutine(nameof(BuildNavmesh));
+
         // List<Room> newRooms = new List<Room>();
         // foreach (var room in rooms){
         //     if (Vector3.Distance(room.transform.position,playerTransform.position) < roomSpawnRange){
@@ -84,7 +99,7 @@ public class Dungeon : MonoBehaviour{
         //         //here we add the new room to rooms list
         //     }
         // }
-    }
+
 
     void ActivateSuspendedRooms(){
         foreach (var room in rooms){
