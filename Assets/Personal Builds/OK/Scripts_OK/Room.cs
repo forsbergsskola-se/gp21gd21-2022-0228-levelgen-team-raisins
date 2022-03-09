@@ -118,13 +118,6 @@ public class Room : MonoBehaviour{
  //   }
 
 
-    // void AddActiveConnections(){
-    //     activeConnections++;
-    // }
-    // void ReduceActiveConnections(){
-    //     activeConnections--;
-    // }
-
 
     [ContextMenu("Spawn All Available Rooms")]
     public List<Room> SpawnRooms(){
