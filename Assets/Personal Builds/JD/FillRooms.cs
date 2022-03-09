@@ -90,7 +90,7 @@ public class FillRooms : MonoBehaviour{
 
         for (var i = 0; i < MaxObjectsToSpawn; i++)
         {
-            if (Random.Range(0, 1f) ! <= SpawnProcentage) continue;
+            if (Random.Range(0, 1f) ! >= SpawnProcentage) continue;
 
             var randPoint= Random.Range(0, points.Count);
             var randList= Random.Range(0, spawnedObjects.prefabLists.Count);
