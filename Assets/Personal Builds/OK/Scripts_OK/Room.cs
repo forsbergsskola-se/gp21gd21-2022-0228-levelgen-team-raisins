@@ -28,7 +28,7 @@ public class Room : MonoBehaviour{
     //bool eventHasBeenInvoked;
 
 
-    [SerializeField] bool isValidRoom = false;
+    bool isValidRoom = true;
 
     public bool IsValidRoom{
         get => isValidRoom;
@@ -40,9 +40,9 @@ public class Room : MonoBehaviour{
                 SpawnInternals();
             }
 
-            if (!isValidRoom){
-                Destroy(this.gameObject);
-            }
+            // if (!isValidRoom){
+            //     Destroy(this.gameObject);
+            // }
         }
     }
 
@@ -64,7 +64,9 @@ public class Room : MonoBehaviour{
     bool isCompletedRoom;
 
     public bool ValidateRoom(){
+        Debug.Log("Validating "+ name);
         foreach (var roomValidator in roomValidators){
+            Debug.Log(name +": Validator: "+ roomValidator.isColliding);
             if (roomValidator.isColliding){
                 Debug.Log("is colliding");
                 IsValidRoom = false;

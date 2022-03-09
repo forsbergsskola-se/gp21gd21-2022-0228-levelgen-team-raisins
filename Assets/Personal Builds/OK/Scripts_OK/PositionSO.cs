@@ -13,4 +13,8 @@ public class PositionSO : ScriptableObject{
     void OnEnable(){
         savedPosition = position;
     }
+
+    void OnDisable(){
+        savedPosition = position;
+    }
 }

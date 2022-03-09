@@ -11,7 +11,7 @@ public class RoomValidator : MonoBehaviour{
     public bool isColliding;
 
     void OnTriggerEnter(Collider other){
-        Debug.Log("Colliding with " + other);
+        Debug.Log(name +"Colliding with " + other);
         room.IsValidRoom = false;
         isColliding = true;
     }
