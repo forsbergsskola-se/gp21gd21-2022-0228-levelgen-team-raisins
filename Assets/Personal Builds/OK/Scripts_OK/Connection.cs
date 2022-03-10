@@ -55,6 +55,7 @@ public class Connection : MonoBehaviour{
     int attempt;
 
     void Awake(){
+        SetActiveRoomList(gameDifficultySo.Difficulty);
         AssignConnectionDirection();
         if (ConnectionType is ConnectionType.OpenConnection){
             DeactivateEnvironmentBlockers();
