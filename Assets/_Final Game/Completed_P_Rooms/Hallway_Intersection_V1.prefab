@@ -13300,8 +13300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 8079340796546827894}
-  isColliding: 0
 --- !u!1 &6383433808611482210
 GameObject:
   m_ObjectHideFlags: 0
@@ -18416,9 +18414,9 @@ MonoBehaviour:
   - {fileID: 8540939407857876211}
   - {fileID: 8088665021216772278}
   - {fileID: 2331345018614128643}
-  roomEventSo: {fileID: 11400000, guid: 8578c7510fa77cf469abe284a03e2e4d, type: 2}
-  roomValidators:
-  - {fileID: 5537487986580946631}
+  rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
+  onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
+  spawnedConnection: {fileID: 0}
 --- !u!114 &-4267980809051980753
 MonoBehaviour:
   m_ObjectHideFlags: 0
