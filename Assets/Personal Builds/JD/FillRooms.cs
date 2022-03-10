@@ -70,7 +70,6 @@ public class FillRooms : MonoBehaviour{
     {
         var points = GetComponentsInChildren<Transform>().ToList();
 
-
         foreach (var p in points)
         {
             if (Random.Range(0, 1f) ! >= SpawnProcentage) continue;
@@ -89,11 +88,13 @@ public class FillRooms : MonoBehaviour{
 
     private void SetupEnemy(GameObject enemy)
     {
+        if (enemy.GetComponent<NetworkObject>() == null) return;
+        enemy.GetComponent<NetworkObject>().Spawn();
+
         if (enemy.GetComponent<CharacterClassContainer>() == null) return;
 
-        enemy.GetComponent<NetworkObject>().Spawn();
         var theHealth = ScriptableObject.CreateInstance<IntVariable>();
-        theHealth.Value = healthAmount;
+        theHealth.Value = 60;
         enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
     }
 
