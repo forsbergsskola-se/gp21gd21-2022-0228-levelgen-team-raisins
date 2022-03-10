@@ -62,22 +62,6 @@ public class FillRooms : MonoBehaviour{
         SpawnRandNumberObjects();
     }
 
-    void OnEnable(){
-        var children = GetComponentsInChildren<Transform>();
-        foreach (var point in children){
-            if (point == transform){
-                continue;
-            }
-            var willItSpawnComparator = Random.Range(0f, 1f);
-
-            if (willItSpawnComparator <= SpawnProcentage){
-                spawnPoints.Add(point);
-                var newObject = RandomizeSpawnedObject();
-                Instantiate(newObject, point.position, newObject.transform.rotation, point);
-            }
-        }
-    }
-
 
     private void SpawnRandNumberObjects()
     {
