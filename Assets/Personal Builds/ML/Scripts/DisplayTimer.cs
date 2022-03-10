@@ -47,6 +47,7 @@ public class DisplayTimer : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
+        FillRooms.OnGetEnemyHealth += SendEnemyHealth;
         healthTimer = gameObject.AddComponent<MyTimer>();
         healthTimer.remainingTime = increaseEnemyHealthInterval;
         healthTimer.outOfTime = false;
@@ -54,10 +55,14 @@ public class DisplayTimer : MonoBehaviour
     }
 
 
-
+    private void SendEnemyHealth()
+    {
+        OnIncreaseEnemyHealth?.Invoke(currentEnemyHealth);
+    }
 
     private void OnDisable()
     {
+        FillRooms.OnGetEnemyHealth -= SendEnemyHealth;
     //    DifficultyManager.OnTimeCountDown -= DisplayTime;
     }
 
