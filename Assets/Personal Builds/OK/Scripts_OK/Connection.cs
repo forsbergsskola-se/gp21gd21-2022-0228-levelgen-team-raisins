@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using Unity.Mathematics;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 
@@ -70,8 +65,8 @@ public class Connection : MonoBehaviour{
     }
 
     void Start(){
-        gameDifficultySo.difficultyChangeEvent.AddListener(SetActiveRoomList);
         SetActiveRoomList(gameDifficultySo.Difficulty);
+        gameDifficultySo.difficultyChangeEvent.AddListener(SetActiveRoomList);
     }
 
     void OnDisable(){
