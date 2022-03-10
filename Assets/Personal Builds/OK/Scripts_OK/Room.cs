@@ -48,7 +48,7 @@ public class Room : MonoBehaviour{
         if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) > rangesSO.roomDespawnRange.value){
             //Set spawn connection to Open
             spawnedConnection.ConnectionType = ConnectionType.OpenConnection;
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 
