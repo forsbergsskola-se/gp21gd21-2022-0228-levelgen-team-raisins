@@ -53,10 +53,6 @@ public class FillRooms : MonoBehaviour{
         if (SpawnType == SpawnType.OnTimer)
             if (spawnTimer.outOfTime)
                 SpawnOnTimer();
-
-        if (Input.GetKeyDown(KeyCode.A)){
-            OnButtonpressForDebug();
-        }
     }
 
     private void SpawnOnTimer()
@@ -66,7 +62,7 @@ public class FillRooms : MonoBehaviour{
         SpawnRandNumberObjects();
     }
 
-    void OnButtonpressForDebug(){
+    void OnEnable(){
         var children = GetComponentsInChildren<Transform>();
         foreach (var point in children){
             if (point == transform){
@@ -97,7 +93,7 @@ public class FillRooms : MonoBehaviour{
             var randPrefab= Random.Range(0, spawnedObjects.prefabLists[randList].prefabs.Count);
             var objectToSpawn = spawnedObjects.prefabLists[randList].prefabs[randPrefab];
 
-            var newObject = Instantiate(objectToSpawn, points[randPoint].position, Quaternion.identity);
+            var newObject = Instantiate(objectToSpawn, points[randPoint].position, Quaternion.identity, points[i]);
             SetupEnemy(newObject);
         }
     }
