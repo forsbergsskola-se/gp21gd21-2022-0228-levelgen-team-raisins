@@ -37,9 +37,4 @@ public class GameDifficultySO : ScriptableObject{
 
         Difficulty = Difficulty.Easy;
     }
-
-    [ContextMenu("Change Difficulty to Hard")]
-    void Test1(){
-        Difficulty = Difficulty.Hard;
-    }
 }

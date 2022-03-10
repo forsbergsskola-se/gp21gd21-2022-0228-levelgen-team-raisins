@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using ExitGames.Client.Photon.StructWrapping;
 using UnityEngine;
 
 public class DifficultyManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class DifficultyManager : MonoBehaviour
     public delegate void TimerCountdownDelegate(float remainingTime);
 
     public static event TimerCountdownDelegate OnTimeCountDown;
+
+    public GameDifficultySO difficultySo;
 
 
     private void OnEnable()
@@ -58,6 +61,7 @@ public class DifficultyManager : MonoBehaviour
 
     private void DifficultyChanged()
     {
+        difficultySo.difficultyChangeEvent?.Invoke(difficulty);
         OnDifficultyChanged?.Invoke(difficulty);
     }
 }
