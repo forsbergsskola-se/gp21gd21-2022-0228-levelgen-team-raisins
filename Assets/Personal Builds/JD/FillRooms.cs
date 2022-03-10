@@ -16,16 +16,12 @@ public class FillRooms : MonoBehaviour{
     [SerializeField] DifficultyDependantPrefabList spawnedObjects;
     [SerializeField][Range(0,100)] int chanceToSpawn;
 
-    List<Transform> spawnPoints = new List<Transform>();
-
     public MyTimer spawnTimer;
     public float spawnInterval = 60;
     public int healthAmount = 10;
-    public int additionalDamageAmount = 0;
-    [Range(2,6)]public int MaxObjectsToSpawn = 4;
+
     private bool healthSet = false;
     public delegate void GetEnemyHealthDelegate();
-
     public static event GetEnemyHealthDelegate OnGetEnemyHealth;
 
 
