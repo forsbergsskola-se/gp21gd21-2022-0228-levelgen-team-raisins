@@ -9,7 +9,7 @@ public class DisplayTimer : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private float counter = 0;
-    public float increaseEnemyHealthInterval = 500;
+    public float increaseEnemyHealthInterval = 4;
     private int currentEnemyHealth = 10;
     public int enemyHealthIncreaseAmount = 5;
 

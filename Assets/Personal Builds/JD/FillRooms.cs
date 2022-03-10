@@ -20,6 +20,7 @@ public class FillRooms : MonoBehaviour{
     public MyTimer spawnTimer;
     public float spawnInterval = 60;
     public int healthAmount = 10;
+    public int additionalDamageAmount = 0;
     [Range(2,6)]public int MaxObjectsToSpawn = 4;
 
 
@@ -68,20 +69,18 @@ public class FillRooms : MonoBehaviour{
     private void SpawnRandNumberObjects()
     {
         var points = GetComponentsInChildren<Transform>().ToList();
+        var objectCount = 0;
 
-        for (var i = 0; i < MaxObjectsToSpawn; i++)
+        foreach (var p in points)
         {
+            if (objectCount == MaxObjectsToSpawn) return;
             if (Random.Range(0, 1f) ! >= SpawnProcentage) continue;
-            if (points.Count < 1) return;
+            var randList = Random.Range(0, spawnedObjects.combinedPrefabList.Count);
+            var objectToSpawn = spawnedObjects.combinedPrefabList[randList];
 
-            var randPoint = Random.Range(0, points.Count);
-            var randList = Random.Range(0, spawnedObjects.prefabLists.Count);
-            var randPrefab = Random.Range(0, spawnedObjects.prefabLists[randList].prefabs.Count);
-            var objectToSpawn = spawnedObjects.prefabLists[randList].prefabs[randPrefab];
-
-            var newObject = Instantiate(objectToSpawn, points[randPoint].position, Quaternion.identity, points[i]);
+            var newObject = Instantiate(objectToSpawn, p.position, Quaternion.identity, p);
             SetupEnemy(newObject);
-            points.RemoveAt(randPoint);
+            objectCount++;
         }
     }
 
