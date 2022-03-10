@@ -200,7 +200,9 @@ public class Connection : MonoBehaviour{
 
     void DeactivateEnvironmentBlockers(){
         foreach (var _gameObject in environmentToggleList){
-            _gameObject.SetActive(false);
+            if (_gameObject != null){
+                _gameObject.SetActive(false);
+            }
         }
     }
 
