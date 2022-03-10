@@ -69,18 +69,16 @@ public class FillRooms : MonoBehaviour{
     private void SpawnRandNumberObjects()
     {
         var points = GetComponentsInChildren<Transform>().ToList();
-        var objectCount = 0;
+
 
         foreach (var p in points)
         {
-            if (objectCount == MaxObjectsToSpawn) return;
             if (Random.Range(0, 1f) ! >= SpawnProcentage) continue;
             var randList = Random.Range(0, spawnedObjects.combinedPrefabList.Count);
             var objectToSpawn = spawnedObjects.combinedPrefabList[randList];
 
             var newObject = Instantiate(objectToSpawn, p.position, Quaternion.identity, p);
             SetupEnemy(newObject);
-            objectCount++;
         }
     }
 
