@@ -150,6 +150,8 @@ public class Connection : MonoBehaviour{
 
             var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
 
+            spawnedRoomRoom.spawnedConnection = this;
+
             foreach (var connection in spawnedRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
                     connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.

@@ -22,6 +22,8 @@ public class Room : MonoBehaviour{
     [SerializeField] UnityEventSO onPlayerPosUpdate;
     [SerializeField] GameEventSO onRoomSpawned;
 
+    public Connection spawnedConnection;
+
     static int id;
     void Awake(){
         gameObject.name = $"room {id++}";
@@ -29,22 +31,35 @@ public class Room : MonoBehaviour{
 
     void Start(){
         onRoomSpawned?.Invoke();
+        onPlayerPosUpdate.roomEvent.AddListener(DestroyRooms);
         onPlayerPosUpdate.roomEvent.AddListener(SpawnRooms);
     }
 
     void OnDisable(){
+       onPlayerPosUpdate.roomEvent.RemoveListener(DestroyRooms);
         onPlayerPosUpdate.roomEvent.RemoveListener(SpawnRooms);
     }
 
     void SpawnRooms(){
         StartCoroutine(nameof(CoroutineSpawnRooms));
-        onPlayerPosUpdate.roomEvent.RemoveListener(SpawnRooms);
     }
+
+    void DestroyRooms(){
+        if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) > rangesSO.roomDespawnRange.value){
+            //Set spawn connection to Open
+            spawnedConnection.ConnectionType = ConnectionType.OpenConnection;
+            Destroy(gameObject);
+        }
+    }
+
+   // void
 
 
     [ContextMenu("Spawn All Available Rooms")]
     IEnumerator CoroutineSpawnRooms(){
         Debug.Log(name + "Spawning rooms");
+
+
         if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) < rangesSO.roomSpawnRange.value){
             foreach (var connection in connections){
                 if (connection == null){
