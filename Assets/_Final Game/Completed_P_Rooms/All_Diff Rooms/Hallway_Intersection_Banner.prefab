@@ -4906,7 +4906,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
+  MaxObjectsToSpawn: 4
   SpawnType: 0
 --- !u!1 &3227684323930908752
 GameObject:
@@ -5423,7 +5423,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 0
   healthAmount: 10
-  MaxObjectsToSpawn: 11
+  MaxObjectsToSpawn: 6
   SpawnType: 0
 --- !u!1 &3528791392436169595
 GameObject:
@@ -7369,7 +7369,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
+  MaxObjectsToSpawn: 4
   SpawnType: 0
 --- !u!1 &4410679362504990909
 GameObject:
@@ -17374,7 +17374,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
+  MaxObjectsToSpawn: 5
   SpawnType: 0
 --- !u!1 &8351873942728916427
 GameObject:

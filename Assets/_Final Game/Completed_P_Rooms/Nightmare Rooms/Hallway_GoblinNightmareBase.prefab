@@ -6519,7 +6519,7 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
+  MaxObjectsToSpawn: 5
   SpawnType: 0
 --- !u!1 &1386511124684541934
 GameObject:
