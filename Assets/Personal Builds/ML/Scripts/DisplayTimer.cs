@@ -5,29 +5,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-public enum DifficultyIncreaseType
-{
-    Health, Damage, HealthAndDamage, None
-}
-
-
 public class DisplayTimer : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private float counter = 0;
-    public float increaseEnemyDifficultyInterval = 500;
-
-    public int enemyStartHealth = 10;
+    public float increaseEnemyHealthInterval = 500;
+    private int currentEnemyHealth = 10;
     public int enemyHealthIncreaseAmount = 5;
-    public int enemyDamageIncreaseAmount = 5;
-  //  public int enemyStartDamage = 5;
 
-    public DifficultyIncreaseType DifficultyIncreaseType;
     private MyTimer healthTimer;
-    public delegate void IncreaseEnemyDifficltyDelegate(int increaseAmount);
-    public static event IncreaseEnemyDifficltyDelegate OnIncreaseEnemyHealth;
-
-
+    public delegate void IncreaseEnemyHealthDelegate(int increaseAmount);
+    public static event IncreaseEnemyHealthDelegate OnIncreaseEnemyHealth;
 
     void DisplayTime(float timeToDisplay)
     {
@@ -37,12 +25,12 @@ public class DisplayTimer : MonoBehaviour
         text.text = $"Time spent: {minutes} : {seconds}";
     }
 
-    private void IncreaseEnemyDifficulty()
+    private void IncreaseEnemyHealth()
     {
-        enemyStartHealth += enemyHealthIncreaseAmount;
-        healthTimer.remainingTime = increaseEnemyDifficultyInterval;
+        currentEnemyHealth += enemyHealthIncreaseAmount;
+        healthTimer.remainingTime = increaseEnemyHealthInterval;
         healthTimer.outOfTime = false;
-        OnIncreaseEnemyHealth?.Invoke(enemyStartHealth);
+        OnIncreaseEnemyHealth?.Invoke(currentEnemyHealth);
     }
 
     private void Update()
@@ -52,7 +40,7 @@ public class DisplayTimer : MonoBehaviour
 
         if (healthTimer.outOfTime)
         {
-           IncreaseEnemyDifficulty();
+           IncreaseEnemyHealth();
         }
     }
 
@@ -60,7 +48,7 @@ public class DisplayTimer : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         healthTimer = gameObject.AddComponent<MyTimer>();
-        healthTimer.remainingTime = increaseEnemyDifficultyInterval;
+        healthTimer.remainingTime = increaseEnemyHealthInterval;
         healthTimer.outOfTime = false;
         //    DifficultyManager.OnTimeCountDown += DisplayTime;
     }

@@ -20,7 +20,7 @@ public class FillRooms : MonoBehaviour{
     public MyTimer spawnTimer;
     public float spawnInterval = 60;
     public int healthAmount = 10;
-    [Range(2, 6)]public int MaxObjectsToSpawn = 4;
+    public int MaxObjectsToSpawn;
     public SpawnType SpawnType;
 
     float SpawnProcentage => (float) chanceToSpawn/100f;
@@ -62,9 +62,11 @@ public class FillRooms : MonoBehaviour{
         SpawnRandNumberObjects();
     }
 
+
     private void SpawnRandNumberObjects()
     {
-        var points = GetComponentsInChildren<Transform>().ToList();
+        var points = GetComponentsInChildren<Transform>()
+            .Where(x => x.CompareTag("EnemySpawnPoints")).ToList();
 
         for (var i = 0; i < MaxObjectsToSpawn; i++)
         {
