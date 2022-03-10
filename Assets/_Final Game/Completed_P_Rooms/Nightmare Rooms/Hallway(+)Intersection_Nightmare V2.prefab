@@ -40193,7 +40193,7 @@ MonoBehaviour:
   - {fileID: 6970745199580550527}
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
-  onRoomSpawned: {fileID: 0}
+  onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
 --- !u!114 &2534258594515045701
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2529,7 +2529,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 174280513688184939}
   connectionDirection: 3
-  spawnedRoom: {fileID: 0}
 --- !u!1 &785615551632422141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,7 +3038,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 4763647582632452690}
   connectionDirection: 2
-  spawnedRoom: {fileID: 0}
 --- !u!1 &924071480150731239
 GameObject:
   m_ObjectHideFlags: 0
@@ -6810,7 +6808,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 3572357827951773510}
   connectionDirection: 1
-  spawnedRoom: {fileID: 0}
 --- !u!1 &2219875706404024887
 GameObject:
   m_ObjectHideFlags: 0
@@ -19421,8 +19418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 8079340796546827894}
-  isColliding: 0
 --- !u!1 &6311459607919473915
 GameObject:
   m_ObjectHideFlags: 0
@@ -20553,8 +20548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 8079340796546827894}
-  isColliding: 0
 --- !u!1 &6713710644237170175
 GameObject:
   m_ObjectHideFlags: 0
@@ -24210,7 +24203,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 7531146883042149436}
   connectionDirection: 4
-  spawnedRoom: {fileID: 0}
 --- !u!1 &8097854011470519198
 GameObject:
   m_ObjectHideFlags: 0
@@ -24940,8 +24932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 8079340796546827894}
-  isColliding: 0
 --- !u!1 &8266261438393134044
 GameObject:
   m_ObjectHideFlags: 0
@@ -26892,8 +26882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 8079340796546827894}
-  isColliding: 0
 --- !u!1 &8734027832456845559
 GameObject:
   m_ObjectHideFlags: 0
@@ -27660,11 +27648,7 @@ MonoBehaviour:
   - {fileID: 2331345018614128643}
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
-  roomValidators:
-  - {fileID: 5537487986580946631}
-  - {fileID: 2428398345517362283}
-  - {fileID: 3473992036553923842}
-  - {fileID: 2337695540394233290}
+  onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
 --- !u!114 &8840240992742129206
 MonoBehaviour:
   m_ObjectHideFlags: 0

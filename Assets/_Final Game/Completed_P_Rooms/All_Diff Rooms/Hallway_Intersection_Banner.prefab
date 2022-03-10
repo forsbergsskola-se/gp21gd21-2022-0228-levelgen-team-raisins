@@ -3974,7 +3974,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 7822351762426177924}
   connectionDirection: 2
-  spawnedRoom: {fileID: 0}
 --- !u!1 &2622041346691361586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,7 +4437,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 3242126034237957053}
   connectionDirection: 3
-  spawnedRoom: {fileID: 0}
 --- !u!1 &2844493919422609026
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,7 +5478,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 2235724691824331920}
   connectionDirection: 1
-  spawnedRoom: {fileID: 0}
 --- !u!1 &3627602217287223838
 GameObject:
   m_ObjectHideFlags: 0
@@ -10181,8 +10178,7 @@ MonoBehaviour:
   - {fileID: 1067329705008147413}
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
-  roomValidators:
-  - {fileID: 7083151467695240465}
+  onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
 --- !u!114 &4664758996694344378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12065,7 +12061,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 5048941414472224746}
   connectionDirection: 4
-  spawnedRoom: {fileID: 0}
 --- !u!1 &6860038129891335167
 GameObject:
   m_ObjectHideFlags: 0
@@ -17989,8 +17984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 6812511246887832992}
-  isColliding: 0
 --- !u!54 &1328785947109470658
 Rigidbody:
   m_ObjectHideFlags: 0
