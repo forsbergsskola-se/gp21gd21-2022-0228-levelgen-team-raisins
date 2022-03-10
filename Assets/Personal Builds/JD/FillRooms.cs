@@ -21,6 +21,8 @@ public class FillRooms : MonoBehaviour{
     public float spawnInterval = 60;
     public int healthAmount = 10;
     [Range(2,6)]public int MaxObjectsToSpawn = 4;
+
+
     public SpawnType SpawnType;
 
     float SpawnProcentage => (float) chanceToSpawn/100f;
