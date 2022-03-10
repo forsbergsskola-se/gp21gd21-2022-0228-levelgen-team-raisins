@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Multiplayer.Samples.BossRoom;
@@ -15,13 +16,13 @@ public class FillRooms : MonoBehaviour{
     [SerializeField] DifficultyDependantPrefabList spawnedObjects;
     [SerializeField][Range(0,100)] int chanceToSpawn;
 
-    List<Transform> spawnPoints = new List<Transform>();
-
     public MyTimer spawnTimer;
     public float spawnInterval = 60;
     public int healthAmount = 10;
-    public int additionalDamageAmount = 0;
-    [Range(2,6)]public int MaxObjectsToSpawn = 4;
+
+    private bool healthSet = false;
+    public delegate void GetEnemyHealthDelegate();
+    public static event GetEnemyHealthDelegate OnGetEnemyHealth;
 
 
     public SpawnType SpawnType;
@@ -32,6 +33,8 @@ public class FillRooms : MonoBehaviour{
     {
         DisplayTimer.OnIncreaseEnemyHealth += SetEnemyHealth;
 
+        OnGetEnemyHealth?.Invoke();
+
         if (SpawnType == SpawnType.OnTimer)
         {
             spawnTimer = gameObject.AddComponent<MyTimer>();
@@ -39,7 +42,13 @@ public class FillRooms : MonoBehaviour{
             spawnTimer.outOfTime = false;
         }
 
-        else if(SpawnType == SpawnType.OnStart)
+        StartCoroutine(LateSpawn());
+    }
+
+    IEnumerator LateSpawn()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if(SpawnType == SpawnType.OnStart)
         {
             SpawnRandNumberObjects();
         }
@@ -92,8 +101,7 @@ public class FillRooms : MonoBehaviour{
         enemy.GetComponent<NetworkObject>().Spawn();
 
         if (enemy.GetComponent<NetworkCharacterState>() == null) return;
-
-        enemy.GetComponent<NetworkCharacterState>().HitPoints = healthAmount;
+        enemy.GetComponent<NetworkCharacterState>().HitPoints += healthAmount;
     }
 
     GameObject RandomizeSpawnedObject(){
