@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}
@@ -2242,7 +2242,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &1418103054423581058
 GameObject:
@@ -4160,7 +4159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}
@@ -4749,7 +4748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}
@@ -5291,7 +5290,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &3231660378170901734
 GameObject:
@@ -7869,7 +7867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}
@@ -10129,6 +10127,7 @@ MonoBehaviour:
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
+  spawnedConnection: {fileID: 0}
 --- !u!114 &5573657151566869487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16792,7 +16791,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &8455686787470283368
 GameObject:
@@ -22376,7 +22374,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &8786388866274734578
 GameObject:

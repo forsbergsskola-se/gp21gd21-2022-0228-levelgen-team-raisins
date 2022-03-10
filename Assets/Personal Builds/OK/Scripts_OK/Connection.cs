@@ -65,7 +65,6 @@ public class Connection : MonoBehaviour{
     }
 
     void Start(){
-        SetActiveRoomList(gameDifficultySo.Difficulty);
         gameDifficultySo.difficultyChangeEvent.AddListener(SetActiveRoomList);
     }
 

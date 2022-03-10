@@ -62,6 +62,7 @@ public class DifficultyManager : MonoBehaviour
     private void DifficultyChanged()
     {
         difficultySo.difficultyChangeEvent?.Invoke(difficulty);
+        difficultySo.Difficulty = difficulty; //Its very chaotic when there's 2 different stored difficulty values. Adding this to try and solve connection issue
         OnDifficultyChanged?.Invoke(difficulty);
     }
 }

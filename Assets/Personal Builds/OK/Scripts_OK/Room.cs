@@ -30,9 +30,9 @@ public class Room : MonoBehaviour{
     }
 
     void Start(){
-        onRoomSpawned?.Invoke();
         onPlayerPosUpdate.roomEvent.AddListener(DestroyRooms);
         onPlayerPosUpdate.roomEvent.AddListener(SpawnRooms);
+        onRoomSpawned?.Invoke();
     }
 
     void OnDisable(){
