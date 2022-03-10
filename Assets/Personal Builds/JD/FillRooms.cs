@@ -72,14 +72,16 @@ public class FillRooms : MonoBehaviour{
         for (var i = 0; i < MaxObjectsToSpawn; i++)
         {
             if (Random.Range(0, 1f) ! >= SpawnProcentage) continue;
+            if (points.Count < 1) return;
 
-            var randPoint= Random.Range(0, points.Count);
-            var randList= Random.Range(0, spawnedObjects.prefabLists.Count);
-            var randPrefab= Random.Range(0, spawnedObjects.prefabLists[randList].prefabs.Count);
+            var randPoint = Random.Range(0, points.Count);
+            var randList = Random.Range(0, spawnedObjects.prefabLists.Count);
+            var randPrefab = Random.Range(0, spawnedObjects.prefabLists[randList].prefabs.Count);
             var objectToSpawn = spawnedObjects.prefabLists[randList].prefabs[randPrefab];
 
             var newObject = Instantiate(objectToSpawn, points[randPoint].position, Quaternion.identity, points[i]);
             SetupEnemy(newObject);
+            points.RemoveAt(randPoint);
         }
     }
 
