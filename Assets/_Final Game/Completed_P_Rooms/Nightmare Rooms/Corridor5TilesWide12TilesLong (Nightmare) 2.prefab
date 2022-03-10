@@ -223,7 +223,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3430897462366253538}
   - component: {fileID: 6798570656396848774}
-  - component: {fileID: 6405165358526468738}
   m_Layer: 0
   m_Name: BoxCollider
   m_TagString: Untagged
@@ -258,20 +257,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22, y: 20, z: 51}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6405165358526468738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6836095672848244372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 8744064055704987671}
-  isColliding: 0
 --- !u!1 &8824401863552041264
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,9 +314,7 @@ MonoBehaviour:
   - {fileID: 3198255206867626421}
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
-  roomValidators:
-  - {fileID: 6405165358526468738}
-  isValidRoom: 1
+  onRoomSpawned: {fileID: 0}
 --- !u!114 &6305866009089458902
 MonoBehaviour:
   m_ObjectHideFlags: 0

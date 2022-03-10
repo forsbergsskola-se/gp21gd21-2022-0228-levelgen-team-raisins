@@ -29383,7 +29383,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3430897462366253538}
   - component: {fileID: 6798570656396848774}
-  - component: {fileID: 5139523922214265257}
   - component: {fileID: 6273654185515069588}
   m_Layer: 16
   m_Name: Collider
@@ -29419,20 +29418,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 15, z: 50}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5139523922214265257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6836095672848244372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 8411093197031910180}
-  isColliding: 0
 --- !u!54 &6273654185515069588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34589,8 +34574,7 @@ MonoBehaviour:
   - {fileID: 3039266628766789984}
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
-  roomValidators:
-  - {fileID: 5139523922214265257}
+  onRoomSpawned: {fileID: 0}
 --- !u!114 &1999979979274732189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39481,6 +39465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
+--- !u!4 &625661420357492387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 694172940738244181, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
+  m_PrefabInstance: {fileID: 75709225421451510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5156207031546123943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5080763905397663313, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
@@ -39503,11 +39492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &625661420357492387 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 694172940738244181, guid: a79758b07c86e2949a8b9f48c1ee4f7a, type: 3}
-  m_PrefabInstance: {fileID: 75709225421451510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &567535075060625418
 PrefabInstance:
   m_ObjectHideFlags: 0
