@@ -19371,7 +19371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5903147343675277696}
   - component: {fileID: 106775142966798115}
-  - component: {fileID: 5537487986580946631}
+  - component: {fileID: 2739876787271047322}
   m_Layer: 16
   m_Name: Collider
   m_TagString: Untagged
@@ -19406,18 +19406,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 36.92384, y: 6.138691, z: 36.486534}
   m_Center: {x: 0.5002003, y: 2.5693455, z: 0.16067886}
---- !u!114 &5537487986580946631
-MonoBehaviour:
+--- !u!54 &2739876787271047322
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6303620388217960996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6311459607919473915
 GameObject:
   m_ObjectHideFlags: 0
@@ -20501,7 +20505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579665854742697421}
   - component: {fileID: 981991033744337254}
-  - component: {fileID: 2428398345517362283}
+  - component: {fileID: 1009954112638914747}
   m_Layer: 16
   m_Name: Collider (1)
   m_TagString: Untagged
@@ -20536,18 +20540,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 36.833687, y: 6.138691, z: 26.590788}
   m_Center: {x: 0.5452757, y: 2.5693455, z: 4.4532213}
---- !u!114 &2428398345517362283
-MonoBehaviour:
+--- !u!54 &1009954112638914747
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6685652124029085529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6713710644237170175
 GameObject:
   m_ObjectHideFlags: 0
@@ -24885,7 +24893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2773996137277456752}
   - component: {fileID: 2097224033034013173}
-  - component: {fileID: 2337695540394233290}
+  - component: {fileID: 1728790525253534576}
   m_Layer: 16
   m_Name: Collider (3)
   m_TagString: Untagged
@@ -24920,18 +24928,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.4310284, y: 6.138691, z: 19.206491}
   m_Center: {x: 16.868847, y: 2.5693455, z: -1.5716314}
---- !u!114 &2337695540394233290
-MonoBehaviour:
+--- !u!54 &1728790525253534576
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8248831786864788272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8266261438393134044
 GameObject:
   m_ObjectHideFlags: 0
@@ -26835,7 +26847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3370484131039249127}
   - component: {fileID: 1764695931884131401}
-  - component: {fileID: 3473992036553923842}
+  - component: {fileID: 9109912269406512133}
   m_Layer: 16
   m_Name: Collider (2)
   m_TagString: Untagged
@@ -26870,18 +26882,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.040436, y: 6.138691, z: 19.651049}
   m_Center: {x: 15.941902, y: 2.5693455, z: -1.79391}
---- !u!114 &3473992036553923842
-MonoBehaviour:
+--- !u!54 &9109912269406512133
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8563918520971912355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8734027832456845559
 GameObject:
   m_ObjectHideFlags: 0
