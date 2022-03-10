@@ -91,11 +91,9 @@ public class FillRooms : MonoBehaviour{
         if (enemy.GetComponent<NetworkObject>() == null) return;
         enemy.GetComponent<NetworkObject>().Spawn();
 
-        if (enemy.GetComponent<CharacterClassContainer>() == null) return;
+        if (enemy.GetComponent<NetworkCharacterState>() == null) return;
 
-        var theHealth = ScriptableObject.CreateInstance<IntVariable>();
-        theHealth.Value = 60;
-        enemy.GetComponent<CharacterClassContainer>().CharacterClass.BaseHP = theHealth;
+        enemy.GetComponent<NetworkCharacterState>().HitPoints = healthAmount;
     }
 
     GameObject RandomizeSpawnedObject(){
