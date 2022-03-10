@@ -20,20 +20,19 @@ public class Room : MonoBehaviour{
     [SerializeField] public List<Connection> connections; //Reference door scripts
     [SerializeField] RangesSO rangesSO;
     [SerializeField] UnityEventSO onPlayerPosUpdate;
+    [SerializeField] GameEventSO onRoomSpawned;
 
     [System.NonSerialized] public Connection spawnedConnection;
 
     static int id;
     void Awake(){
         gameObject.name = $"room {id++}";
-
     }
 
     void Start(){
-        this.GetComponent<NavMeshSurface>().BuildNavMesh();
+        onRoomSpawned?.Invoke();
         onPlayerPosUpdate.roomEvent.AddListener(DestroyRooms);
         onPlayerPosUpdate.roomEvent.AddListener(SpawnRooms);
-
     }
 
     void OnDisable(){
