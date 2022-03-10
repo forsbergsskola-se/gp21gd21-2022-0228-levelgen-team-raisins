@@ -105,7 +105,7 @@ public class FillRooms : MonoBehaviour{
         enemy.GetComponent<NetworkObject>().Spawn();
 
         if (enemy.GetComponent<NetworkCharacterState>() == null) return;
-        enemy.GetComponent<NetworkCharacterState>().HitPoints = healthAmount;
+        enemy.GetComponent<NetworkCharacterState>().HitPoints += healthAmount;
     }
 
     GameObject RandomizeSpawnedObject(){
