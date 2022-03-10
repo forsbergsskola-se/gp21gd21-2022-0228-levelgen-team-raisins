@@ -68,16 +68,6 @@ public class Room : MonoBehaviour{
                 connection.SpawnRoom();
                 yield return new WaitForSeconds(1f);
             }
-            SpawnInternals();
         }
-    }
-    public void SpawnInternals(){
-        //This should spawn all items inside the room.
-        //The items need to be picked at random from a list of possible items
-
-
-        //-take into account rooms which allow both easy and medium enemies to spawn
-        //Foreach prefablistSO in ...something?
-        //foreach gameobject in prefablistSO
     }
 }
