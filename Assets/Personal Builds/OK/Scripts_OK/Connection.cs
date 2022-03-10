@@ -161,6 +161,10 @@ public class Connection : MonoBehaviour{
                 }
             }
         }
+
+        if (attempt >= activeRoomListSo.combinedPrefabList.Count){
+            connectionType = ConnectionType.ClosedConnection;
+        }
     }
 
     bool IsValidRoom(Room room, out Vector3 offset){
@@ -171,7 +175,7 @@ public class Connection : MonoBehaviour{
             }
         }
 
-        offset = default;
+        offset = Vector3.zero;
         return false;
     }
 
@@ -194,6 +198,9 @@ public class Connection : MonoBehaviour{
     }
 
     void DeactivateEnvironmentBlockers(){
+        if (environmentToggleList == null){
+            return;
+        }
         foreach (var _gameObject in environmentToggleList){
             if (_gameObject != null){
                 _gameObject.SetActive(false);
@@ -202,6 +209,9 @@ public class Connection : MonoBehaviour{
     }
 
     void ActivateEnvironmentBlockers(){
+        if (environmentToggleList == null){
+            return;
+        }
         foreach (var _gameObject in environmentToggleList){
             _gameObject.SetActive(true);
         }

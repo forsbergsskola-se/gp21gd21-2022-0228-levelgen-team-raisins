@@ -12,13 +12,9 @@ public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] RangesSO rangesSO;
     [SerializeField] UnityEventSO onPlayerPosUpdate;
-
-    void Start(){
-        onPlayerPosUpdate.roomEvent.Invoke();
-    }
-
     void Update(){
         UpdatePlayerPos(playerTransform.position);
+
     }
     void UpdatePlayerPos(Vector3 playerPosition){
         if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > rangesSO.updatePosThreshold.value){
