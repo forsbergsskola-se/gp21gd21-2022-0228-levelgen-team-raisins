@@ -157,13 +157,13 @@ public class Connection : MonoBehaviour{
 
             foreach (var connection in spawnedRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-                    connection.connectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+                    connection.ConnectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
                 }
             }
         }
 
         if (attempt >= activeRoomListSo.combinedPrefabList.Count){
-            connectionType = ConnectionType.ClosedConnection;
+            ConnectionType = ConnectionType.ClosedConnection;
         }
     }
 
