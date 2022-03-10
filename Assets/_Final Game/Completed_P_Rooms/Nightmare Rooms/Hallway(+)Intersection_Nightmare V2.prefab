@@ -33801,7 +33801,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 2677139461068515679}
   connectionDirection: 4
-  spawnedRoom: {fileID: 0}
 --- !u!1 &3417796281205238953
 GameObject:
   m_ObjectHideFlags: 0
@@ -39339,7 +39338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3771329348562063398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.74, y: 0, z: 6.52}
+  m_LocalPosition: {x: 9.92, y: 0, z: -0.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5571677107636712355}
@@ -40194,6 +40193,7 @@ MonoBehaviour:
   - {fileID: 6970745199580550527}
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
+  onRoomSpawned: {fileID: 0}
 --- !u!114 &2534258594515045701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46378,7 +46378,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 4795415609694559511}
   connectionDirection: 3
-  spawnedRoom: {fileID: 0}
 --- !u!1 &5272635086315948866
 GameObject:
   m_ObjectHideFlags: 0
@@ -47242,7 +47241,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 215176753938274094}
   connectionDirection: 2
-  spawnedRoom: {fileID: 0}
 --- !u!1 &5626159234400236775
 GameObject:
   m_ObjectHideFlags: 0
@@ -66309,7 +66307,6 @@ MonoBehaviour:
   environmentToggleList:
   - {fileID: 2460047304778093459}
   connectionDirection: 1
-  spawnedRoom: {fileID: 0}
 --- !u!1 &8036859849011760693
 GameObject:
   m_ObjectHideFlags: 0
