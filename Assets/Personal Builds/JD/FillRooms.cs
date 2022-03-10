@@ -97,7 +97,6 @@ public class FillRooms : MonoBehaviour{
     private void SetEnemyHealth(int setHealth)
     {
         healthAmount = setHealth;
-        Debug.Log($"Current Health: {healthAmount}");
     }
 
     private void SetupEnemy(GameObject enemy)
@@ -106,7 +105,6 @@ public class FillRooms : MonoBehaviour{
         enemy.GetComponent<NetworkObject>().Spawn();
 
         if (enemy.GetComponent<NetworkCharacterState>() == null) return;
-
         enemy.GetComponent<NetworkCharacterState>().HitPoints = healthAmount;
     }
 
