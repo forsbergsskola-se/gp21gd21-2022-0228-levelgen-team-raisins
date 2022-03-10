@@ -15668,8 +15668,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 35.541542, y: 6.138691, z: 34.9425}
-  m_Center: {x: 0.30833054, y: 2.5693455, z: 0.19432259}
+  m_Size: {x: 35.541542, y: 9.054095, z: 34.9425}
+  m_Center: {x: 0.30833054, y: 1.1116434, z: 0.19432259}
 --- !u!54 &5772643338424391704
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33793,7 +33793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}
@@ -46370,7 +46370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}
@@ -47233,7 +47233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}
@@ -66299,7 +66299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fae1af3abb66a43ad20ffb0f256e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRoomListSo: {fileID: 11400000, guid: 56ac32f70fb90e643b676c8d5ca9f742, type: 2}
+  activeRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   easyRoomListSo: {fileID: 11400000, guid: bb58b1218ea7e8f44a41bac76c907b81, type: 2}
   mediumRoomListSo: {fileID: 11400000, guid: b8e36fcffd7cc9b4b8a47b697a2397e4, type: 2}
   hardRoomListSo: {fileID: 11400000, guid: d297393f738484248a11a8c4a32ccf08, type: 2}

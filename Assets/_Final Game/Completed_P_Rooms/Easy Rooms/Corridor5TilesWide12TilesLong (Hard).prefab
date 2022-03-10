@@ -288,8 +288,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22, y: 8.389374, z: 41.981018}
-  m_Center: {x: 0, y: -12.126411, z: -0.3446846}
+  m_Size: {x: 22, y: 9.748983, z: 41.981018}
+  m_Center: {x: 0, y: -12.806216, z: -0.3446846}
 --- !u!54 &6481152727136538518
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364,6 +364,7 @@ MonoBehaviour:
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
+  spawnedConnection: {fileID: 0}
 --- !u!114 &3224336111302445434
 MonoBehaviour:
   m_ObjectHideFlags: 0

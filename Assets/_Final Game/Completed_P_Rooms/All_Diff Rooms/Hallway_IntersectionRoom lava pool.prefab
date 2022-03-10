@@ -4892,8 +4892,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  additionalDamageAmount: 0
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &3227684323930908752
 GameObject:
@@ -5520,8 +5518,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 0
   healthAmount: 10
-  additionalDamageAmount: 0
-  MaxObjectsToSpawn: 11
   SpawnType: 0
 --- !u!1 &3528791392436169595
 GameObject:
@@ -7462,8 +7458,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  additionalDamageAmount: 0
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &4410679362504990909
 GameObject:
@@ -16157,8 +16151,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  additionalDamageAmount: 0
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &8351873942728916427
 GameObject:
@@ -16723,8 +16715,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.92384, y: 6.138691, z: 36.73664}
-  m_Center: {x: 0.5002003, y: 2.5693455, z: 0.28573227}
+  m_Size: {x: 36.92384, y: 8.567571, z: 36.73664}
+  m_Center: {x: 0.5002003, y: 1.3549057, z: 0.28573227}
 --- !u!54 &1328785947109470658
 Rigidbody:
   m_ObjectHideFlags: 0

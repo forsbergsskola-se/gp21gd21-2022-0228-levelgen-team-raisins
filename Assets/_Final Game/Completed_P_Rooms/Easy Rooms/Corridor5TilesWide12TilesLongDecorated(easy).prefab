@@ -29413,11 +29413,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836095672848244372}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 8.90737, z: 43.227943}
-  m_Center: {x: 0, y: -6.963292, z: 0.48316097}
+  m_Size: {x: 20, y: 10.998934, z: 43.227943}
+  m_Center: {x: 0, y: -8.009074, z: 0.48316193}
 --- !u!54 &6273654185515069588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34575,6 +34575,7 @@ MonoBehaviour:
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
+  spawnedConnection: {fileID: 0}
 --- !u!114 &1999979979274732189
 MonoBehaviour:
   m_ObjectHideFlags: 0

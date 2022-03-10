@@ -12737,7 +12737,6 @@ MonoBehaviour:
   spawnTimer: {fileID: 0}
   spawnInterval: 60
   healthAmount: 10
-  MaxObjectsToSpawn: 0
   SpawnType: 0
 --- !u!1 &4084203407571000901
 GameObject:
@@ -19404,8 +19403,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.92384, y: 6.138691, z: 36.486534}
-  m_Center: {x: 0.5002003, y: 2.5693455, z: 0.16067886}
+  m_Size: {x: 36.92384, y: 8.741396, z: 35.4119}
+  m_Center: {x: 0.5002003, y: 1.267993, z: -0.3766384}
 --- !u!54 &2739876787271047322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20538,8 +20537,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.833687, y: 6.138691, z: 26.590788}
-  m_Center: {x: 0.5452757, y: 2.5693455, z: 4.4532213}
+  m_Size: {x: 36.833687, y: 9.816491, z: 26.590788}
+  m_Center: {x: 0.54527664, y: 0.7304454, z: 4.4532213}
 --- !u!54 &1009954112638914747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24926,8 +24925,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.4310284, y: 6.138691, z: 19.206491}
-  m_Center: {x: 16.868847, y: 2.5693455, z: -1.5716314}
+  m_Size: {x: 5.429405, y: 8.34661, z: 19.206491}
+  m_Center: {x: 16.86966, y: 1.4653858, z: -1.5716314}
 --- !u!54 &1728790525253534576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26880,8 +26879,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.040436, y: 6.138691, z: 19.651049}
-  m_Center: {x: 15.941902, y: 2.5693455, z: -1.79391}
+  m_Size: {x: 5.36779, y: 8.186115, z: 19.651049}
+  m_Center: {x: 15.605579, y: 1.5456333, z: -1.79391}
 --- !u!54 &9109912269406512133
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27665,6 +27664,7 @@ MonoBehaviour:
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
+  spawnedConnection: {fileID: 0}
 --- !u!114 &8840240992742129206
 MonoBehaviour:
   m_ObjectHideFlags: 0

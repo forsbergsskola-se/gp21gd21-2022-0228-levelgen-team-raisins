@@ -13251,6 +13251,7 @@ GameObject:
   - component: {fileID: 5903147343675277696}
   - component: {fileID: 106775142966798115}
   - component: {fileID: 5537487986580946631}
+  - component: {fileID: 6585431630384321668}
   m_Layer: 16
   m_Name: Collider
   m_TagString: Validation_Collider
@@ -13283,8 +13284,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.92384, y: 6.138691, z: 36.73664}
-  m_Center: {x: 0.5002003, y: 2.5693455, z: 0.28573227}
+  m_Size: {x: 36.92384, y: 7.707157, z: 36.73664}
+  m_Center: {x: 0.5002003, y: 1.7851124, z: 0.28573227}
 --- !u!114 &5537487986580946631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13297,6 +13298,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fa1742091c79f419c3abc7a66667b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &6585431630384321668
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6303620388217960996}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6383433808611482210
 GameObject:
   m_ObjectHideFlags: 0
@@ -18413,6 +18430,7 @@ MonoBehaviour:
   rangesSO: {fileID: 11400000, guid: 24300669bd34386438ed69be7c0978af, type: 2}
   onPlayerPosUpdate: {fileID: 11400000, guid: 258d1e03c26a5014cb5b5750f9254140, type: 2}
   onRoomSpawned: {fileID: 11400000, guid: 258bb9fe9944c3b4b831fff0c0ecb5d7, type: 2}
+  spawnedConnection: {fileID: 0}
 --- !u!114 &-4267980809051980753
 MonoBehaviour:
   m_ObjectHideFlags: 0
