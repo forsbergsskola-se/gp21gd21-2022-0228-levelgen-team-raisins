@@ -22,7 +22,7 @@ public class Room : MonoBehaviour{
     [SerializeField] UnityEventSO onPlayerPosUpdate;
     [SerializeField] GameEventSO onRoomSpawned;
 
-    public Connection spawnedConnection;
+    [System.NonSerialized] public Connection spawnedConnection;
 
     static int id;
     void Awake(){

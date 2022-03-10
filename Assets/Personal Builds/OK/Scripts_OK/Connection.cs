@@ -39,7 +39,7 @@ public class Connection : MonoBehaviour{
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
-    public GameObject spawnedRoom;
+    [System.NonSerialized]public GameObject spawnedRoom;
     List<int> exhaustedNumbers = new List<int>();
 
     int roomNumber;
@@ -119,6 +119,10 @@ public class Connection : MonoBehaviour{
 
     GameObject PickRoomToSpawn(){
         roomNumber = GetRandomNumber(activeRoomListSo.combinedPrefabList.Count);
+        while (exhaustedNumbers.Contains(roomNumber) && attempt < activeRoomListSo.combinedPrefabList.Count){
+            attempt++;
+            roomNumber = GetRandomNumber(activeRoomListSo.combinedPrefabList.Count);
+        }
         print(roomNumber);
         print("Count:" + activeRoomListSo.combinedPrefabList.Count);
         var room = activeRoomListSo.combinedPrefabList[roomNumber];
@@ -133,7 +137,11 @@ public class Connection : MonoBehaviour{
             var randomPrefabRoom = PickRoomToSpawn();
             var randomRoom = randomPrefabRoom.GetComponent<Room>();
 
-            Vector3 offset = GetOffset(randomRoom);
+            bool validRoom = IsValidRoom(randomRoom, out Vector3 offset);
+
+            if (!validRoom){
+                continue;
+            }
 
             Collider[] intersecting = Physics.OverlapBox(transform.position - offset,
                 randomPrefabRoom.transform.localScale / 2,Quaternion.identity, LayerMask.GetMask("Validators"));
@@ -146,7 +154,7 @@ public class Connection : MonoBehaviour{
             spawnedRoom = Instantiate(randomPrefabRoom, transform.position - offset, quaternion.identity);
 
             ConnectionType = ConnectionType.UsedConnection;
-            attempt++;
+            //attempt++;
 
             var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
 
@@ -160,15 +168,27 @@ public class Connection : MonoBehaviour{
         }
     }
 
-    Vector3 GetOffset(Room room){
+    bool IsValidRoom(Room room, out Vector3 offset){
         foreach (var connection in room.connections){
             if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-               return connection.transform.position;
+                offset = connection.transform.position;
+                return true;
             }
         }
 
-        return default;
+        offset = default;
+        return false;
     }
+
+    // Vector3 GetOffset(Room room){
+    //     foreach (var connection in room.connections){
+    //         if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+    //            return connection.transform.position;
+    //         }
+    //     }
+    //
+    //     return default;
+    // }
 
     bool CheckOppositeDirection(ConnectionDirection direction1, ConnectionDirection direction2){
         if (direction1 is ConnectionDirection.Up && direction2 is ConnectionDirection.Down) return true;
