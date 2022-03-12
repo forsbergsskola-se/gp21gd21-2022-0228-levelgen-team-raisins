@@ -132,11 +132,11 @@ public class Connection : MonoBehaviour{
 
             spawnedRoom = Instantiate(randomPrefabRoom, transform.position - offset, quaternion.identity);
 
+            SetConnectionType(this, ConnectionType.UsedConnection);
+
             var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
 
             spawnedRoomRoom.spawnedConnection = this;
-
-            SetConnectionType(this, ConnectionType.UsedConnection);
 
             foreach (var connection in spawnedRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
@@ -146,13 +146,13 @@ public class Connection : MonoBehaviour{
         }
 
         if (attempt >= activeRoomListSo.combinedPrefabList.Count){
-            ConnectionType = ConnectionType.ClosedConnection;
+            SetConnectionType(this, ConnectionType.ClosedConnection);
         }
     }
 
     bool IsValidRoom(Room room, out Vector3 offset){
         foreach (var connection in room.connections){
-            if (!CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+            if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
                 offset = connection.transform.position;
                 return true;
             }
