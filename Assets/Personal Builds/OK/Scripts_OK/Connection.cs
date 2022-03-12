@@ -23,7 +23,7 @@ public enum ConnectionDirection{
 public class Connection : MonoBehaviour{
     [SerializeField] DifficultyDependantRoomList activeRoomListSo;
 
-    [Header("Changable Difficulty Rooms")] [SerializeField]
+    [Header("Changeable Difficulty Rooms")] [SerializeField]
     DifficultyDependantRoomList easyRoomListSo;
 
     [SerializeField] DifficultyDependantRoomList mediumRoomListSo;
@@ -34,7 +34,7 @@ public class Connection : MonoBehaviour{
     [SerializeField] List<GameObject> environmentToggleList;
     public ConnectionDirection connectionDirection; //TODO: remove public
 
-    [System.NonSerialized]public GameObject spawnedRoom;
+    [System.NonSerialized] public GameObject spawnedRoom;
     List<int> exhaustedNumbers = new List<int>();
 
     int roomNumber;
@@ -60,7 +60,8 @@ public class Connection : MonoBehaviour{
         if (ConnectionType is ConnectionType.OpenConnection){
             DeactivateEnvironmentBlockers();
         }
-        else if (ConnectionType is ConnectionType.ClosedConnection|| ConnectionType is ConnectionType.SuspendedConnection){
+        else if (ConnectionType is ConnectionType.ClosedConnection ||
+                 ConnectionType is ConnectionType.SuspendedConnection){
             ActivateEnvironmentBlockers();
         }
     }
@@ -91,23 +92,6 @@ public class Connection : MonoBehaviour{
         }
     }
 
-
-    // public Vector3 GetSpawnPosition(){
-    //     // var randomRoom = PickRoomToSpawn();
-    //     // var randomRoomRoom = randomRoom.GetComponent<Room>();
-    //     //
-    //     // Vector3 offset = Vector3.zero;
-    //     //
-    //     // foreach (var connection in randomRoomRoom.connections){
-    //     //     if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-    //     //         offset = connection.transform.position;
-    //     //     }
-    //     // }
-    //     //
-    //     // return transform.position - offset;
-    //     return default;
-    // }
-
     int GetRandomNumber(int maxInt){
         return Random.Range(0, maxInt);
     }
@@ -118,6 +102,7 @@ public class Connection : MonoBehaviour{
             attempt++;
             roomNumber = GetRandomNumber(activeRoomListSo.combinedPrefabList.Count);
         }
+
         print(roomNumber);
         print("Count:" + activeRoomListSo.combinedPrefabList.Count);
         var room = activeRoomListSo.combinedPrefabList[roomNumber];
@@ -125,7 +110,6 @@ public class Connection : MonoBehaviour{
         return room;
     }
 
-    [ContextMenu("Spawn Room")]
     public void SpawnRoom(){
         attempt = 0;
         while (ConnectionType is ConnectionType.OpenConnection && attempt < activeRoomListSo.combinedPrefabList.Count){
@@ -139,25 +123,24 @@ public class Connection : MonoBehaviour{
             }
 
             Collider[] intersecting = Physics.OverlapBox(transform.position - offset,
-                randomPrefabRoom.transform.localScale / 2,Quaternion.identity, LayerMask.GetMask("Validators"));
+                randomPrefabRoom.transform.localScale / 2, Quaternion.identity, LayerMask.GetMask("Validators"));
 
             if (intersecting.Length > 0){
-                ConnectionType = ConnectionType.ClosedConnection;
+                SetConnectionType(this, ConnectionType.ClosedConnection);
                 break;
             }
 
             spawnedRoom = Instantiate(randomPrefabRoom, transform.position - offset, quaternion.identity);
 
-            ConnectionType = ConnectionType.UsedConnection;
-            //attempt++;
-
             var spawnedRoomRoom = spawnedRoom.GetComponent<Room>();
 
             spawnedRoomRoom.spawnedConnection = this;
 
+            SetConnectionType(this, ConnectionType.UsedConnection);
+
             foreach (var connection in spawnedRoomRoom.connections){
                 if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-                    connection.ConnectionType = ConnectionType.UsedConnection; //TODO: This only affects the prefab, which is really bad. But Needed until we fix Validation.
+                    SetConnectionType(connection, ConnectionType.UsedConnection);
                 }
             }
         }
@@ -169,7 +152,7 @@ public class Connection : MonoBehaviour{
 
     bool IsValidRoom(Room room, out Vector3 offset){
         foreach (var connection in room.connections){
-            if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
+            if (!CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
                 offset = connection.transform.position;
                 return true;
             }
@@ -179,15 +162,6 @@ public class Connection : MonoBehaviour{
         return false;
     }
 
-    // Vector3 GetOffset(Room room){
-    //     foreach (var connection in room.connections){
-    //         if (CheckOppositeDirection(connectionDirection, connection.connectionDirection)){
-    //            return connection.transform.position;
-    //         }
-    //     }
-    //
-    //     return default;
-    // }
 
     bool CheckOppositeDirection(ConnectionDirection direction1, ConnectionDirection direction2){
         if (direction1 is ConnectionDirection.Up && direction2 is ConnectionDirection.Down) return true;
@@ -197,10 +171,15 @@ public class Connection : MonoBehaviour{
         else return false;
     }
 
+    void SetConnectionType(Connection connection, ConnectionType newConnectionType){
+        connection.ConnectionType = newConnectionType;
+    }
+
     void DeactivateEnvironmentBlockers(){
         if (environmentToggleList == null){
             return;
         }
+
         foreach (var _gameObject in environmentToggleList){
             if (_gameObject != null){
                 _gameObject.SetActive(false);
@@ -212,6 +191,7 @@ public class Connection : MonoBehaviour{
         if (environmentToggleList == null){
             return;
         }
+
         foreach (var _gameObject in environmentToggleList){
             _gameObject.SetActive(true);
         }
