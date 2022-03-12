@@ -12,23 +12,38 @@ public class Dungeon : MonoBehaviour{
     [SerializeField] PositionSO playerTransform;
     [SerializeField] RangesSO rangesSO;
     [SerializeField] UnityEventSO onPlayerPosUpdate;
-    void Update(){
-        UpdatePlayerPos(playerTransform.position);
 
-    }
-    void UpdatePlayerPos(Vector3 playerPosition){
-        if (Vector3.Distance(playerPosition, playerTransform.savedPosition) > rangesSO.updatePosThreshold.value){
-            Debug.Log("Updating player pos");
-            playerTransform.SavePosition();
-            onPlayerPosUpdate.roomEvent.Invoke();
+    void Update(){
+        if (!PlayerIsWithinUpdateRange()){
+            return;
         }
+
+        UpdatePlayerPos();
     }
+
+    void UpdatePlayerPos(){
+        playerTransform.SavePosition();
+        onPlayerPosUpdate.roomEvent.Invoke();
+    }
+
+    bool PlayerIsWithinUpdateRange(){
+        if (Vector3.Distance(playerTransform.position, playerTransform.savedPosition) >
+            rangesSO.updatePosThreshold.value){
+            return true;
+        }
+
+        return false;
+    }
+
     void OnDrawGizmos(){
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(playerTransform.savedPosition,rangesSO.roomSpawnRange.value);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(playerTransform.savedPosition, rangesSO.roomDespawnRange.value);
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(playerTransform.savedPosition, rangesSO.updatePosThreshold.value);
+        DrawColoredGizmoWireSphere(playerTransform.savedPosition, rangesSO.roomSpawnRange.value, Color.green);
+        DrawColoredGizmoWireSphere(playerTransform.savedPosition, rangesSO.roomDespawnRange.value, Color.red);
+        DrawColoredGizmoWireSphere(playerTransform.savedPosition, rangesSO.updatePosThreshold.value, Color.magenta);
+    }
+
+    void DrawColoredGizmoWireSphere(Vector3 origin, float range, Color color){
+        Gizmos.color = color;
+        Gizmos.DrawWireSphere(origin, range);
+        Gizmos.color = Color.white;
     }
 }

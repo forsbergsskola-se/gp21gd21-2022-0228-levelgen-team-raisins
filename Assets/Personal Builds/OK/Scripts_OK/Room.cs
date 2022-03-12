@@ -33,8 +33,6 @@ public class Room : MonoBehaviour{
     }
 
     void SpawnRooms(){
-        Debug.Log(name + "Spawning rooms");
-
         if (!RoomIsWithinSpawnRangeCheck()){
             return;
         }
