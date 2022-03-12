@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour{
+    [SerializeField] public List<Connection> connections;
+
     [SerializeField] PositionSO playerTransform;
-    [SerializeField] public List<Connection> connections; //Reference door scripts
     [SerializeField] RangesSO rangesSO;
     [SerializeField] UnityEventSO onPlayerPosUpdate;
     [SerializeField] GameEventSO onRoomSpawned;
@@ -12,6 +13,7 @@ public class Room : MonoBehaviour{
     public Connection spawnedConnection;
 
     static int id;
+
     void Awake(){
         gameObject.name = $"room {id++}";
     }
@@ -31,47 +33,48 @@ public class Room : MonoBehaviour{
     }
 
     void SpawnRooms(){
-        //StartCoroutine(nameof(CoroutineSpawnRooms));
         Debug.Log(name + "Spawning rooms");
 
+        if (!RoomIsWithinSpawnRangeCheck()){
+            return;
+        }
 
-        if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) < rangesSO.roomSpawnRange.value){
-            foreach (var connection in connections){
-                if (connection == null){
-                    continue;
-                }
-                connection.SpawnRoom();
-                //yield return new WaitForSeconds(0.3f);
+        foreach (var connection in connections){
+            if (connection == null){
+                continue;
             }
+
+            connection.SpawnRoom();
         }
     }
 
     void DestroyRooms(){
-        if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) >= rangesSO.roomDespawnRange.value){
-            //Set spawn connection to Open
-            if (spawnedConnection != null){
-               spawnedConnection.ConnectionType = ConnectionType.OpenConnection;
-            }
-
-            Destroy(this.gameObject);
+        if (!RoomIsOutsideDespawnRangeCheck()){
+            return;
         }
+
+        if (spawnedConnection != null){
+            ChangeConnectionType(spawnedConnection, ConnectionType.OpenConnection);
+        }
+
+        Destroy(this.gameObject);
     }
 
-   // [ContextMenu("Spawn All Available Rooms")]
-    // IEnumerator CoroutineSpawnRooms(){
-    //     Debug.Log(name + "Spawning rooms");
-    //
-    //
-    //     if (Vector3.Distance(this.transform.position,playerTransform.savedPosition ) < rangesSO.roomSpawnRange.value){
-    //         foreach (var connection in connections){
-    //             if (connection == null){
-    //                 continue;
-    //             }
-    //             connection.SpawnRoom();
-    //             //yield return new WaitForSeconds(0.3f);
-    //         }
-    //     }
-    //
-    //     yield return default;
-    // }
+    bool RoomIsWithinSpawnRangeCheck(){
+        if (Vector3.Distance(this.transform.position, playerTransform.savedPosition) < rangesSO.roomDespawnRange.value){
+            return true;
+        }
+
+        return false;
+    }
+    bool RoomIsOutsideDespawnRangeCheck(){
+        if (Vector3.Distance(this.transform.position, playerTransform.savedPosition) >= rangesSO.roomDespawnRange.value){
+            return true;
+        }
+
+        return false;
+    }
+    void ChangeConnectionType(Connection connection, ConnectionType newConnectionType){
+        connection.ConnectionType = newConnectionType;
+    }
 }
