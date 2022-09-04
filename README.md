@@ -1,8 +1,4 @@
-# {game-title}
-
-{video}
-
-{description}
+# Boss Room Nightmare
 
 ## Team Unicorn Raisins
 
